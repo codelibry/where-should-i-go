@@ -1,0 +1,114 @@
+.teaser 
+    background: #d3e3d7
+    &__title 
+        margin-bottom: 40px
+        +max-screen(1200px)
+            margin-bottom: 36px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 32px
+        +max-screen($breakpoint-md)
+            margin-bottom: 24px
+    &__text 
+        font-size: 24px
+        line-height: 1.6
+        +max-screen(1200px)
+            font-size: 22px
+        +max-screen($breakpoint-lg)
+            font-size: 20px
+        &Wrapper
+            max-width: 52.5%
+            flex: 0 0 52.5%
+            padding: 0 16px 
+            +max-screen($breakpoint-lg)
+                max-width: 80%
+                flex: 0 0 80%
+            +max-screen($breakpoint-md)
+                max-width: 100%
+                flex: 0 0 100%
+    &__button 
+        margin-top: 120px
+        padding-top: 8.5px
+        padding-bottom: 8.5px
+        position: relative
+        display: inline-block
+        +max-screen(1200px)
+            margin-top: 64px
+        +max-screen($breakpoint-lg)
+            margin-top: 48px
+        +max-screen($breakpoint-md)
+            margin-top: 36px
+        &::after 
+            content: ""
+            position: absolute
+            right: -64px
+            top: 50%
+            transform: translateY(-50%)
+            width: 48px 
+            height: 47px
+            background-image: url('../assets/images/button__arrow.svg')
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            transition: .3s
+            +max-screen($breakpoint-md)
+                width: 36px 
+                height: 34px 
+        &:hover::after 
+            right: -74px 
+            +max-screen($breakpoint-md)
+                right: -46px
+        a 
+            font-size: 24px
+            line-height: 1.6
+            +max-screen(1200px)
+                font-size: 22px
+            +max-screen($breakpoint-lg)
+                font-size: 20px
+    &__image 
+        padding: 0 16px 
+        max-width: 47.5%
+        flex: 0 0 47.5%
+        text-align: right
+        +max-screen($breakpoint-lg)
+            max-width: 80%
+            flex: 0 0 80%
+            margin-top: 36px
+        +max-screen($breakpoint-md)
+            margin-top: 36px
+            max-width: 100%
+            flex: 0 0 100%
+        img 
+            width: 91%
+            transform: rotate(-12deg)
+            +max-screen($breakpoint-lg)
+                width: 100%
+                transform: none
+    &__content 
+        padding-top: 120px
+        padding-bottom: 120px
+        margin: 0 -16px 
+        align-items: center
+        +max-screen(1200px)
+            padding-top: 100px
+            padding-bottom: 100px
+        +max-screen($breakpoint-lg)
+            padding-top: 92px
+            padding-bottom: 92px
+            justify-content: center
+        +max-screen($breakpoint-md)
+            padding-top: 80px
+            padding-bottom: 80px
+        &:nth-child(2n)
+            flex-direction: row-reverse
+            .teaser__image 
+                text-align: left
+                padding-left: 30px
+                +max-screen($breakpoint-lg)
+                    padding-left: 16px
+                img 
+                    width: 93%
+                    transform: rotate(8deg)                    
+                    +max-screen($breakpoint-lg)
+                        width: 100%
+                        transform: none
+                        

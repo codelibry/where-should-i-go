@@ -1,0 +1,115 @@
+.header 
+    background: #D3E3D7
+    padding-top: 64px
+    padding-bottom: 64px
+    +max-screen(1200px)
+        padding-top: 48px
+        padding-bottom: 48px
+    +max-screen($breakpoint-lg)
+        padding-top: 36px
+        padding-bottom: 36px
+    +max-screen($breakpoint-md)
+        padding-top: 24px
+        padding-bottom: 24px
+    &__burger
+        display: none
+        +max-screen($breakpoint-md)
+            display: block
+            width: 24px
+            height: 18px
+            position: relative
+            transform: rotate(0deg)
+            transition: .5s ease-in-out
+            cursor: pointer
+            span 
+                display: block
+                position: absolute
+                height: 2px
+                width: 100%
+                background: #0C0C0C
+                opacity: 1
+                left: 0
+                transform: rotate(0deg)
+                transition: .25s ease-in-out
+                &:nth-child(1)
+                    top: 0
+                &:nth-child(2)
+                    top: 8px
+                &:nth-child(3)
+                    top: 16px
+    &__logo 
+        img 
+            max-height: 56px 
+            +max-screen($breakpoint-lg)
+                max-height: 46px
+            +max-screen($breakpoint-md)
+                max-height: 40px 
+    &__content 
+        display: flex 
+        +max-screen($breakpoint-md)
+            justify-content: space-between
+            align-items: center
+    &__menu 
+        display: flex 
+        align-items: center
+        margin-right: 120px
+        margin-left: auto
+        +max-screen($breakpoint-lg)
+            margin-right: 0
+        +max-screen($breakpoint-md)
+            position: fixed
+            width: 100%
+            height: 100%
+            left: 100%
+            top: 0
+            background: #D3E3D7
+            transition: .3s
+        .menu 
+            display: flex 
+            margin: 0 -20px
+            li 
+                margin: 0 20px 
+                position: relative
+                +max-screen($breakpoint-lg)
+                    font-size: 16px
+                +max-screen($breakpoint-md)
+                    font-size: 20px
+                &::after 
+                    content: ""
+                    width: 100%
+                    height: 1px 
+                    background: #0C0C0C
+                    position: absolute
+                    left: 0
+                    bottom: -8px 
+                    transform: scaleX(0)
+                    transform-origin: left
+                    transition: .3s
+                    +max-screen($breakpoint-lg)
+                        bottom: -2px
+                &:hover::after 
+                    transform: scaleX(1)
+                &.current-menu-item::after 
+                    transform: scaleX(1)
+    &.menu-open
+        .header__burger
+            span:nth-child(1) 
+                top: 8px
+                transform: rotate(135deg)
+            span:nth-child(2) 
+                opacity: 0
+                left: -24px
+            span:nth-child(3) 
+                top: 8px
+                transform: rotate(-135deg)
+        .header__menu 
+            +max-screen($breakpoint-md)
+                left: 0
+                justify-content: center
+                .menu 
+                    flex-direction: column
+                    align-items: center
+                    li 
+                        margin-bottom: 20px
+                        &::after 
+                            bottom: -4px

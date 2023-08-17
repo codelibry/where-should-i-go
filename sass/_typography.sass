@@ -1,0 +1,324 @@
+html, body
+  -webkit-overflow-scrolling: touch
+
+body
+    font-family: $font-family-base
+    font-size: $default-font-size
+    font-weight: $default-font-weight
+    font-style: normal
+    line-height: $default-line-height
+    color: $default-text-color
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    -webkit-backface-visibility: hidden
+    -webkit-tap-highlight-color: transparent
+    // ::-moz-selection
+    //     color: $color-light
+    //     background: transparent
+    // ::selection
+    //     color: $color-light
+    //     background: transparent
+    +max-screen($breakpoint-lg)
+        font-size: 18px
+    +max-screen($breakpoint-md)
+        font-size: 16px
+
+
+.text
+    &--style
+        
+    &--default,&--default *
+        font-family: $font-family-base
+        font-size: $default-font-size
+        font-weight: $default-font-weight
+        font-style: normal
+        line-height: $default-line-height
+
+    &--uppercase
+        text-transform: uppercase !important
+    &--transform--none
+        text-transform: none !important
+        
+    &--left
+        text-align: left
+    &--right
+        text-align: right
+    &--center
+        text-align: center
+        
+    &--color
+        &--white
+            &,& *, &.content-block *
+                color: #fff
+        &--light
+            &,& *
+                color: $color-light
+        &--dark
+            &, & *
+                color: $color-dark
+        &--light-orange
+            &, & *
+                color: $color-light-orange
+        &--default
+            &,& *
+                color: $default-text-color
+    &--columns--2
+        column-count: 2
+
+    &--underline
+        text-decoration: underline
+
+    &--spacing
+        letter-spacing: 0.05em
+
+    &--opacity
+        opacity: 0.6
+
+    &--size
+        &--12
+            font-size: 12px !important
+            line-height: 16px !important
+        &--14
+            font-size: 14px !important
+            line-height: 17px !important
+        &--16
+            font-size: 16px !important
+            line-height: normal !important
+        &--18
+            font-size: 18px !important
+            line-height: 1.5 !important
+        &--25
+            font-size: 25px !important
+            line-height: 30px !important
+            +max-screen($breakpoint-sm)
+                font-size: 20px !important
+                line-height: 25px !important
+        &--40
+            font-size: 40px !important
+            line-height: 40px !important
+            +max-screen($breakpoint-sm)
+                font-size: 35px !important
+                line-height: 35px !important
+
+    &--outline
+        color: transparent
+        -webkit-text-stroke: 1px $default-text-color
+        .content-block &
+            color: transparent
+        .text-color-white &
+            -webkit-text-stroke: 1px #fff
+
+
+.font
+    &--primary
+        font-family: $font-family-base
+    &--secondary
+        font-family: $font-family-secondary
+    &--italic
+        font-style: italic
+    &--weight
+        &--300,
+        &--300 *
+            font-weight: 300
+        &--400,
+        &--400 *
+            font-weight: 400
+        &--500,
+        &--500 *
+            font-weight: 500
+        &--600,
+        &--600 *
+            font-weight: 600
+        &--700,
+        &--700 *
+            font-weight: 700
+        &--900,
+        &--900 *
+            font-weight: 900
+
+
+.p1
+    font-size: 15px
+    line-height: normal
+
+.p2
+    font-size: 18px
+    line-height: 22px
+
+.p3
+
+.p4
+    +max-screen($breakpoint-lg)
+    +max-screen($breakpoint-sm)
+
+
+h1,.h1
+    font-size: 136px
+    font-weight: 300
+    font-family: "Romie"
+    line-height: 1
+    +max-screen(1200px)
+        font-size: 82px
+    +max-screen($breakpoint-lg)
+        font-size: 64px
+    +max-screen($breakpoint-md)
+        font-size: 56px
+
+h2,.h2
+    font-size: 80px
+    font-weight: 400
+    line-height: 1.2
+    font-family: "Romie"
+    +max-screen(1200px)	
+        font-size: 64px
+    +max-screen($breakpoint-lg)
+        font-size: 52px
+    +max-screen($breakpoint-md)	
+        font-size: 40px
+    
+
+h3,.h3
+    font-size: 56px
+    font-weight: 400
+    font-family: "Romie"
+    +max-screen(1200px)
+        font-size: 48px
+    +max-screen($breakpoint-lg)
+        font-size: 42px
+    +max-screen($breakpoint-md)
+        font-size: 36px
+        
+h4,.h4
+    font-size: 48px
+    font-weight: 400
+    font-family: "Romie"
+    +max-screen(1200px)
+        font-size: 42px
+    +max-screen($breakpoint-lg)
+        font-size: 36px
+    +max-screen($breakpoint-md)
+        font-size: 32px
+
+.h5,h5
+    font-size: 40px
+    font-weight: 400
+    line-height: 1.4
+    font-family: "Romie"
+    +max-screen(1200px)
+        font-size: 36px
+    +max-screen($breakpoint-lg)
+        font-size: 32px
+    +max-screen($breakpoint-md)
+        font-size: 26px
+
+h6,.h6
+        
+
+.link-underline
+    position: relative
+    &:before
+        content: ''
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 100%
+        height: 1px
+        background-color: $color-light
+        transition: 0.2s ease-out
+    &:hover:before
+        width: 0
+
+.checkbox-list
+    margin: -5px 0
+    li
+        padding: 5px 0
+        display: flex
+        &::before
+            display: inline-block
+            content: ''
+            width: 15px
+            min-width: 15px
+            height: 15px
+            background-image: url(../assets/images/icon-checkbox.svg)
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            margin-right: 20px
+            margin-top: 6px
+
+
+.content-block
+    h2,
+    h3, 
+        margin-top: 64px
+        margin-bottom: 32px
+        +max-screen(1200px)
+            margin-top: 60px
+            margin-bottom: 30px
+        +max-screen($breakpoint-lg)
+            margin-top: 56px
+            margin-bottom: 28px
+        +max-screen($breakpoint-md)
+            margin-top: 48px
+            margin-bottom: 24px
+    h4 
+        margin-top: 48px
+    p 
+        margin-bottom: 32px
+        line-height: 1.6
+        +max-screen(1200px)
+            margin-bottom: 30px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 28px
+        +max-screen($breakpoint-md)
+            margin-bottom: 24px
+        &:last-child
+            margin-bottom: 0
+    ul,
+    ol 
+        margin-bottom: 32px
+        +max-screen(1200px)
+            margin-bottom: 30px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 28px
+        +max-screen($breakpoint-md)
+            margin-bottom: 24px
+    ul 
+        li 
+            padding-left: 30px
+            position: relative
+            line-height: 1.6
+            &::before 
+                content: ""
+                width: 7px 
+                height: 7px 
+                position: absolute 
+                left: 12px
+                top: 50%
+                background: #0C0C0C 
+                border-radius: 50%
+                transform: translateY(-50%)
+    ol 
+        padding-left: 30px
+        li
+            list-style-type: decimal
+            line-height: 1.6
+    .p2 
+        font-size: 24px
+        display: inline-block
+        line-height: 1.6
+        +max-screen(1200px)
+            font-size: 22px
+        +max-screen($breakpoint-lg)
+            font-size: 20px
+    & > *:nth-child(1)
+        margin-top: 0
+
+    
+.title 
+    &-light 
+        font-weight: 300
+        font-family: "Romie"
+    &-regular 
+        font-weight: 400
+        font-family: "Romie"

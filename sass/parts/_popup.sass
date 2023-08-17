@@ -1,0 +1,104 @@
+.popup-block
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    z-index: 1000
+    &__background
+        position: absolute
+        width: 100vw
+        height: 100vh
+        left: 0
+        top: 0
+        background: transparentize($color-bg-dark, 0.4)
+    &__inner
+        display: flex
+        flex-direction: column
+        justify-content: center
+        height: 100%
+        z-index: 1001
+        overflow: auto
+    &__wrapper
+        position: relative
+        max-height: 80vh
+        max-width: 550px
+        .videoBlock &
+            max-width: 920px
+    &__container
+        +max-screen($breakpoint-sm)
+            padding-left: 30px
+            padding-right: 30px
+    &__content
+        max-height: 100%
+        overflow: auto
+        position: relative
+        border-radius: 10px
+        background-color: $color-bg-light
+        .videoBlock__video.video--oembed
+            &>div:not(.plyr)
+                padding-bottom: 56%
+    &__close
+        position: absolute
+        top: 1px
+        right: 1px
+        width: 48px
+        height: 48px
+        background-color: $color-bg-light
+        cursor: pointer
+        z-index: 3
+        transition: 0.3s
+        z-index: 100
+        display: flex
+        align-items: center
+        justify-content: center
+        +max-screen($breakpoint-md)
+            width: 35px
+            height: 35px
+            top: 1px
+            right: 1px
+        &:hover
+            // transform: rotate(90deg)
+            &::before
+                transform: translateY(-50%) rotate(-45deg)
+            &::after
+                transform: translateY(-50%) rotate(45deg)
+        &::before, &::after
+            content: ''
+            background: $color-bg-dark
+            height: 2px
+            width: 9px
+            position: absolute
+            transition: 0.3s
+        &::before
+            transform: translateY(-50%) rotate(45deg)
+        &::after
+            transform: translateY(-50%) rotate(-45deg)
+
+.popup-hotel-location
+    .popup-block__container
+        max-width: 1370px !important
+        max-height: 100vh
+        padding-top: 55px
+        padding-bottom: 55px
+    &__image-wrapper
+        position: relative
+        > img
+            object-fit: cover
+            max-height: 220px
+        .icon-bookmark
+            position: absolute
+            top: 0
+            right: 20px
+
+.popup-accom-reserve
+    .container
+        max-width: 650px
+    &__list
+    &__item
+        &-inner
+            border: 1px solid #000C26
+            border-radius: 5px
+
+

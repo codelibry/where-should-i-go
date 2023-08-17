@@ -1,0 +1,67 @@
+.contentBlock
+    padding-top: 120px
+    padding-bottom: 120px
+    +max-screen(1200px)
+        padding-top: 100px
+        padding-bottom: 100px
+    +max-screen($breakpoint-lg)
+        padding-top: 92px
+        padding-bottom: 92px
+    +max-screen($breakpoint-md)
+        padding-top: 80px
+        padding-bottom: 80px
+    &__title 
+        max-width: 846px 
+        margin: auto
+        margin-bottom: 72px
+        +max-screen(1200px)
+            margin-bottom: 56px
+        +max-screen($breakpoint-lg)
+            text-align: center
+            margin-bottom: 42px
+        +max-screen($breakpoint-md)
+            margin-bottom: 32px
+            text-align: center
+    &__text 
+        padding-right: 77px
+        font-size: 24px
+        line-height: 1.6
+        padding-top: 22px
+        padding-bottom: 22px
+        +max-screen(1200px)
+            font-size: 22px
+        +max-screen($breakpoint-lg)
+            font-size: 20px
+            text-align: center
+            padding: 0 10px 
+        +max-screen($breakpoint-md)
+            text-align: center
+        p 
+            margin-bottom: 24px
+            &:last-child 
+                margin-bottom: 0
+        &Wrapper 
+            align-items: center
+            justify-content: space-between
+    &__image 
+        +max-screen($breakpoint-lg)
+            max-width: 75%
+            margin: auto
+        +max-screen($breakpoint-md)
+            margin-top: 48px
+            max-width: 100%
+
+        img 
+            transform: translateX(-20px) rotate(12deg)
+            margin-left: -58px
+            width: calc( 100% + 58px )
+            +max-screen(1200px)
+                margin-left: -90px
+                width: calc( 100% + 90px )
+            +max-screen($breakpoint-lg)
+                margin-left: 0
+                width: calc( 100% - 20px )
+                transform: translateX(10px)
+                margin-top: 36px
+            +max-screen($breakpoint-md)
+                margin-top: 0

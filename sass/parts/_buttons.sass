@@ -1,0 +1,22 @@
+.button 
+    padding-top: 8.5px
+    padding-bottom: 8.5px
+    a 
+        font-size: 24px
+        line-height: 1.6
+        position: relative
+        &::after 
+            content: ""
+            position: absolute 
+            width: 48px 
+            height: 47px
+            top: 50%
+            transform: translateY(-50%)
+            right: -64px
+            background-image: url('../assets/images/button_arrow.svg')
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            transition: .3s
+        &:hover::after 
+            transform: translate( 10px, -50% )
