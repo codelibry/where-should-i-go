@@ -80,6 +80,8 @@
         img 
             width: 91%
             transform: rotate(-12deg)
+            +max-screen(1600px)
+                transform: translateX(-20px) rotate(-12deg)
             +max-screen($breakpoint-lg)
                 width: 100%
                 transform: none

@@ -11,7 +11,7 @@ import { appearence } from './animations/appearence';
 import { videoBlock } from './template-parts/blocks/video';
 import { ctaAnimation } from './template-parts/blocks/cta';
 import { imagesSlider } from './template-parts/blocks/images_slider';
-
+import { accordion } from './template-parts/blocks/accordion';
 // Parts
 import { initPopups } from './parts/popups';
 import { basicSliders } from './parts/slider';
@@ -26,6 +26,7 @@ appearence();
 videoBlock();
 ctaAnimation();
 imagesSlider();
+accordion();
 
 // Parts
 initPopups();

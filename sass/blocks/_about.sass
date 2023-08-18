@@ -1,0 +1,51 @@
+.about
+    padding-top: 120px
+    padding-bottom: 120px
+    background: #d3e3d7
+    +max-screen(1200px)
+        padding-top: 100px
+        padding-bottom: 100px
+    +max-screen($breakpoint-lg)
+        padding-top: 92px
+        padding-bottom: 92px
+    +max-screen($breakpoint-md)
+        padding-top: 80px
+        padding-bottom: 80px
+    &__title 
+        margin-bottom: 24px
+    &__text 
+        font-size: 24px
+        line-height: 1.6
+        +max-screen(1200px)
+            font-size: 22px
+        +max-screen($breakpoint-lg)
+            font-size: 20px
+        &Wrapper 
+            width: 52.7%
+            +max-screen($breakpoint-lg)
+                width: 100%
+        p 
+            margin-bottom: 24px
+            &:last-child
+                margin-bottom: 0
+    &__content 
+        display: flex 
+        justify-content: space-between
+        align-items: center
+        +max-screen($breakpoint-lg)
+            flex-direction: column
+    &__image 
+        width: 36.4%
+        +max-screen(1200px)
+            width: 42%
+        +max-screen($breakpoint-lg)
+            width: 80%
+            margin-top: 48px
+        +max-screen($breakpoint-md)
+            width: 100%
+            margin-top: 36px
+        img 
+            width: 100%
+            transform: rotate(12deg)
+            +max-screen($breakpoint-lg)
+                transform: none
