@@ -5,7 +5,17 @@ function header(){
         $('.header__burger').click(function(){
             $('.header').toggleClass('menu-open');
         });
+        var headerHeight = $('header').height();
+        $(window).on('scroll', function(){
+            if($(window).scrollTop() > headerHeight){
+                $('header').addClass('hide');
+            }
+            else{
+                $('header').removeClass('hide');
+            }
+        });
     });
+    
 }
 
 

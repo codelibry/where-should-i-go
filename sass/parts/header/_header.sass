@@ -2,15 +2,32 @@
     background: #D3E3D7
     padding-top: 64px
     padding-bottom: 64px
+    position: fixed
+    width: 100% 
+    top: 0
+    left: 0
+    transition: .3s 
+    z-index: 1
+    .home & 
+        +min-screen(992px)
+            padding-bottom: 0
+    &.hide 
+        padding-top: 28px
+        padding-bottom: 28px
     +max-screen(1200px)
         padding-top: 48px
         padding-bottom: 48px
+        &.hide 
+            padding-top: 24px
+            padding-bottom: 24px
     +max-screen($breakpoint-lg)
         padding-top: 36px
         padding-bottom: 36px
     +max-screen($breakpoint-md)
         padding-top: 24px
         padding-bottom: 24px
+    .container
+        position: relative
     &__burger
         display: none
         +max-screen($breakpoint-md)
@@ -113,3 +130,10 @@
                         margin-bottom: 20px
                         &::after 
                             bottom: -4px
+body
+    padding-top: 184px
+    &.logged-in 
+        .header 
+            top: 32px
+            +max-screen(782px)
+                top: 46px
