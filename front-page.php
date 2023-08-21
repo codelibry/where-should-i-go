@@ -27,10 +27,6 @@ $link = get_field('hero_link');
         </div>
     </div>
 </section>
-<div class="container test">
-  <div class="text">Ваш текст тут</div>
-  <div class="image"></div>
-</div>
 <?php 
 $title = get_field('favorities_slider_title');
 $text = get_field('favorities_slider_text');
