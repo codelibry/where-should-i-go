@@ -4,15 +4,16 @@ $image = get_field('hero_image');
 $title = get_field('hero_title');
 $text = get_field('hero_text');
 $link = get_field('hero_link');
+$mobile_link = get_field('hero_mobile_link');
 ?>
 <section class="fpHero">
     <div class="container">
         <div class="fpHero__contentWrapper row">
             <?php if($image): ?>
-                <div class="fpHero__image col-4"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></div>
+                <div class="fpHero__image col-md-4 col-12"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></div>
             <?php endif; ?>
             <?php if($title || $text || $link): ?>
-                <div class="fpHero__content col-8">
+                <div class="fpHero__content col-md-8 col-12">
                     <?php if($title): ?>
                         <h1 class="fpHero__title"><?php echo $title; ?></h1>
                     <?php endif; ?>
@@ -21,6 +22,9 @@ $link = get_field('hero_link');
                     <?php endif; ?>
                     <?php if($link): ?>
                         <div class="fpHero__link button"><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></div>
+                    <?php endif; ?>
+                    <?php if($mobile_link): ?>
+                        <div class="fpHero__mobileLink button"><a href="<?php echo $mobile_link['url']; ?>"><?php echo $mobile_link['title']; ?></a></div>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
@@ -83,12 +87,12 @@ $image = get_field('description_image');
         <?php if($text || $image): ?>
             <div class="description__content row">
                 <?php if($text): ?>
-                    <div class="description__text col-7">
+                    <div class="description__text col-lg-7 col-12">
                         <?php echo $text; ?>
                     </div>
                 <?php endif; ?>
                 <?php if($image): ?>
-                    <div class="description__image col-5">
+                    <div class="description__image col-lg-5 col-12">
                         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
                     </div>
                 <?php endif; ?>
@@ -111,7 +115,7 @@ $title = get_field('features_title');
                         $title = get_sub_field('title'); 
                         $text = get_sub_field('text');
                     ?>
-                    <div class="features__cardsItem col-4">
+                    <div class="features__cardsItem col-lg-4 col-md-6 col-12">
                         <h2 class="features__cardsItem__number">{ <?php echo $i; ?> }</h2>
                         <?php if($title): ?>
                             <h4 class="features__cardsItem__title"><?php echo $title; ?></h4>

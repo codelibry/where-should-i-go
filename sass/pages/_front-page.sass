@@ -2,11 +2,28 @@
     background: #d3e3d7
     &__image 
         padding-right: 5px 
+        +max-screen($breakpoint-lg)
+            text-align: center
+        +max-screen(560px)
+            text-align: right
         img 
             margin-left: -28px
             width: calc( 100% + 28px )
             transform: rotate(-8deg)
             margin-bottom: -20px
+            +max-screen($breakpoint-lg)
+                max-width: 405px
+                margin: auto
+                margin-bottom: 56px
+            +max-screen($breakpoint-md)
+                max-width: 50%
+                margin-bottom: 32px
+            +max-screen(560px)
+                max-width: 54%
+                margin-bottom: -12%
+                margin-right: 3%
+                width: 100%
+                margin-left: 0
     &__content 
         padding-left: 75px
         padding-top: 48px
@@ -14,23 +31,84 @@
         +max-screen(1650px)
             padding-top: 0
             padding-bottom: 48px
+        +max-screen($breakpoint-lg)
+
+        +max-screen($breakpoint-md)
+            padding-left: 10px
+            padding-bottom: 80px
+            display: flex 
+            flex-direction: column
+            align-items: flex-start
         &Wrapper 
             align-items: center
     &__title 
         line-height: 1
         margin-bottom: 64px
+        +max-screen(1200px)
+            margin-bottom: 56px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 48px
+        +max-screen($breakpoint-md)
+            margin-bottom: 32px
+            max-width: 100%
+        +max-screen(560px)
+            max-width: 335px
     &__text 
         line-height: 1.6
         max-width: 470px
+        +max-screen($breakpoint-lg)
+            font-size: 20px
+        +max-screen($breakpoint-md)
+            font-size: 20px
     &__link 
         margin-top: 96px
+        +max-screen(1200px)
+            margin-top: 72px
+        +max-screen($breakpoint-lg)
+            margin-top: 56px
+            a 
+                font-size: 20px
+        +max-screen($breakpoint-md)
+            display: none
+    &__mobileLink 
+        display: none
+        +max-screen($breakpoint-md)
+            display: block
+            margin-top: 40px
+            padding-top: 14px
+            padding-bottom: 14px
+            margin-right: 15px
+            border-bottom: 2px solid #fff
+            a 
+                font-size: 18px
+                line-height: 1.5
+                display: block
+                padding-right: 64px
+                &::after 
+                    right: 0
 .favorities
     padding-top: 120px
     overflow: hidden
     padding-bottom: 282px
     background: #fff
+    +max-screen(1200px)
+        padding-top: 100px
+        padding-bottom: 142px
+    +max-screen($breakpoint-lg)
+        padding-top: 92px
+        padding-bottom: 112px
+    +max-screen($breakpoint-md)
+        padding-top: 80px
+        padding-bottom: 80px
     &__content 
         max-width: 785px 
+        +max-screen($breakpoint-lg)
+            max-width: 85%
+        +max-screen($breakpoint-md)
+            max-width: 100%
+            display: flex 
+            flex-direction: column
+            align-items: flex-start
     &__slider 
         margin-top: 80px
         max-width: 1210px
@@ -38,15 +116,35 @@
         margin-left: auto
         margin-right: calc( (-100vw + 1532px) / 2)
         max-width: calc( 1210px + (100vw - 1532px) / 2)
+        +max-screen(1200px)
+            margin-left: 0
+            margin-right: 0
+            max-width: 100%
+        +max-screen($breakpoint-lg)
+            max-width: calc( 100% + 130px )
+            padding-left: 0
+            margin-left: -65px
+            margin-right: -65px
+        +max-screen($breakpoint-md)
+            max-width: 100% 
+            margin-left: 0
+            margin-right: 0
         .slick-list
             overflow: visible
             padding-top: 24px
             padding-bottom: 24px
+            +max-screen($breakpoint-md)
+                margin-right: -30px
+                margin-left: -20px
         .slick-slide 
             transform: rotate(-8deg)
             transition: .3s
             opacity: 0
             margin: 0 12px
+            +max-screen($breakpoint-lg)
+                transform: rotate(-6deg)
+            +max-screen($breakpoint-md)
+                transform: rotate(-4deg)
             &.slick-active 
                 opacity: 1
         &Item 
@@ -54,40 +152,80 @@
             display: flex !important
             align-items: stretch
             &__content 
-                writing-mode: vertical-lr
+                writing-mode: vertical-rl
                 transform: rotate(180deg)
                 height: 100%
                 display: flex
                 justify-content: space-between
                 padding-left: 20px
+                align-items: flex-end
             &__title 
                 height: 420px 
+                +max-screen($breakpoint-md)
+                    height: 305px
             &__image 
                 width: 100%
                 max-width: 460px
                 img 
                     width: 100%
-                    object-fit: contain
+                    object-fit: cover
                     max-height: 565px
     &__title 
         line-height: 1.2
         margin-bottom: 40px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 36px
+        +max-screen($breakpoint-md)
+            margin-bottom: 24px
     &__text 
         font-size: 24px
         line-height: 1.6
+        +max-screen(1200px)
+            font-size: 22px
+        +max-screen($breakpoint-md)
+            font-size: 20px
     &__link 
         margin-top: 120px
+        +max-screen(1200px)
+            margin-top: 82px
+        +max-screen($breakpoint-lg)
+            margin-top: 64px
+        +max-screen($breakpoint-md)
+            margin-top: 64px
+            padding: 12.5px 0
+            border-bottom: 2px solid #D3E3D7
+            a 
+                padding-right: 64px
+                font-size: 20px
+                line-height: 1.5
+                display: block
+                &::after 
+                    right: 0
 .description 
     background: #D3E3D7
     padding-top: 220px
     display: block
     padding-bottom: 120px
+    +max-screen(1200px)
+        padding-top: 160px
+        padding-bottom: 100px
+    +max-screen($breakpoint-lg)
+        padding-bottom: 92px
+        padding-top: 136px
+    +max-screen($breakpoint-md)
+        padding-top: 112px
+        padding-bottom: 80px
     &__title 
-        font-size: 48px
-        line-height: 1.2
         max-width: 850px 
         margin: auto
         margin-bottom: 72px
+        +max-screen(1200px)
+            margin-bottom: 64px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 56px
+            text-align: center
+        +max-screen($breakpoint-md)
+            margin-bottom: 42px
     &__content
         display: flex 
         align-items: center
@@ -98,14 +236,34 @@
         padding-right: 77px
         padding-top: 23px
         padding-bottom: 23px
+        +max-screen(1200px)
+            font-size: 22px
+            padding: 0 10px 
+        +max-screen($breakpoint-lg)
+            font-size: 20px
+            text-align: center
+        +max-screen($breakpoint-md)
+            margin-bottom: 32px
         &:last-child 
             margin-bottom: 0
     &__image 
         padding-left: 46px
         padding-right: 40px
+        +max-screen(1200px)
+            padding-left: 16px
+            padding-right: 10px
+        +max-screen($breakpoint-lg)
+            padding: 0 10px 
         img
             width: 100%
             transform: rotate(12deg)
+            +max-screen($breakpoint-lg)
+                transform: none
+                max-width: 80%
+                margin: auto 
+                display: block 
+            +max-screen($breakpoint-md)
+                max-width: 100%
 .features
     background: #D3E3D7
     padding-top: 120px
@@ -248,12 +406,26 @@
     padding-top: 120px
     padding-bottom: 120px
     background: #D3E3D7
+    +max-screen(1200px)
+        padding-top: 100px
+        padding-bottom: 100px
+    +max-screen($breakpoint-lg)
+        padding-top: 92px
+        padding-bottom: 92px
+    +max-screen($breakpoint-md)
+        padding-top: 80px
+        padding-bottom: 80px
     &__content 
         max-width: 846px
         margin: auto
         padding-top: 75px
         position: relative 
         padding-bottom: 11px
+        +max-screen(1200px)
+            padding-top: 64px
+        +max-screen($breakpoint-md)
+            padding-top: 52px
+            padding-bottom: 7px
         &::before,
         &::after 
             content: ""
@@ -263,6 +435,12 @@
             background-size: contain
             background-position: center
             background-repeat: no-repeat
+            +max-screen(1200px)
+                width: 45px
+                height: 40px
+            +max-screen($breakpoint-md)
+                width: 38px 
+                height: 32px 
         &::before
             left: 0
             top: 0
@@ -272,8 +450,9 @@
             bottom: 0
             background-image: url('../assets/images/testimonial_after.svg')
     &__text 
-        font-size: 48px
         margin-bottom: 32px
+        +max-screen($breakpoint-md)
+            margin-bottom: 18px
     &__author 
         line-height: 1.6
 .imagesSlider
@@ -281,24 +460,56 @@
     background: #D3E3D7
     padding-bottom: 120px
     overflow: hidden
+    +max-screen(1200px)
+        padding-top: 100px
+        padding-bottom: 100px
+    +max-screen($breakpoint-lg)
+        padding-top: 92px
+        padding-bottom: 92px
+    +max-screen($breakpoint-md)
+        padding-top: 80px
+        padding-bottom: 80px
     &__title 
         text-align: right
+        +max-screen(1200px)
+            text-align: center
+        +max-screen($breakpoint-lg)
+            text-align: left
+        +max-screen($breakpoint-md)
+            text-align: center
     &__list 
         margin-top: 96px
-        max-width: 1210px
         padding-left: 50px
         margin-left: auto
         margin-right: calc( (-100vw + 1532px) / 2)
         max-width: calc( 1210px + (100vw - 1532px) / 2)
+        +max-screen(1200px)
+            margin-top: 72px
+            margin-left: 0
+            margin-right: 0
+            max-width: 100%
+            padding-left: 0
+        +max-screen($breakpoint-lg)
+            max-width: 100%
+            padding-left: 0
+            margin-right: 0
+            margin-top: 64px
+        +max-screen($breakpoint-md)
+            margin-top: 42px
         .slick-list
             overflow: visible
             padding-top: 24px
             padding-bottom: 24px
+            +max-screen($breakpoint-lg)
+                padding: 0
+                margin: 0 -12px 
         .slick-slide 
             transform: rotate(-8deg)
             transition: .3s
             opacity: 0
             margin: 0 12px
+            +max-screen($breakpoint-lg)
+                transform: none
             &.slick-active 
                 opacity: 1
         &Item 
@@ -325,14 +536,30 @@
         background-repeat: no-repeat
         background-position: center
         background-image: url('../assets/images/slick_next.svg')
+        +max-screen(1200px)
+            width: 64px
+            height: 60px
+        +max-screen($breakpoint-lg)
+            width: 56px
+            height: 52px
+        +max-screen($breakpoint-md)
+            width: 48px
+            height: 42px
         &Before 
             transform: rotate( 180deg )
         &After 
             transform: translateY(-1px )
     &__numbers 
         margin-left: 131px
+        +max-screen($breakpoint-lg)
+            margin-left: 0
     &__bottom 
         display: flex
         align-items: center
         justify-content: flex-end
         margin-top: 96px
+        +max-screen($breakpoint-lg)
+            justify-content: space-between
+            margin-top: 56px
+        +max-screen($breakpoint-md)
+            margin-top: 36px

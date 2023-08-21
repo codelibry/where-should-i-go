@@ -9,8 +9,7 @@
     transition: .3s 
     z-index: 1
     .home & 
-        +min-screen(992px)
-            padding-bottom: 0
+        padding-bottom: 0
     &.hide 
         padding-top: 28px
         padding-bottom: 28px
@@ -132,6 +131,10 @@
                             bottom: -4px
 body
     padding-top: 184px
+    +max-screen($breakpoint-lg)
+        padding-top: 124px
+    +max-screen($breakpoint-md)
+        padding-top: 88px
     &.logged-in 
         .header 
             top: 32px
