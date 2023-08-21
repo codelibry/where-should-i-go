@@ -27,6 +27,10 @@ $link = get_field('hero_link');
         </div>
     </div>
 </section>
+<div class="container test">
+  <div class="text">Ваш текст тут</div>
+  <div class="image"></div>
+</div>
 <?php 
 $title = get_field('favorities_slider_title');
 $text = get_field('favorities_slider_text');
@@ -53,11 +57,13 @@ $slider = get_field('favorities_slider');
                 <?php foreach($slider as $post): setup_postdata( $post ); ?>
                     <?php $price = get_field('price'); ?>
                     <div class="favorities__sliderItem">
-                        <div class="favorities__sliderItem__content">
-                            <h4 class="favorities__sliderItem__title"><?php the_title(); ?></h4>
-                            <?php if($price): ?>
-                                <div class="favorities__sliderItem__price"><?php echo $price; ?></div>
-                            <?php endif; ?>
+                        <div class="favorities__sliderItem__contentWrapper">
+                            <div class="favorities__sliderItem__content h4">
+                                <h4 class="favorities__sliderItem__title"><?php the_title(); ?></h4>
+                                <?php if($price): ?>
+                                    <div class="favorities__sliderItem__price"><?php echo $price; ?></div>
+                                <?php endif; ?>
+                            </div>
                         </div>
                         <div class="favorities__sliderItem__image">
                             <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="">

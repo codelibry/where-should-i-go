@@ -1,3 +1,16 @@
+.container.test
+    display: flex
+    align-items: center
+    .text 
+        writing-mode: vertical-lr 
+        transform: rotate(-90deg)
+        white-space: nowrap 
+        padding-right: 20px 
+    .image 
+        width: 200px 
+        height: 200px 
+        background-image: url('http://localhost:8888/wsig/wp-content/uploads/2023/08/product-image.png') 
+        background-size: cover
 .fpHero
     background: #d3e3d7
     &__image 
@@ -9,13 +22,18 @@
             margin-bottom: -20px
     &__content 
         padding-left: 75px
+        padding-top: 48px
+        padding-bottom: 64px
+        +max-screen(1650px)
+            padding-top: 0
+            padding-bottom: 48px
         &Wrapper 
             align-items: center
     &__title 
         line-height: 1
         margin-bottom: 64px
     &__text 
-        line-heigt: 1.6
+        line-height: 1.6
         max-width: 470px
     &__link 
         margin-top: 96px
@@ -45,16 +63,21 @@
             &.slick-active 
                 opacity: 1
         &Item 
+            width: 100%
+            display: flex !important
+            align-items: stretch
             &__content 
-                font-size: 48px
+                writing-mode: vertical-lr
+                transform: rotate(180deg)
+                height: 100%
                 display: flex
-                transform: translateX(-39%) translateY(195%) rotate(-90deg)
-                position: absolute
-                width: 86%
                 justify-content: space-between
+                padding-left: 20px
             &__title 
-                width: 420px 
+                height: 420px 
             &__image 
+                width: 100%
+                max-width: 460px
                 img 
                     width: 100%
                     object-fit: contain
@@ -64,6 +87,7 @@
         margin-bottom: 40px
     &__text 
         font-size: 24px
+        line-height: 1.6
     &__link 
         margin-top: 120px
 .description 
@@ -195,6 +219,7 @@
         +max-screen($breakpoint-md)
             text-align: center
     &__text 
+        line-height: 1.6
         +max-screen($breakpoint-md)
             font-size: 16px
             text-align: center
