@@ -106,13 +106,12 @@
             position: relative
             opacity: 0.5 
             transition: .3s 
+            +max-screen($breakpoint-lg)
+                margin-top: 12px
+            +max-screen($breakpoint-md)
+                margin-top: 18px
             .wpcf7-spinner
                 position: absolute
-            & + div 
-                position: absolute
-                bottom: -42px
-                font-size: 14px
-                left: 0
             &::before 
                 content: ""
                 width: 16px 
@@ -145,3 +144,28 @@
                 width: 100%
                 height: 100%
                 border-radius: 15px 
+.wpcf7 form 
+    .wpcf7-response-output
+        border: 0
+        margin: 0
+        margin-top: 18px
+        border-radius: 25px
+        position: absolute
+        bottom: -42px
+        font-size: 14px
+        left: 0
+        padding: 8px 16px
+        margin-left: 10px
+        width: 74%
+        +max-screen($breakpoint-lg)
+            position: static
+            margin-left: 0
+        +max-screen($breakpoint-md)
+            width: 100%
+            padding: 4px 12px
+    &.sent 
+        .wpcf7-response-output
+            background-color: #75eb80
+    &.invalid 
+        .wpcf7-response-output
+            background-color: #ffb900
