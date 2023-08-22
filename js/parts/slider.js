@@ -17,13 +17,31 @@ function basicSliders(){
     });
     jQuery(function () {
       
-        $(".favorities__slider").on('wheel', (function(e) {
+        /*$(".favorities__slider").on('wheel', (function(e) {
             e.preventDefault();
           
             if (e.originalEvent.deltaX < 0) {
-              $(this).slick('slickPrev');
+                var currentSlide = $(this).find('.slick-active').attr('data-slick-index');
+                $(this).slick('slickGoTo', currentSlide - 1);
             } else {
-              $(this).slick('slickNext');
+                var currentSlide = $(this).find('.slick-active').attr('data-slick-index');
+                $(this).slick('slickGoTo', currentSlide + 1);
+            }
+        }));*/
+        var scrollCount = null;
+        var scroll= null;
+        $(".favorities__slider").on('wheel', (function(e) {
+            e.preventDefault();
+        
+            clearTimeout(scroll);
+            scroll = setTimeout(function(){scrollCount=0;}, 50);
+            if(scrollCount) return 0;
+            scrollCount=1;
+        
+            if (e.originalEvent.deltaX < 0) {
+                $(this).slick('slickPrev');
+            } else {
+                $(this).slick('slickNext');
             }
         }));
       });
