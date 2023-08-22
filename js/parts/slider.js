@@ -14,7 +14,20 @@ function basicSliders(){
                 },
             },
         ]
-    })
+    });
+    jQuery(function () {
+      
+        $(".favorities__slider").on('wheel', (function(e) {
+            e.preventDefault();
+          
+            if (e.originalEvent.deltaX < 0) {
+              $(this).slick('slickPrev');
+            } else {
+              $(this).slick('slickNext');
+            }
+        }));
+      });
+      
     $(document).ready(function(){
         /*$('.favorities__slider').find('.slick-slide').each(function(){
             var imgHeight = $(this).find('.favorities__sliderItem__image img').height();
