@@ -56,22 +56,45 @@ $slider = get_field('favorities_slider');
             <div class="favorities__slider">
                 <?php foreach($slider as $post): setup_postdata( $post ); ?>
                     <?php $price = get_field('price'); ?>
+                    <?php $button = get_field('button_label'); ?>
                     <div class="favorities__sliderItem">
-                        <div class="favorities__sliderItem__contentWrapper">
-                            <div class="favorities__sliderItem__content h4">
-                                <h4 class="favorities__sliderItem__title"><?php the_title(); ?></h4>
-                                <?php if($price): ?>
-                                    <div class="favorities__sliderItem__price"><?php echo $price; ?></div>
+                        <div class="favorities__sliderItem__head">
+                            <div class="favorities__sliderItem__contentWrapper">
+                                <div class="favorities__sliderItem__content h4">
+                                    <h4 class="favorities__sliderItem__title"><?php the_title(); ?></h4>
+                                    <?php if($price): ?>
+                                        <div class="favorities__sliderItem__price"><?php echo $price; ?></div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <div class="favorities__sliderItem__image">
+                                <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="">
+                                <?php if(!empty(get_the_excerpt(  ))): ?>
+                                    <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
+                                <?php endif; ?>
+                                <?php if($button): ?>
+                                    <div class="favorities__sliderItem__button"><?php echo $button; ?></div>
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <div class="favorities__sliderItem__image">
-                            <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="">
+                        <div class="favorities__sliderItem__body">
+                            <?php if(!empty(get_the_excerpt(  ))): ?>
+                                <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
+                            <?php endif; ?>
+                            <?php if($button): ?>
+                                <div class="favorities__sliderItem__button"><?php echo $button; ?></div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 <?php endforeach; wp_reset_postdata(  ); ?>
             </div>
         <?php endif; ?>
+        <div class="favorities__bottom">
+            <div class="favorities__arrows">
+                <div class="favorities__arrow favorities__leftArrow"></div>
+                <div class="favorities__arrow favorities__rightArrow"></div>
+            </div>
+        </div>
     </div>
 </section>
 <?php 

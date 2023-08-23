@@ -89,14 +89,14 @@
 .favorities
     padding-top: 120px
     overflow: hidden
-    padding-bottom: 282px
+    padding-bottom: 212px
     background: #fff
     +max-screen(1200px)
         padding-top: 100px
-        padding-bottom: 142px
+        padding-bottom: 122px
     +max-screen($breakpoint-lg)
         padding-top: 92px
-        padding-bottom: 112px
+        padding-bottom: 102px
     +max-screen($breakpoint-md)
         padding-top: 80px
         padding-bottom: 80px
@@ -150,9 +150,43 @@
         .slick-active + .slick-slide 
             opacity: 1
         &Item 
-            width: 100%
-            display: flex !important
-            align-items: stretch
+            &__head
+                width: 100%
+                display: flex !important
+                align-items: stretch
+            &__body 
+                display: none 
+                +max-screen($breakpoint-md)
+                    display: block 
+                    max-width: 90%
+            &__text 
+                margin-top: 48px
+                line-height: 1.6
+                +max-screen($breakpoint-md)
+                    margin-top: 24px
+            &__button 
+                margin-top: 36px
+                position: relative
+                padding: 4px 24px 
+                line-height: 1.6
+                display: inline-block
+                cursor: pointer
+                &::before 
+                    content: ""
+                    width: 16px
+                    height: 16px 
+                    background: #D3E3D7
+                    border-radius: 50%
+                    left: 0 
+                    top: 50% 
+                    transform: translateY(-50%)
+                    position: absolute
+                    transition: .3s 
+                    z-index: -1
+                &:hover::before 
+                    width: 100%
+                    height: 100%
+                    border-radius: 15px
             &__content 
                 writing-mode: vertical-rl
                 transform: rotate(180deg)
@@ -168,6 +202,10 @@
             &__image 
                 width: 100%
                 max-width: 460px
+                +max-screen($breakpoint-md)
+                    .favorities__sliderItem__text,
+                    .favorities__sliderItem__button 
+                        display: none
                 img 
                     width: 100%
                     object-fit: cover
@@ -203,6 +241,38 @@
                 display: block
                 &::after 
                     right: 0
+    &__arrow 
+        cursor: pointer
+        width: 84px
+        height: 64px
+        margin: 8px 20px
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: 50%
+        background-image: url('../assets/images/slick_next.svg')
+        +max-screen(1200px)
+            width: 64px
+            height: 60px
+        +max-screen($breakpoint-lg)
+            width: 56px
+            height: 52px
+        +max-screen($breakpoint-md)
+            width: 48px
+            height: 42px
+    &__arrows 
+        display: flex 
+        justify-content: flex-end
+        margin-top: 72px
+        +max-screen(1200px)
+            margin-top: 56px
+        +max-screen($breakpoint-lg)
+            margin-top: 48px
+        +max-screen($breakpoint-md)
+            margin-top: 36px
+    &__leftArrow
+        transform: rotate(180deg)
+    &__rightArrow
+        transform: translateY(-1px)
 .description 
     background: #D3E3D7
     padding-top: 220px
