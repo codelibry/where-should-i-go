@@ -4,43 +4,205 @@
     padding-bottom: 120px
     background: #fff
     &__list 
-        transform: translateX(150px) rotate(-6deg)
+        transform: translateX(270px) rotate(-6deg)
         margin: 0 -75px
         padding-top: 120px
         display: flex 
         flex-wrap: wrap
+        +max-screen(1600px)
+            transform: translateX(210px) rotate(-6deg)
+        +max-screen(1400px)
+            transform: translateX(210px) rotate(-4deg)
+        +max-screen(1300px)
+            transform: translateX(160px) rotate(-2deg)
+        +max-screen(1200px)
+            +min-screen(993px)
+                transform: translateX(120px) rotate(-2deg)
+                margin: 0 -35px 
+                margin-bottom: -48px
+                padding-top: 0
+        +max-screen($breakpoint-lg)
+            margin: 0 -12px 
+            margin-bottom: -42px
+            padding-top: 0
+            transform: none
+        +max-screen($breakpoint-md)
+            padding-top: 0
         &Item 
             max-width: 36.64%
             margin: 0 75px
             margin-bottom: 52px
+            +max-screen(1200px)
+                +min-screen(993px)
+                    max-width: 41%
+                    margin: 0 35px
+                    margin-bottom: 48px
+            +max-screen($breakpoint-lg)
+                margin: 0 
+                margin-bottom: 42px
+                max-width: 50%
+                padding: 0 12px 
+                transform: rotate(-4deg)
+            +max-screen($breakpoint-md)
+                max-width: 100%
+                transform: none
             &__content 
-                writing-mode: vertical-rl
-                transform: rotate(180deg)
-                display: -webkit-box
-                display: -ms-flexbox
-                display: flex
-                justify-content: space-between
-                padding-left: 20px
-                align-items: flex-end
-                height: 100%
+                +min-screen(993px)
+                    writing-mode: vertical-rl
+                    transform: rotate(180deg)
+                    display: -webkit-box
+                    display: -ms-flexbox
+                    display: flex
+                    justify-content: space-between
+                    padding-left: 20px
+                    align-items: flex-start
+                    position: absolute
+                    top: 0
+                    bottom: 48px
+                    right: 100%
+                    width: min-content
+                +max-screen($breakpoint-lg)
+                    right: auto 
+                    left: 0
+                    position: static
+                    display: flex 
+                    height: auto !important
+                    justify-content: space-between
+                    margin-bottom: 32px
+                    flex-direction: column
+                +max-screen($breakpoint-md)
+                    flex-direction: row
+            &__price
+                +max-screen($breakpoint-lg)
+                    margin-top: 18px
+                +max-screen($breakpoint-md)
+                    margin-top: 0
             &__image 
                 max-width: 67.63%
                 margin-bottom: 48px
+                +max-screen(1200px)
+                    margin-bottom: 42px
+                +max-screen($breakpoint-lg)
+                    margin-bottom: 36px
+                    max-width: 100%
+                    height: auto !important
+                +max-screen($breakpoint-md)
+                    margin-bottom: 32px
                 img 
                     width: 100%
+                    object-fit: cover
             &__head 
                 display: flex 
                 position: relative
+                +max-screen($breakpoint-lg)
+                    flex-direction: column
             &__body 
                 max-width: 67.63%
-            &__sideContent 
-                position: absolute
-                top: 0
-                bottom: 48px
-                right: 100%
-                width: fit-content
+                +max-screen($breakpoint-lg)
+                    max-width: 100%
+            &__title 
+                +max-screen(1200px)
+                    +min-screen(993px)
+                        font-size: 28px
+                        padding-bottom: 28px
             &__text 
                 margin-bottom: 36px
                 line-height: 1.6
+                +max-screen(1200px)
+                    margin-bottom: 32px
+                +max-screen($breakpoint-lg)
+                    margin-bottom: 28px
+                +max-screen($breakpoint-md)
+                    margin-bottom: 24px 
+                +max-screen(1200px)
+                    +min-screen(993px)
+                        font-size: 18px
             &__button 
                 margin-top: auto
+                position: relative
+                padding: 4px 24px 
+                line-height: 1.6
+                display: inline-block
+                z-index: 1
+                &::before 
+                    content: ""
+                    position: absolute
+                    left: 0
+                    top: 50% 
+                    transform: translateY(-50%)
+                    width: 16px 
+                    height: 16px 
+                    background: #D3E3D7 
+                    border-radius: 50%
+                    transition: .3s 
+                    z-index: -1
+                &:hover::before 
+                    width: 100%
+                    height: 100% 
+                    border-radius: 15px
+.parisContent
+    padding-top: 120px 
+    padding-bottom: 120px 
+    +max-screen(1200px)
+        padding-top: 100px 
+        padding-bottom: 100px 
+    +max-screen($breakpoint-lg)
+        padding-top: 92px 
+        padding-bottom: 92px 
+    +max-screen($breakpoint-md)
+        padding-top: 80px 
+        padding-bottom: 80px 
+    &__wrapper
+        align-items: center
+        display: flex 
+        +max-screen($breakpoint-lg)
+            flex-direction: column
+        +max-screen($breakpoint-md)
+            flex-wrap: wrap
+    &__image 
+        max-width: 43.25%
+        +max-screen($breakpoint-lg)
+            max-width: 80%
+            margin: auto
+        +max-screen($breakpoint-md)
+            max-width: 100%
+        img 
+            width: 100% 
+            transform: translateX(-10px) rotate(8deg)
+            +max-screen($breakpoint-lg)
+                transform: none
+    &__text 
+        margin-top: 40px 
+        font-size: 24px 
+        line-height: 1.6
+        +max-screen(1200px)
+            font-size: 22px 
+            margin-top: 36px
+        +max-screen($breakpoint-lg)
+            font-size: 20px
+            margin-top: 32px
+        +max-screen($breakpoint-md)
+            margin-top: 28px
+        &Wrapper 
+            max-width: 52.7%
+            margin-left: auto
+            +max-screen($breakpoint-lg)
+                max-width: 90%
+                margin: auto
+                margin-top: 48px
+            +max-screen($breakpoint-md)
+                max-width: 100%
+                margin-top: 48px
+    &__button 
+        border-bottom: 2px solid #fff
+        display: inline-block
+        margin-top: 120px 
+        padding-right: 64px
+        +max-screen(1200px)
+            margin-top: 82px
+        +max-screen($breakpoint-lg)
+            margin-top: 64px
+        +max-screen($breakpoint-md)
+            margin-top: 64px
+            padding: 12.5px 0
+            padding-right: 64px

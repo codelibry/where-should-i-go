@@ -56,7 +56,7 @@ if($the_query->have_posts()):
                             <div class="favoritiesBlock__listItem__text"><?php the_excerpt(); ?></div>
                         <?php endif; ?>
                         <?php if($button): ?>
-                            <div class="favoritiesBlock__listItem__button"><a href="<?php the_permalink(  ) ?>"><?php echo $button; ?></a></div>
+                            <div class="favoritiesBlock__listItem__button"><?php echo $button; ?></div>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ $button = get_field('button');
             <?php if($title || $text || $button): ?>
                 <div class="parisContent__textWrapper">
                     <?php if($title): ?>
-                        <div class="parisContent__title"><?php echo $title; ?></div>
+                        <h2 class="parisContent__title"><?php echo $title; ?></h2>
                     <?php endif; ?>
                     <?php if($text): ?>
                         <div class="parisContent__text"><?php echo $text; ?></div>

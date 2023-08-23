@@ -1,10 +1,18 @@
 .button 
     padding-top: 8.5px
     padding-bottom: 8.5px
+    padding-right: 64px
     a 
         font-size: 24px
         line-height: 1.6
         position: relative
+        display: inline-block
+        +max-screen(1200px)
+            font-size: 22px
+        +max-screen($breakpoint-lg)
+            font-size: 20px
+        +max-screen($breakpoint-md)
+            font-size: 18px
         &::after 
             content: ""
             position: absolute 
