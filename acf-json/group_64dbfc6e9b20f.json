@@ -25,7 +25,7 @@
             "key": "field_64dbfca72daaa",
             "label": "Form",
             "name": "form",
-            "type": "acf_cf7",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -33,7 +33,12 @@
                 "width": "50",
                 "class": "",
                 "id": ""
-            }
+            },
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0
         },
         {
             "key": "field_64dbfcbb4d02d",
@@ -151,5 +156,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1692138774
+    "modified": 1693087827
 }

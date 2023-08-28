@@ -36,17 +36,17 @@ if($the_query->have_posts()):
             <?php while($the_query->have_posts()): $the_query->the_post(); ?>
             <?php $price = get_field('price'); ?>
             <?php $button = get_field('button_label'); ?>
-            <div class="favoritiesBlock__listItem">
+            <div class="favoritiesBlock__listItem product" data-text="<?php the_content(); ?>">
                 <div class="favoritiesBlock__listItem__head">
                     <div class="favoritiesBlock__listItem__sideContent">
                         <div class="favoritiesBlock__listItem__content h4">
-                            <h4 class="favoritiesBlock__listItem__title"><?php the_title(); ?></h4>
+                            <h4 class="favoritiesBlock__listItem__title product-title"><?php the_title(); ?></h4>
                             <?php if($price): ?>
-                                <div class="favoritiesBlock__listItem__price"><?php echo $price; ?></div>
+                                <div class="favoritiesBlock__listItem__price product-price"><?php echo $price; ?></div>
                             <?php endif; ?>
                         </div>
                     </div>
-                    <div class="favoritiesBlock__listItem__image">
+                    <div class="favoritiesBlock__listItem__image product-image">
                         <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="">
                     </div>
                 </div>
@@ -56,7 +56,7 @@ if($the_query->have_posts()):
                             <div class="favoritiesBlock__listItem__text"><?php the_excerpt(); ?></div>
                         <?php endif; ?>
                         <?php if($button): ?>
-                            <div class="favoritiesBlock__listItem__button"><?php echo $button; ?></div>
+                            <div class="favoritiesBlock__listItem__button show-product-popup"><?php echo $button; ?></div>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -96,4 +96,25 @@ $button = get_field('button');
         </div>
     </div>
 </section>
+<div class="orderPopup">
+    <div class="orderPopup__content">
+        <div class="orderPopup__productWrapper">
+            <div class="orderPopup__product">
+                <h4 class="orderPopup__productContent">
+                    <div class="orderPopup__productTitle"></div>
+                    <div class="orderPopup__productPrice"></div>
+                </h4>
+                <div class="orderPopup__productImage"><img src="" alt=""></div>
+            </div>
+        </div>
+        <div class="orderPopup__textWrapper">
+            <div class="orderPopup__text">
+            </div>
+            <div class="orderPopup__form">
+                <?php echo do_shortcode('[contact-form-7 id="a001442" title="Order product form"]'); ?>
+            </div>
+        </div>
+    </div>
+    <div class="orderPopup__close"></div>
+</div>
 <?php get_footer(); ?>

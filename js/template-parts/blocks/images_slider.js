@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 function imagesSlider() {
     $(document).ready(function(){
-        $('.imagesSlider__list').slick({
+        $('#sbi_images').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
             prevArrow: '.imagesSlider__arrowBefore',
@@ -25,9 +25,16 @@ function imagesSlider() {
             ]
         });
         $('.imagesSlider__arrow').click(function(){
-            var slideIndex = parseInt($('.imagesSlider__list').find('.slick-active').attr('data-slick-index'));
+            var slideIndex = parseInt($('#sbi_images').find('.slick-active').attr('data-slick-index'));
+            $('.imagesSlider__currentSlide').html(slideIndex + 1);
+        });
+        $('#sbi_images').on('swipe', function(){
+            var slideIndex = parseInt($('#sbi_images').find('.slick-active').attr('data-slick-index'));
             $('.imagesSlider__currentSlide').html(slideIndex + 1);
         })
+        var lastSlider = parseInt($('.imagesSlider .slick-list .slick-slide:last-child').attr('data-slick-index')) + 1;
+        $('.imagesSlider .imagesSlider__lastSlide').html(lastSlider / 2);
+        
     });
 }
 

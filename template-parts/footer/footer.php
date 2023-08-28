@@ -31,7 +31,7 @@ $privacy = get_field('footer_privacy_text', 'options');
                             $icon = get_sub_field('icon');
                             $link = get_sub_field('link');
                             ?>
-                            <a href="<?php echo $link['url']; ?>" class="footer__socialIcon"><img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['title'] ?>"></a>
+                            <a href="" class="footer__socialIcon"><img src="<?php echo $icon['url']; ?>" alt=""></a>
                         <?php endwhile; ?>
                     </div>
                 <?php endif; ?>

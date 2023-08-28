@@ -1,0 +1,40 @@
+.errorBlock 
+    padding: 120px 0
+    &__title 
+        margin-bottom: 32px
+        font-family: 'Suisse', sans-serif
+        +max-screen($breakpoint-md)
+            margin-bottom: 24px
+    &__subtitle 
+        margin-bottom: 12px
+        font-family: 'Suisse', sans-serif
+        +max-screen($breakpoint-md)
+            margin-bottom: 6px
+        br 
+            display: none 
+            +max-screen($breakpoint-md)
+                display: block
+    &__button
+        margin-top: 48px
+        +max-screen($breakpoint-md)
+            margin-top: 32px
+        a 
+            display: inline-block
+            padding: 20px 48px
+            background: #fff 
+            font-size: 24px 
+            line-height: 1.6
+            border-radius: 15px
+            +max-screen($breakpoint-lg)
+                font-size: 22px
+                padding: 18px 36px
+            +max-screen($breakpoint-md)
+                font-size: 20px
+                padding: 16px 32px 
+    &__content 
+        text-align: center
+.error404 
+    #main 
+        display: flex 
+        align-items: center
+        justify-content: center

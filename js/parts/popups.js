@@ -2,37 +2,44 @@ import $ from 'jquery';
 
 
 function initPopups() {
-    $('.popup-block').each(function () {
-        var $popup = $(this);
-        var $closeBtn = $popup.find('#popupClose');
-        var $background = $popup.find('.popup-block__background');
+    $(document).ready(function(){
+        $('.show-product-popup').click(function(){
+            var productTitle = $(this).closest('.product').find('.product-title').html();
+            var productPrice = $(this).closest('.product').find('.product-price').html();
+            var productText = $(this).closest('.product').attr('data-text');
+            var productImage = $(this).closest('.product').find('.product-image img').attr('src');
+            var productId = $(this).closest('.product').attr('data-id');
+            var productSlug = $(this).closest('.product').attr('data-slug');
+            $('.orderPopup__text').html(productText);
+            $('.orderPopup__productTitle').html(productTitle);
+            $('.orderPopup__productImage img').attr('src', productImage);
+            $('.orderPopup__productPrice').html(productPrice);
+            $('.orderPopup__formTitle input').val(productTitle);
+            setTimeout(() => {
+                var imageHeight = $('.orderPopup__productImage img').height();
+            $('.orderPopup__productContent').css('height', imageHeight);
+            }, 100);
+            setTimeout(() => {
+                $('body').addClass('opened-popup');
+            }, 200);
 
-        var id = $popup.attr('id');
-
-        // Show popup when user clicked on element with id which the same to popup id
-        $(`[href="#${id}"]`).on('click', function (e) {
-            e.preventDefault();
-            $popup.fadeIn();
         });
-
-        // Hide popup when user click on background or close button
-        [$background, $closeBtn].forEach(($element) => {
-            $element.on('click', function (e) {
-                e.preventDefault();
-                $popup.fadeOut();
-            });
+        $('.orderPopup__close').click(function(){
+            $('body').removeClass('opened-popup');
+            $('body').removeClass('full-popup');
         });
-
-        $popup.find('.popup-block__wrapper').on('click', function (event) {
-            event.stopPropagation();
+        $('.orderPopup__termsText__input').click(function(){
+            $(this).toggleClass('checked');
+            $('.orderPopup__submit .button').toggleClass('active');
+            if($(this).hasClass('checked')){
+                $(this).find('input').prop('checked', true);
+            }
+            else{
+                $(this).find('input').prop('checked', false);
+            }
         });
     });
-
-    popupHotelLocation();
 }
 
-function popupHotelLocation() {
-    // Here is code for popup Hotel Location
-}
 
 export { initPopups };

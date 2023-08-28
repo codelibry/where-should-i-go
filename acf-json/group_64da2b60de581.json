@@ -483,42 +483,63 @@
             "endpoint": 0
         },
         {
-            "key": "field_64dab0bc983d0",
-            "label": "Author",
-            "name": "testimonial_author",
-            "type": "text",
+            "key": "field_64ea7bb373941",
+            "label": "Testimonials List",
+            "name": "testimonials__list",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_64dab0c9983d1",
-            "label": "Testimonial",
-            "name": "testimonial",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_64dab0c9983d1",
+                    "label": "Testimonial",
+                    "name": "text",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_64dab0bc983d0",
+                    "label": "Author",
+                    "name": "testimonial_author",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         },
         {
             "key": "field_64dbd5b11cced",
@@ -557,9 +578,9 @@
         },
         {
             "key": "field_64dbd5c31ccef",
-            "label": "Image",
-            "name": "image_slider",
-            "type": "repeater",
+            "label": "Image Slider Shortcode",
+            "name": "image_slider_shortcode",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -568,37 +589,11 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_64dbd5ce1ccf0",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                }
-            ]
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -618,5 +613,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1692639107
+    "modified": 1693088731
 }

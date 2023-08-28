@@ -67,13 +67,18 @@
         +max-screen($breakpoint-md)
             margin-top: 42px
     &__form
-        form
+        .mc4wp-form-fields
             display: flex 
             width: 100%
             align-items: center
             +max-screen($breakpoint-lg)
                 flex-direction: column
                 align-items: flex-start
+        .mc4wp-response:not(:empty)
+            margin-top: 16px
+            font-size: 14px
+            +max-screen($breakpoint-md)
+                font-size: 12px
         &Email 
             display: flex 
             flex-direction: column

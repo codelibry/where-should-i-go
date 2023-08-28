@@ -55,25 +55,27 @@ $slider = get_field('favorities_slider');
         <?php if($slider): ?>
             <div class="favorities__slider">
                 <?php foreach($slider as $post): setup_postdata( $post ); ?>
-                    <?php $price = get_field('price'); ?>
+                    <?php 
+                    $id = get_the_ID();
+                    $product = wc_get_product( $id );
+                    $price = $product->get_price();
+                    ?>
                     <?php $button = get_field('button_label'); ?>
-                    <div class="favorities__sliderItem">
+                    <div class="favorities__sliderItem product product-text" data-text="<?php the_content(); ?>" data-id="<?php echo get_the_ID(); ?>" data-slug="<?php echo $post->post_name; ?>">
                         <div class="favorities__sliderItem__head">
                             <div class="favorities__sliderItem__contentWrapper">
                                 <div class="favorities__sliderItem__content h4">
-                                    <h4 class="favorities__sliderItem__title"><?php the_title(); ?></h4>
-                                    <?php if($price): ?>
-                                        <div class="favorities__sliderItem__price"><?php echo $price; ?></div>
-                                    <?php endif; ?>
+                                    <h4 class="favorities__sliderItem__title product-title"><?php the_title(); ?></h4>
+                                    <div class="favorities__sliderItem__price product-price"><?php echo $product->get_regular_price() . '€'; ?></div>
                                 </div>
                             </div>
-                            <div class="favorities__sliderItem__image">
+                            <div class="favorities__sliderItem__image product-image">
                                 <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="">
                                 <?php if(!empty(get_the_excerpt(  ))): ?>
                                     <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
                                 <?php endif; ?>
                                 <?php if($button): ?>
-                                    <div class="favorities__sliderItem__button"><?php echo $button; ?></div>
+                                    <div class="favorities__sliderItem__button show-product-popup"><?php echo $button; ?></div>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -82,7 +84,7 @@ $slider = get_field('favorities_slider');
                                 <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
                             <?php endif; ?>
                             <?php if($button): ?>
-                                <div class="favorities__sliderItem__button"><?php echo $button; ?></div>
+                                <div class="favorities__sliderItem__button show-product-popup"><?php echo $button; ?></div>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -181,27 +183,39 @@ $link = get_field('cta_link');
     </div>
 </section>
 <?php 
-$testimonial = get_field('testimonial');
-$author = get_field('testimonial_author');
-if($testimonial):
+if(have_rows('testimonials__list')):
 ?>
 <section class="testimonial">
     <div class="container">
-        <div class="testimonial__content">
-            <h4 class="testimonial__text">
-                <?php echo $testimonial; ?>
-            </h4>
-            <?php if($author): ?>
-                <div class="testimonial__author">
-                    — <?php echo $author; ?>
+        <div class="testimonials__list">
+            <?php while(have_rows('testimonials__list')): the_row(); ?>
+                <?php 
+                $text = get_sub_field('text');
+                $author = get_sub_field('testimonial_author');
+                ?>
+                <div class="testimonial__item">
+                    <div class="testimonial__content">
+                        <?php if($text): ?>
+                            <h4 class="testimonial__text">
+                                <?php echo $text; ?>
+                            </h4>
+                        <?php endif; ?>
+                        <?php if($author): ?>
+                            <div class="testimonial__author">
+                                — <?php echo $author; ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
                 </div>
-            <?php endif; ?>
+            <?php endwhile; ?>
         </div>
     </div>
 </section>
 <?php endif; ?>
 <?php 
 $title = get_field('images_slider_title');
+$image_slider = get_field('image_slider_shortcode');
+if($image_slider):
 ?>
 <section class="imagesSlider">
     <div class="container">
@@ -210,28 +224,38 @@ $title = get_field('images_slider_title');
                 <?php echo $title; ?>
             </h2>
         <?php endif; ?>
-        <?php $slidesCount = count(get_field('image_slider')); ?>
-        <?php if(have_rows('image_slider')): ?>
-            <div class="imagesSlider__list">
-                <?php while(have_rows('image_slider')): the_row(); ?>
-                    <?php 
-                    $image = get_sub_field('image');
-                    if($image):
-                    ?>
-                    <div class="imagesSlider__listItem"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></div>
-                    <?php endif; ?>
-                <?php endwhile; ?>
-            </div>
-        <?php endif; ?>
+        <?php echo $image_slider; ?>
         <div class="imagesSlider__bottom">
             <div class="imagesSlider__arrows">
                 <div class="imagesSlider__arrow imagesSlider__arrowBefore"></div>
                 <div class="imagesSlider__arrow imagesSlider__arrowAfter"></div>
             </div>
             <h2 class="imagesSlider__numbers">
-                <span class="imagesSlider__currentSlide">1</span> / <span class="imagesSlider__lastSlide"><?php echo $slidesCount; ?></span>
+                <span class="imagesSlider__currentSlide">1</span> / <span class="imagesSlider__lastSlide"></span>
             </h2>
         </div>
     </div>
 </section>
+<?php endif; ?>
+<div class="orderPopup">
+    <div class="orderPopup__content">
+        <div class="orderPopup__productWrapper">
+            <div class="orderPopup__product">
+                <h4 class="orderPopup__productContent">
+                    <div class="orderPopup__productTitle"></div>
+                    <div class="orderPopup__productPrice"></div>
+                </h4>
+                <div class="orderPopup__productImage"><img src="" alt=""></div>
+            </div>
+        </div>
+        <div class="orderPopup__textWrapper">
+            <div class="orderPopup__text">
+            </div>
+            <div class="orderPopup__form">
+                <?php echo do_shortcode( '[ninja_form id=2]' ); ?>
+            </div>
+        </div>
+    </div>
+    <div class="orderPopup__close"></div>
+</div>
 <?php get_footer(); ?>

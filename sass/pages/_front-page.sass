@@ -116,6 +116,9 @@
         margin-left: auto
         margin-right: calc( (-100vw + 1532px) / 2)
         max-width: calc( 1210px + (100vw - 1532px) / 2)
+        +max-screen(1532px)
+            max-width: 100%
+            margin-right: 0
         +max-screen(1200px)
             margin-left: 0
             margin-right: 0
@@ -139,7 +142,6 @@
         .slick-slide 
             transform: rotate(-8deg)
             transition: .3s
-            opacity: 0
             margin: 0 12px
             +max-screen($breakpoint-lg)
                 transform: rotate(-6deg)
@@ -527,6 +529,11 @@
             margin-bottom: 18px
     &__author 
         line-height: 1.6
+    .slick-slide
+        margin: 0 12px 
+    .slick-list
+        margin: 0 -12px
+    
 .imagesSlider
     padding-top: 120px
     background: #D3E3D7
@@ -575,15 +582,7 @@
             +max-screen($breakpoint-lg)
                 padding: 0
                 margin: 0 -12px 
-        .slick-slide 
-            transform: rotate(-8deg)
-            transition: .3s
-            opacity: 0
-            margin: 0 12px
-            +max-screen($breakpoint-lg)
-                transform: none
-            &.slick-active 
-                opacity: 1
+            
         &Item 
             position: relative
             &::after 
@@ -635,3 +634,45 @@
             margin-top: 56px
         +max-screen($breakpoint-md)
             margin-top: 36px
+    #sb_instagram 
+        margin-top: 96px
+        padding-left: 50px
+        margin-left: auto
+        margin-right: calc((-100vw + 1532px) / 2)
+        max-width: calc(1210px + (100vw - 1532px) / 2)
+        +max-screen(1200px)
+            margin-top: 72px
+            margin-left: 0
+            margin-right: 0
+            max-width: 100%
+            padding-left: 0
+        +max-screen($breakpoint-lg)
+            max-width: 100%
+            padding-left: 0
+            margin-right: 0
+            margin-top: 64px
+        +max-screen($breakpoint-md)
+            margin-top: 42px
+        .sb_instagram_header
+            display: none
+        #sbi_load 
+            display: none
+        .slick-slide 
+            -webkit-transform: rotate(-8deg)
+            transform: rotate(-8deg)
+            -webkit-transition: .3s
+            transition: .3s
+            opacity: 0
+            margin: 0 12px
+            +max-screen($breakpoint-lg)
+                transform: none
+            &.slick-active 
+                opacity: 1
+        .slick-list 
+            overflow: visible
+        #sbi_images 
+            padding: 0 !important
+            +max-screen($breakpoint-lg)
+                margin: 0 -12px 
+                max-width: calc( 100% + 24px )
+                width: calc( 100% + 24px )

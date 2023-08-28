@@ -206,3 +206,281 @@
             margin-top: 64px
             padding: 12.5px 0
             padding-right: 64px
+.orderPopup
+    position: fixed
+    width: 90%
+    padding: 120px 128px 
+    background: #fff 
+    left: 50% 
+    top: 50% 
+    transform: translate(-50%, -50%)
+    opacity: 0
+    visibility: hidden 
+    z-index: -10
+    max-height: 94%
+    overflow: scroll
+    +max-screen(1350px)
+        padding: 102px 48px
+    +max-screen($breakpoint-md)
+        padding: 56px 16px
+    &__submit 
+        a.button
+            position: relative
+            padding: 4px 24px 
+            opacity: 0.5
+            transition: .3s
+            display: inline-block
+            margin-top: 48px
+            pointer-events: none
+            +max-screen($breakpoint-lg)
+                margin-top: 32px
+            +max-screen($breakpoint-md)
+                margin-top: 24px
+            &.active 
+                opacity: 1
+                pointer-events: all
+            &::before 
+                content: ""
+                position: absolute
+                width: 16px 
+                height: 16px 
+                background: #D3E3D7
+                border-radius: 50%
+                transition: .3s 
+                left: 0
+                top: 50%
+                z-index: -1
+                transform: translateY(-50%)
+            &:hover
+                &::before 
+                    width: 100%
+                    height: 100%
+                    border-radius: 15px 
+    &__termsText 
+        display: flex 
+        align-items: center
+        margin-top: 24px
+        a 
+            text-decoration: underline
+            margin-left: 4px
+            display: inline-block
+        &__input 
+            width: 28px 
+            height: 28px 
+            border: 1px solid #000
+            position: relative
+            margin-right: 12px
+            cursor: pointer
+            &.checked 
+                &::before 
+                    content: ""
+                    position: absolute
+                    left: 4px
+                    top: 50%
+                    width: 18px
+                    height: 18px
+                    -webkit-transform: translateY(-50%)
+                    transform: translateY(-50%)
+                    z-index: 1
+                    background-size: contain
+                    background-position: center
+                    background-image: url('../assets/images/tick-icon.png')
+            input 
+                width: 0
+                height: 0
+                visibility: hidden 
+                padding: 0
+                margin: 0
+    &__content 
+        display: flex 
+        justify-content: space-between
+        +max-screen($breakpoint-lg)
+            flex-direction: column 
+            align-items: center
+    &__text 
+        font-size: 24px
+        line-height: 1.6
+        +max-screen(1200px)
+            font-size: 20px
+        +max-screen($breakpoint-md)
+            font-size: 18px
+        p
+            margin-bottom: 32px
+            +max-screen($breakpoint-md)
+                margin-bottom: 24px
+            &:last-child 
+                margin-bottom: 0
+        &Wrapper 
+            width: 53.852%
+            +max-screen(1350px)
+                width: 48%
+            +max-screen($breakpoint-lg)
+                width: 80%
+            +max-screen($breakpoint-md)
+                width: 100%
+    &__product 
+        display: flex 
+        transform: translateY(40px) rotate(-8deg)
+        +max-screen($breakpoint-lg)
+            transform: none
+            margin-bottom: 42px
+        +max-screen($breakpoint-md)
+            flex-direction: column 
+        &Content 
+            +min-screen(770px)
+                writing-mode: vertical-rl
+                transform: rotate(180deg)
+                height: 100%
+                display: flex
+                justify-content: space-between
+                padding-left: 20px
+                align-items: flex-end
+            +max-screen($breakpoint-md)
+                height: auto !important
+        &Price 
+            +max-screen($breakpoint-md)
+                margin-top: 24px
+        &Image 
+            img 
+                width: 100%
+                max-width: 392px 
+                +max-screen($breakpoint-md)
+                    margin-top: 32px
+                    max-width: 100%
+                    max-height: 650px
+                    object-fit: cover
+        &Title 
+            padding-bottom: 24px
+            +max-screen(1400px)
+                padding-bottom: 12px
+            +max-screen($breakpoint-lg)
+                padding-bottom: 0
+        &Wrapper 
+            width: 41.6785%
+            +max-screen(1350px)
+                width: 45%
+            +max-screen($breakpoint-lg)
+                width: 80%
+            +max-screen($breakpoint-md)
+                width: 100%
+    &__close 
+        position: absolute
+        right: 40px 
+        top: 40px
+        width: 32px 
+        height: 32px 
+        cursor: pointer
+        +max-screen($breakpoint-md)
+            width: 28px
+            height: 28px
+            right: 24px
+            top: 24px 
+        &::before,
+        &::after
+            content: ""
+            width: 100%
+            height: 2px 
+            background: #0C0C0C
+            left: 0
+            top: 50%
+            position: absolute
+        &::before 
+            transform: translateY(-50%) rotate(45deg)
+        &::after 
+            transform: translateY(-50%) rotate(-45deg)
+    &__form 
+        margin-top: 94px
+        display: flex 
+        flex-direction: column 
+        align-items: flex-start
+        width: 100% 
+        max-width: 68%
+        +max-screen($breakpoint-lg) 
+            width: 100%
+            max-width: 100%
+            margin-top: 48px
+        .wpcf7-form-control-wrap 
+            padding: 0
+            width: 100%
+        .wpcf7
+            width: 100%
+        &Title 
+            visibility: hidden
+            width: 0
+            height: 0
+        form 
+            width: 100%
+        &Input 
+            display: flex 
+            flex-direction: column
+            margin-bottom: 48px
+            input 
+                border: 0
+                border-bottom: 2px solid #0c0c0c
+                font-size: 15px
+                height: 64px
+                padding: 24px 16px
+                width: 100%
+                background: #F9FAF9
+            span 
+                padding: 0 16px 
+                margin-bottom: 4px
+                display: inline-block
+                font-size: 13px
+                line-height: 1.615
+        &Submit 
+            padding: 4px 24px 
+            position: relative
+            opacity: 0.5 
+            display: flex 
+            width: fit-content
+            cursor: pointer
+            transition: .3s 
+            input  
+                border: 0
+                padding: 0 
+                margin: 0
+                background: transparent
+                font-size: 20px
+                line-height: 1.6
+            &::before 
+                content: ""
+                position: absolute
+                left: 0 
+                top: 50% 
+                transform: translateY(-50%)
+                width: 16px 
+                height: 16px 
+                background: #D3E3D7
+                transition: .3s 
+                border-radius: 50%
+                z-index: -1
+            &:hover 
+                opacity: 1
+                &::before 
+                    width: 100% 
+                    height: 100% 
+                    border-radius: 15px 
+    .opened-popup & 
+        opacity: 1
+        visibility: visible
+        z-index: 101
+body
+    &.opened-popup
+        position: relative
+        &::before 
+            content: ""
+            position: fixed 
+            z-index: 100
+            left: 0
+            top: 0
+            width: 100% 
+            height: 100% 
+            background: #000 
+            opacity: 0.5
+    &.full-popup 
+        overflow: hidden
+        .orderPopup
+            overflow: scroll
+            height: 100%
+            width: 100%

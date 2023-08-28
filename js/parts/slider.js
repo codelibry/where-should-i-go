@@ -3,11 +3,18 @@ import 'slick-carousel';
 
 function basicSliders(){
     $('.favorities__slider').slick({
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         prevArrow: $('.favorities__leftArrow'),
         nextArrow: $('.favorities__rightArrow'),
         responsive: [
+            {
+                breakpoint: 2560,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
             {
                 breakpoint: 768,
                 settings: {
@@ -24,6 +31,7 @@ function basicSliders(){
         $('.favoritiesBlock__list .favoritiesBlock__listItem__image img').css('height', listImgHeight);
         $('.favoritiesBlock__list .favoritiesBlock__listItem__content').css('height', listImgHeight);
     })
+    
 }
 
 export { basicSliders };

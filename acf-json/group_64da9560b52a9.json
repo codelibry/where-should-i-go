@@ -3,25 +3,6 @@
     "title": "Product Fields",
     "fields": [
         {
-            "key": "field_64da9564bb7b1",
-            "label": "Price",
-            "name": "price",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_64e3ebca3a0ec",
             "label": "Button Label",
             "name": "button_label",
@@ -30,7 +11,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "100",
                 "class": "",
                 "id": ""
             },
@@ -58,5 +39,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1692658649
+    "modified": 1693160184
 }

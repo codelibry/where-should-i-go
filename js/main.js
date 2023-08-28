@@ -12,6 +12,7 @@ import { videoBlock } from './template-parts/blocks/video';
 import { ctaAnimation } from './template-parts/blocks/cta';
 import { imagesSlider } from './template-parts/blocks/images_slider';
 import { accordion } from './template-parts/blocks/accordion';
+import { testimonialsSlider } from './template-parts/blocks/testimonials';
 // Parts
 import { initPopups } from './parts/popups';
 import { basicSliders } from './parts/slider';
@@ -27,6 +28,7 @@ videoBlock();
 ctaAnimation();
 imagesSlider();
 accordion();
+testimonialsSlider();
 
 // Parts
 initPopups();
