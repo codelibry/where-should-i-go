@@ -67,9 +67,9 @@ $slider = get_field('favorities_slider');
                                 <div class="favorities__sliderItem__content h4">
                                     <h4 class="favorities__sliderItem__title product-title"><?php the_title(); ?></h4>
                                     <?php if($price == '0'): ?>
-                                        <div class="favorities__sliderItem__price product-price"><span><?php echo $price; ?></span>€</div>
-                                    <?php else:  ?>
                                         <div class="favorities__sliderItem__price product-price"><span>Free</span></div>
+                                    <?php else: ?>
+                                        <div class="favorities__sliderItem__price product-price"><span><?php echo $price; ?></span>€</div>
                                     <?php endif; ?>
                                 </div>
                             </div>
