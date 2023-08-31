@@ -1,6 +1,6 @@
 {
     "key": "group_64de7e2808ee3",
-    "title": "Terms & Conditions",
+    "title": "Page settings",
     "fields": [
         {
             "key": "field_64de7e30a3805",
@@ -55,5 +55,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1693486476
+    "modified": 1693487559
 }
