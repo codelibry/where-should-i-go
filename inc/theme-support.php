@@ -6,6 +6,13 @@
 	=====================	
 */
 
+/*
+* Add support of excerpts for pages to use on page.php 
+	and show content under page title
+*/ 
+
+add_post_type_support( 'page', 'excerpt' );
+
 
 
 /*
