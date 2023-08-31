@@ -52,8 +52,10 @@ if($the_query->have_posts()):
                     <div class="favoritiesBlock__listItem__sideContent">
                         <div class="favoritiesBlock__listItem__content h4">
                             <h4 class="favoritiesBlock__listItem__title product-title"><?php the_title(); ?></h4>
-                            <?php if($price): ?>
+                            <?php if($price == '0'): ?>
                                 <div class="favoritiesBlock__listItem__price product-price"><span><?php echo $price; ?></span>€</div>
+                            <?php else:  ?>
+                                <div class="favoritiesBlock__listItem__price product-price"><span>Free</span></div>
                             <?php endif; ?>
                         </div>
                     </div>
