@@ -1,0 +1,24 @@
+.pagination-wrapper
+    margin-top: 50px
+    position: relative
+    z-index: 999
+    .pagination
+        .screen-reader-text
+            display: none
+        .nav-links
+            display: flex
+            justify-content: center
+            align-items: center
+        a.page-numbers,
+        .current
+            padding: 5px
+            border-radius: 5px
+            margin-left: 5px
+            margin-right: 5px
+            min-width: 30px
+            text-align: center
+            transition: .5s
+            &:hover
+                background-color: $color-green
+        .current
+            background-color: $color-green

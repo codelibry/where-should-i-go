@@ -1,8 +1,41 @@
-<?php get_header(); ?>
+<?php
 
-    <div class="page-blocks">
-        321
+/**
+ * Basic page template
+ */
+
+get_header();
+
+$title = get_the_title();
+$text = get_field('hero_text');
+$content = get_the_content();
+
+?>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero__content">
+            <?php if($title): ?>
+                <h1 class="hero__title"><?php echo $title; ?></h1>
+            <?php endif; ?>
+            <?php if($text): ?>
+                <div class="hero__text"><?php echo $text; ?></div>
+            <?php endif; ?>
+        </div>
     </div>
-    <?php the_content(); ?>
+</section>
+
+
+<?php if($content): ?>
+
+    <section class="termsText">
+        <div class="container">
+            <div class="termsText__content content-block">
+                <?php echo $content; ?>
+            </div>
+        </div>
+    </section>
+
+<?php endif; ?>
 
 <?php get_footer(); ?>

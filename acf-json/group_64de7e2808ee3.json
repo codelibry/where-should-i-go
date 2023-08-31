@@ -1,6 +1,6 @@
 {
     "key": "group_64de7e2808ee3",
-    "title": "Terms & Conditions",
+    "title": "Extra Fields",
     "fields": [
         {
             "key": "field_64de7e30a3805",
@@ -19,11 +19,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_64de7e35a3806",
-            "label": "Title",
-            "name": "hero_title",
-            "type": "text",
-            "instructions": "",
+            "key": "field_64de7e50a3807",
+            "label": "Text",
+            "name": "hero_text",
+            "type": "textarea",
+            "instructions": "Content to show below the page title",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -33,63 +33,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_64de7e50a3807",
-            "label": "Text",
-            "name": "hero_text",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_64de7e6ea3808",
-            "label": "Text Block",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_64de7e74a3809",
-            "label": "Text Block",
-            "name": "text_block",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -97,7 +43,14 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "terms__conditions.php"
+                "value": "default"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
             }
         ]
     ],
@@ -109,5 +62,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1692302981
+    "modified": 1693490944
 }
