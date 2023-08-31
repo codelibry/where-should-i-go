@@ -9,7 +9,7 @@
     /**
      * Post Type: Products
      */
-    /*function cptui_register_my_cpts_product()
+    function cptui_register_my_cpts_product()
     {
         $labels = array(
             'name' => __('Products', 'theme_slug'),
@@ -46,4 +46,4 @@
         register_post_type('product', $args);
     }
     
-    add_action('init', 'cptui_register_my_cpts_product');*/
+    add_action('init', 'cptui_register_my_cpts_product');

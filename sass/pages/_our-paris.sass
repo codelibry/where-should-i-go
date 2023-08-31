@@ -3,12 +3,18 @@
     padding-top: 120px
     padding-bottom: 120px
     background: #fff
+    &__row 
+        display: flex 
+        margin: 0 -75px
+        flex-wrap: wrap
+        +max-screen(1200px)
+            +min-screen(993px)
+                margin: 0 -35px 
+        +max-screen($breakpoint-lg)
+            margin: 0 -12px 
     &__list 
         transform: translateX(270px) rotate(-6deg)
-        margin: 0 -75px
         padding-top: 120px
-        display: flex 
-        flex-wrap: wrap
         +max-screen(1600px)
             transform: translateX(210px) rotate(-6deg)
         +max-screen(1400px)
@@ -18,16 +24,12 @@
         +max-screen(1200px)
             +min-screen(993px)
                 transform: translateX(120px) rotate(-2deg)
-                margin: 0 -35px 
                 margin-bottom: -48px
                 padding-top: 0
         +max-screen($breakpoint-lg)
-            margin: 0 -12px 
             margin-bottom: -42px
             padding-top: 0
             transform: none
-        +max-screen($breakpoint-md)
-            padding-top: 0
         &Item 
             max-width: 36.64%
             margin: 0 75px
@@ -46,6 +48,7 @@
             +max-screen($breakpoint-md)
                 max-width: 100%
                 transform: none
+                transition-delay: 0s
             &__content 
                 +min-screen(993px)
                     writing-mode: vertical-rl
@@ -73,6 +76,7 @@
                 +max-screen($breakpoint-md)
                     flex-direction: row
             &__price
+                font-weight: 300
                 +max-screen($breakpoint-lg)
                     margin-top: 18px
                 +max-screen($breakpoint-md)
@@ -91,6 +95,11 @@
                 img 
                     width: 100%
                     object-fit: cover
+                    +max-screen($breakpoint-md)
+                        height: auto !important
+                        max-height: 550px 
+                    +max-screen(480px)
+                        max-height: 350px 
             &__head 
                 display: flex 
                 position: relative
@@ -101,10 +110,13 @@
                 +max-screen($breakpoint-lg)
                     max-width: 100%
             &__title 
+                font-weight: 300
                 +max-screen(1200px)
                     +min-screen(993px)
                         font-size: 28px
                         padding-bottom: 28px
+                +max-screen($breakpoint-md)
+                    height: auto !important
             &__text 
                 margin-bottom: 36px
                 line-height: 1.6
@@ -161,16 +173,26 @@
             flex-wrap: wrap
     &__image 
         max-width: 43.25%
+        position: relative
+        width: 100%
+        transform: translateY(-170px)
+        +max-screen(1200px)
+            transform: translateY(-120px)
         +max-screen($breakpoint-lg)
             max-width: 80%
             margin: auto
+            transform: none
         +max-screen($breakpoint-md)
             max-width: 100%
         img 
             width: 100% 
+            position: absolute
+            left: 0
+            top: 0
             transform: translateX(-10px) rotate(8deg)
             +max-screen($breakpoint-lg)
-                transform: none
+                transform: none !important
+                position: static
     &__text 
         margin-top: 40px 
         font-size: 24px 
@@ -187,11 +209,12 @@
             max-width: 52.7%
             margin-left: auto
             +max-screen($breakpoint-lg)
-                max-width: 90%
+                max-width: 80%
                 margin: auto
                 margin-top: 48px
             +max-screen($breakpoint-md)
                 max-width: 100%
+                width: 100%
                 margin-top: 48px
     &__button 
         border-bottom: 2px solid #fff
@@ -223,6 +246,127 @@
         padding: 102px 48px
     +max-screen($breakpoint-md)
         padding: 56px 16px
+    .orderPopup__form 
+        .nf-form-title
+            display: none
+        .nf-before-form-content,
+        .number-container,
+        .html-container 
+            display: none
+        .nf-form-content
+            width: 100%
+            padding: 0
+        .nf-form-cont 
+            width: 100%
+        .nf-field-container
+            width: 100%
+        .nf-field 
+            input:not(input[type="submit"])
+                border: 0
+                border-bottom: 2px solid #0c0c0c
+                font-size: 15px
+                height: 64px
+                padding: 24px 16px
+                width: 100%
+                background: #F9FAF9
+                +max-screen($breakpoint-lg)
+                    height: 48px 
+                    padding: 8px 16px
+        .nf-field .nf-field-label 
+            margin-bottom: 0 !important
+
+            label 
+                padding: 0 16px 
+                margin-bottom: 4px !important
+                display: inline-block
+                font-size: 13px
+                line-height: 1.615
+                font-weight: 400
+        .ninja-forms-req-symbol
+            display: none
+        .nf-error-msg
+            font-size: 12px 
+        .nf-error.field-wrap .nf-field-element::after
+            content: none
+        .checkbox-wrap .nf-field-label label
+            margin-left: 0
+            padding-left: 36px
+            font-weight: 400
+            line-height: 1.6
+            display: inline-block
+            &::before 
+                left: 5px
+                top: -4px
+                font-size: 18px
+            &::after
+                content: ""
+                position: absolute
+                left: 0
+                top: 50%
+                width: 28px
+                height: 28px
+                -webkit-transform: translateY(-50%)
+                transform: translateY(-50%)
+                z-index: 1
+                background-size: contain
+                background-position: 50%
+                border: 1px solid
+                background: transparent
+        .nf-field-container 
+            margin-bottom: 48px
+            +max-screen(1200px) 
+                margin-bottom: 32px
+            +max-screen($breakpoint-md)
+                margin-bottom: 24px
+        .checkbox-container 
+            margin-bottom: 24px
+            +max-screen($breakpoint-lg)
+                margin-bottom: 12px
+            .checkbox-wrap .nf-field-label
+                label 
+                    display: block
+                    z-index: 1
+                    a 
+                        text-decoration: underline
+        .submit-container
+            margin-bottom: 0
+        .nf-pass.field-wrap .nf-field-element:after 
+            content: none
+        .checkbox-wrap .nf-checked-label a 
+            text-decoration: underline
+        .email-text,
+        .email-file 
+            display: none
+        .submit-wrap
+            .nf-field-element
+                opacity: 0.7 
+                transition: .3s 
+                width: auto
+                &::before 
+                    content: ""
+                    position: absolute
+                    width: 16px 
+                    height: 16px 
+                    background: #D3E3D7
+                    border-radius: 50%
+                    transition: .3s 
+                    left: 0
+                    top: 50%
+                    z-index: -1
+                    transform: translateY(-50%)
+                &:hover
+                    opacity: 1
+                    &::before 
+                        width: 100%
+                        height: 100%
+                        border-radius: 15px 
+            .ninja-forms-field
+                border: 0
+                background: transparent
+                height: 40px 
+                padding: 4px 24px 
+                color: #0C0C0C
+                cursor: pointer
     &__submit 
         a.button
             position: relative
@@ -277,8 +421,8 @@
                     position: absolute
                     left: 4px
                     top: 50%
-                    width: 18px
-                    height: 18px
+                    width: 28px
+                    height: 28px
                     -webkit-transform: translateY(-50%)
                     transform: translateY(-50%)
                     z-index: 1
@@ -414,20 +558,6 @@
             display: flex 
             flex-direction: column
             margin-bottom: 48px
-            input 
-                border: 0
-                border-bottom: 2px solid #0c0c0c
-                font-size: 15px
-                height: 64px
-                padding: 24px 16px
-                width: 100%
-                background: #F9FAF9
-            span 
-                padding: 0 16px 
-                margin-bottom: 4px
-                display: inline-block
-                font-size: 13px
-                line-height: 1.615
         &Submit 
             padding: 4px 24px 
             position: relative

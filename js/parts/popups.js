@@ -8,13 +8,16 @@ function initPopups() {
             var productPrice = $(this).closest('.product').find('.product-price').html();
             var productText = $(this).closest('.product').attr('data-text');
             var productImage = $(this).closest('.product').find('.product-image img').attr('src');
-            var productId = $(this).closest('.product').attr('data-id');
-            var productSlug = $(this).closest('.product').attr('data-slug');
+            var productEmailText = $(this).closest('.product').attr('data-email-text');
+            var productFile = $(this).closest('.product').attr('data-file');
             $('.orderPopup__text').html(productText);
             $('.orderPopup__productTitle').html(productTitle);
             $('.orderPopup__productImage img').attr('src', productImage);
             $('.orderPopup__productPrice').html(productPrice);
             $('.orderPopup__formTitle input').val(productTitle);
+            $('.orderPopup input[type="number"]').val($(this).closest('.product').find('.product-price span').html());
+            $('.orderPopup .email-text .field-wrap input').val(productEmailText);
+            $('.orderPopup .email-file .field-wrap input').val(productFile);
             setTimeout(() => {
                 var imageHeight = $('.orderPopup__productImage img').height();
             $('.orderPopup__productContent').css('height', imageHeight);
@@ -22,7 +25,6 @@ function initPopups() {
             setTimeout(() => {
                 $('body').addClass('opened-popup');
             }, 200);
-
         });
         $('.orderPopup__close').click(function(){
             $('body').removeClass('opened-popup');
