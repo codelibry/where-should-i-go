@@ -1,6 +1,6 @@
 {
     "key": "group_64de7e2808ee3",
-    "title": "Page settings",
+    "title": "Extra Fields",
     "fields": [
         {
             "key": "field_64de7e30a3805",
@@ -45,6 +45,13 @@
                 "operator": "==",
                 "value": "default"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
         ]
     ],
     "menu_order": 0,
@@ -55,5 +62,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1693487559
+    "modified": 1693490944
 }
