@@ -150,8 +150,8 @@
         +max-screen($breakpoint-lg)
             max-width: calc( 100% + 130px )
             padding-left: 0
-            margin-left: -65px
-            margin-right: -65px
+            margin-left: -35px
+            margin-right: -35px
         +max-screen($breakpoint-md)
             max-width: 100% 
             margin-left: 0
@@ -170,7 +170,8 @@
             +max-screen($breakpoint-lg)
                 transform: rotate(-6deg)
             +max-screen($breakpoint-md)
-                transform: rotate(-4deg)
+                transform: rotate(-3deg)
+                margin: 0 16px
             &.slick-active 
                 opacity: 1
         .slick-active + .slick-slide 
@@ -188,6 +189,8 @@
             &__text 
                 margin-top: 48px
                 line-height: 1.6
+                +max-screen(1200px)
+                    margin-top: 32px
                 +max-screen($breakpoint-md)
                     margin-top: 24px
             &__button 
@@ -227,9 +230,16 @@
                 font-weight: 300
                 +max-screen($breakpoint-md)
                     height: 305px
+                +max-screen(1200px)
+                    +min-screen(993px)
+                        font-size: 36px
             &__image 
-                width: 100%
-                max-width: 460px
+                width: 55%
+                max-width: 400px
+                +max-screen(1440px)
+                    width: 60%
+                +max-screen($breakpoint-md)
+                    width: 100%
                 +max-screen($breakpoint-md)
                     .favorities__sliderItem__text,
                     .favorities__sliderItem__button 

@@ -26,7 +26,37 @@ function basicSliders(){
             },
         ]
     });
+    
     $(document).ready(function(){
+        let blocked = false;
+        let blockTimeout = null;
+        let prevDeltaX = 0;
+
+        $(".favorities__slider").on('mousewheel DOMMouseScroll wheel', (function(e) {
+            let deltaX = e.originalEvent.deltaX;
+            let deltaY = e.originalEvent.deltaY;
+
+            if(typeof deltaY != 'undefined') {
+                clearTimeout(blockTimeout);
+                    blockTimeout = setTimeout(function(){
+                    blocked = false;
+                }, 25);
+            
+                if ((deltaY < 1 && deltaY > -1) && ((deltaX > 10 && deltaX > prevDeltaX) || (deltaX < -10 && deltaX < prevDeltaX) || !blocked)) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    blocked = true;
+                    prevDeltaX = deltaX;
+
+                    if (deltaX > 0) {
+                        $(this).slick('slickNext');
+                    } else {
+                        $(this).slick('slickPrev');
+                    }
+                }
+            }
+        }));
         var sliderImgHeight = $('.favorities__slider').find('.slick-slide[data-slick-index="0"] .favorities__sliderItem__image img').height();
         $('.favorities__slider .slick-slide .favorities__sliderItem__image img').css('height', sliderImgHeight);
         $('.favorities__slider .slick-slide .favorities__sliderItem__content').css('height', sliderImgHeight);

@@ -25,6 +25,11 @@ function initPopups() {
             setTimeout(() => {
                 $('body').addClass('opened-popup');
             }, 200);
+            $("body").on('DOMSubtreeModified', ".nf-response-msg", function() {
+                console.log('123');
+                $('body').removeClass('opened-popup');
+                $('body').addClass('submit-popup');
+            });
         });
         $('.orderPopup__close').click(function(){
             $('body').removeClass('opened-popup');
@@ -40,6 +45,12 @@ function initPopups() {
                 $(this).find('input').prop('checked', false);
             }
         });
+        var url = window.location.href.split('?'); 
+        var urlPart = url[1].split('&');
+        if(urlPart[1] == 'nfs_checkout=success'){
+            $('body').addClass('submit-popup');
+        }
+        
     });
 }
 

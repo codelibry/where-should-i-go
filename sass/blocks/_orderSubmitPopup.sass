@@ -1,0 +1,54 @@
+.orderSubmit
+    &__wrapper 
+        position: fixed 
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background: #d3e3d7
+        border-radius: 35px 
+        padding: 64px 48px 
+        z-index: 101
+        display: none
+        +max-screen($breakpoint-lg)
+            width: 520px
+        +max-screen($breakpoint-md)
+            width: 450px
+            max-width: 90%
+            padding: 48px 32px 
+        .submit-popup & 
+            display: block
+    &__text
+        font-size: 32px
+        color: #fff
+        text-align: center
+        line-height: 1.8
+        +max-screen($breakpoint-lg)
+            font-size: 28px
+        +max-screen($breakpoint-md)
+            font-size: 24px
+    &__close 
+        position: absolute
+        top: 20px
+        right: 24px
+        width: 32px
+        height: 32px
+        +max-screen($breakpoint-md)
+            top: 16px
+            right: 22px
+            width: 26px
+            height: 26px
+        &::before,
+        &::after 
+            content: ""
+            width: 28px 
+            height: 3px 
+            background: #fff
+            border-radius: 10px
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+        &::before
+            transform: translateY(-50%) rotate(-45deg)
+        &::after 
+            transform: translateY(-50%) rotate(45deg)

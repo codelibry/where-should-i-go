@@ -84,6 +84,7 @@
             &__image 
                 max-width: 67.63%
                 margin-bottom: 48px
+                width: 100%
                 +max-screen(1200px)
                     margin-bottom: 42px
                 +max-screen($breakpoint-lg)
@@ -95,6 +96,7 @@
                 img 
                     width: 100%
                     object-fit: cover
+                    max-height: 520px
                     +max-screen($breakpoint-md)
                         height: auto !important
                         max-height: 550px 
@@ -596,7 +598,8 @@
         visibility: visible
         z-index: 101
 body
-    &.opened-popup
+    &.opened-popup,
+    &.submit-popup
         position: relative
         &::before 
             content: ""

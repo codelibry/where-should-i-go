@@ -27,9 +27,13 @@
         padding-bottom: 24px
     .container
         position: relative
+        max-width: 1632px
+        +max-screen(1920px)
+            max-width: 1768.5px
+            margin-right: 0
     &__burger
         display: none
-        +max-screen($breakpoint-md)
+        +max-screen($breakpoint-lg)
             display: block
             width: 24px
             height: 18px
@@ -37,6 +41,7 @@
             transform: rotate(0deg)
             transition: .5s ease-in-out
             cursor: pointer
+            z-index: 101
             span 
                 display: block
                 position: absolute
@@ -62,20 +67,19 @@
                 max-height: 40px 
     &__content 
         display: flex 
-        +max-screen($breakpoint-md)
+        +max-screen($breakpoint-lg)
             justify-content: space-between
             align-items: center
     &__menu 
         display: flex 
         align-items: center
-        margin-right: 120px
         margin-left: auto
-        flex-direction: column
-        align-items: flex-end
+        align-items: center
         transition: .3s
+        justify-content: flex-end
         +max-screen($breakpoint-lg)
             margin-right: 0
-        +max-screen($breakpoint-md)
+        +max-screen($breakpoint-lg)
             position: fixed
             width: 100%
             height: 100%
@@ -84,19 +88,24 @@
             background: #D3E3D7
             transition: .3s
             align-items: center
+            z-index: 100
         .menu-header-menu-container 
             padding: 16px 0
+            margin-right: 64px
+            +max-screen(1200px)
+                margin-right: 32px
+            +max-screen($breakpoint-lg)
+                margin-right: 0
         &Wrapper 
             margin-left: auto
             max-height: 56px
-            overflow: hidden
         .menu 
             display: flex 
             margin: 0 -20px
             li 
                 margin: 0 20px 
                 position: relative
-                +max-screen($breakpoint-lg)
+                +max-screen(1200px)
                     font-size: 16px
                 +max-screen($breakpoint-md)
                     font-size: 20px
@@ -120,13 +129,22 @@
     &__button 
         padding: 16px 24px
         border-radius: 15px
-        margin-top: 18px
         transition: .3s
         position: relative
+        margin-right: -64px
+        +max-screen(1200px) 
+            margin-right: -32px
+            font-size: 16px
         +max-screen($breakpoint-lg)
             padding: 12.205px 18px
-        +max-screen($breakpoint-md)
+            margin-right: 32px
             display: none
+        &.tablet 
+            display: none
+            +max-screen($breakpoint-lg)
+                display: block
+            +max-screen($breakpoint-md)
+                display: none
         &::before 
             content: ""
             width: 16px
@@ -157,7 +175,7 @@
                 top: 8px
                 transform: rotate(-135deg)
         .header__menu 
-            +max-screen($breakpoint-md)
+            +max-screen($breakpoint-lg)
                 left: 0
                 justify-content: center
                 .menu 
@@ -167,13 +185,6 @@
                         margin-bottom: 20px
                         &::after 
                             bottom: -4px
-    &.hide 
-        .header__menu 
-            transform: translateY(-74px)
-            +max-screen($breakpoint-lg)
-                transform: translateY(-69px)
-            +max-screen($breakpoint-md)
-                transform: none
 body
     padding-top: 184px
     +max-screen($breakpoint-lg)
