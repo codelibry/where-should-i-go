@@ -13,14 +13,14 @@ function parrallax_images() {
         //responsive
         //let mm = gsap.matchMedia();
         gsap.to(img ,{
-            yPercent: -25,
+            yPercent: -30,
             //stagger: 0.5,
             scrollTrigger: {
                 trigger: img,
                 start: 'top bottom',
-                end: 'bottom top',
+                end: 'bottom center',
                 //markers: true,
-                scrub: true,
+                scrub: true, 
                 //pin: true
             }
         });
@@ -28,7 +28,7 @@ function parrallax_images() {
         
         });*/
     });
-    $(".sbi_photo_wrap").each(function(){
+    $(".sbi_photo_wrap").each(function(){ 
         let img = $(this).find('.sbi_photo');
         let path = $(this).data('path');
         let disabled = false;

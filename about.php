@@ -36,7 +36,7 @@ $image = get_field('image');
                     <h2 class="about__title"><?php echo $title; ?></h2>
                 <?php endif; ?>
                 <?php if($text): ?>
-                    <div class="about__text"><?php echo $text; ?></div>
+                    <div class="about__text p3"><?php echo $text; ?></div>
                 <?php endif; ?>
             </div>
             <?php if($image): ?>
@@ -115,7 +115,7 @@ if($text):
                             <h2 class="teaser__title"><?php echo $title; ?></h2>
                         <?php endif; ?>
                         <?php if($text): ?>
-                            <div class="teaser__text"><?php echo $text; ?></div>
+                            <div class="teaser__text p3"><?php echo $text; ?></div>
                         <?php endif; ?>
                         <?php if($link_type == 'Link'): ?>
                             <div class="teaser__button">
