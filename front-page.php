@@ -10,10 +10,10 @@ $mobile_link = get_field('hero_mobile_link');
     <div class="container">
         <div class="fpHero__contentWrapper row">
             <?php if($image): ?>
-                <div class="fpHero__image col-md-4 col-12"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></div>
+                <div class="fpHero__image col-md-4 col-12 parallax-img-wrapper"><div class="animate fade-right"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"><img src="<?php echo $image['url']; ?>" class="hidden-img" alt="<?php echo $image['title']; ?>"></div></div>
             <?php endif; ?>
             <?php if($title || $text || $link): ?>
-                <div class="fpHero__content col-md-8 col-12">
+                <div class="fpHero__content col-md-8 col-12 animate fade-left delay-1">
                     <?php if($title): ?>
                         <h1 class="fpHero__title"><?php echo $title; ?></h1>
                     <?php endif; ?>
@@ -42,31 +42,35 @@ $slider = get_field('favorities_slider');
         <?php if($title || $text || $link): ?>
             <div class="favorities__content">
                 <?php if($title): ?>
-                    <h2 class="favorities__title"><?php echo $title; ?></h2>
+                    <h2 class="favorities__title animate fade-up"><?php echo $title; ?></h2>
                 <?php endif; ?>
                 <?php if($text): ?>
-                    <div class="favorities__text"><?php echo $text; ?></div>
+                    <div class="favorities__text animate fade-up delay-1"><?php echo $text; ?></div>
                 <?php endif; ?>
                 <?php if($link): ?>
-                    <div class="favorities__link button"><a href="<?php echo $link['url'] ?>"><?php echo $link['title']; ?></a></div>
+                    <div class="favorities__link button animate fade-up delay-2"><a href="<?php echo $link['url'] ?>"><?php echo $link['title']; ?></a></div>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
         <?php if($slider): ?>
-            <div class="favorities__slider">
+            <div class="favorities__slider animate fade-up delay-3">
                 <?php foreach($slider as $post): setup_postdata( $post ); ?>
                     <?php 
-                    $id = get_the_ID();
-                    $product = wc_get_product( $id );
-                    $price = $product->get_price();
+                    $price = get_field('price'); 
+                    $button = get_field('button_label'); 
+                    $email_text = get_field('email_text'); 
+                    $file = get_field('file');
                     ?>
-                    <?php $button = get_field('button_label'); ?>
-                    <div class="favorities__sliderItem product product-text" data-text="<?php the_content(); ?>" data-id="<?php echo get_the_ID(); ?>" data-slug="<?php echo $post->post_name; ?>">
+                    <div class="favorities__sliderItem product product-text" data-email-text="<?php if($email_text): echo $email_text; endif; ?>" data-file="<?php if($file): echo $file; endif; ?>" data-text="<?php the_content(); ?>">
                         <div class="favorities__sliderItem__head">
                             <div class="favorities__sliderItem__contentWrapper">
                                 <div class="favorities__sliderItem__content h4">
                                     <h4 class="favorities__sliderItem__title product-title"><?php the_title(); ?></h4>
-                                    <div class="favorities__sliderItem__price product-price"><?php echo $product->get_regular_price() . '€'; ?></div>
+                                    <?php if($price == '0'): ?>
+                                        <div class="favorities__sliderItem__price product-price"><span>Free</span></div>
+                                    <?php else: ?>
+                                        <div class="favorities__sliderItem__price product-price"><span><?php echo $price; ?></span>€</div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="favorities__sliderItem__image product-image">
@@ -107,18 +111,18 @@ $image = get_field('description_image');
 <section class="description">
     <div class="container">
         <?php if($title): ?>
-            <h4 class="description__title"><?php echo $title; ?></h4>
+            <h4 class="description__title animate fade-up"><?php echo $title; ?></h4>
         <?php endif; ?>
         <?php if($text || $image): ?>
             <div class="description__content row">
                 <?php if($text): ?>
-                    <div class="description__text col-lg-7 col-12">
+                    <div class="description__text col-lg-7 col-12 animate fade-right delay-1">
                         <?php echo $text; ?>
                     </div>
                 <?php endif; ?>
                 <?php if($image): ?>
-                    <div class="description__image col-lg-5 col-12">
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
+                    <div class="description__image col-lg-5 col-12 parallax-img-wrapper">
+                        <div class="animate fade-left delay-2"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div>
                     </div>
                 <?php endif; ?>
             </div>
@@ -131,7 +135,7 @@ $title = get_field('features_title');
 <section class="features">
     <div class="container">
         <?php if($title): ?>
-            <h2 class="features__title"><?php echo $title; ?></h2>
+            <h2 class="features__title animate fade-up"><?php echo $title; ?></h2>
         <?php endif; ?>
         <?php if(have_rows('features_list')): ?>
             <div class="features__cards row">
@@ -140,7 +144,7 @@ $title = get_field('features_title');
                         $title = get_sub_field('title'); 
                         $text = get_sub_field('text');
                     ?>
-                    <div class="features__cardsItem col-lg-4 col-md-6 col-12">
+                    <div class="features__cardsItem col-lg-4 col-md-6 col-12 animate fade-up delay-<?php echo $i; ?>">
                         <h2 class="features__cardsItem__number">{ <?php echo $i; ?> }</h2>
                         <?php if($title): ?>
                             <h4 class="features__cardsItem__title"><?php echo $title; ?></h4>
@@ -166,17 +170,17 @@ $link = get_field('cta_link');
     <div class="container">
         <div class="cta__contentWrapper">
             <?php if($image): ?>
-                <div class="cta__image"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></div>
+                <div class="cta__image animate fade-right"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></div>
             <?php endif; ?>
-            <div class="cta__content">
+            <div class="cta__content animate fade-left delay-1">
                 <?php if($title): ?>
-                    <h2 class="cta__title"><?php echo $title; ?></h2>
+                    <h2 class="cta__title animate fade-up delay-2"><?php echo $title; ?></h2>
                 <?php endif; ?>
                 <?php if($text): ?>
-                    <div class="cta__text"><?php echo $text; ?></div>
+                    <div class="cta__text animate fade-up delay-3"><?php echo $text; ?></div>
                 <?php endif; ?>
                 <?php if($link): ?>
-                    <div class="cta__button"><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></div>
+                    <div class="cta__button animate fade-up delay-4"><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></div>
                 <?php endif; ?>
             </div>
         </div>
@@ -187,7 +191,7 @@ if(have_rows('testimonials__list')):
 ?>
 <section class="testimonial">
     <div class="container">
-        <div class="testimonials__list">
+        <div class="testimonials__list animate fade-up">
             <?php while(have_rows('testimonials__list')): the_row(); ?>
                 <?php 
                 $text = get_sub_field('text');
@@ -220,12 +224,14 @@ if($image_slider):
 <section class="imagesSlider">
     <div class="container">
         <?php if($title): ?>
-            <h2 class="imagesSlider__title">
+            <h2 class="imagesSlider__title animate fade-right">
                 <?php echo $title; ?>
             </h2>
         <?php endif; ?>
-        <?php echo $image_slider; ?>
-        <div class="imagesSlider__bottom">
+        <div class="imagesSlider__wrapper animate fade-left delay-1">
+            <?php echo $image_slider; ?>
+        </div>
+        <div class="imagesSlider__bottom animate fade-left delay-1">
             <div class="imagesSlider__arrows">
                 <div class="imagesSlider__arrow imagesSlider__arrowBefore"></div>
                 <div class="imagesSlider__arrow imagesSlider__arrowAfter"></div>
@@ -258,4 +264,11 @@ if($image_slider):
     </div>
     <div class="orderPopup__close"></div>
 </div>
+<div class="orderSubmit__wrapper">
+    <div class="orderSubmit__content">
+        <a href="<?php echo get_home_url(); ?>" class="orderSubmit__close"></a>
+        <div class="orderSubmit__text">Thanks for your purchase!<br>Check your email</div>
+    </div>
+</div>
 <?php get_footer(); ?>
+

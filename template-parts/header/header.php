@@ -19,6 +19,9 @@ $button = get_field('header_menu_cta_button', 'options');
                 </div>
             </div>
             <div class="header__lang"></div>
+            <?php if($button): ?>
+                <a href="<?php echo $button['url']; ?>" class="header__button tablet"><?php echo $button['title']; ?></a>
+            <?php endif; ?>
             <div class="header__burger">
                 <span></span>
                 <span></span>

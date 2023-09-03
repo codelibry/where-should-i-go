@@ -13,10 +13,10 @@ if($title || $text):
     <div class="container">
         <div class="hero__content">
             <?php if($title): ?>
-                <h1 class="hero__title"><?php echo $title; ?></h1>
+                <h1 class="hero__title animate fade-up"><?php echo $title; ?></h1>
             <?php endif; ?>
             <?php if($text): ?>
-                <div class="hero__text"><?php echo $text; ?></div>
+                <div class="hero__text animate fade-up delay-1"><?php echo $text; ?></div>
             <?php endif; ?>
         </div>
     </div>
@@ -33,16 +33,29 @@ if($the_query->have_posts()):
 <section class="favoritiesBlock">
     <div class="container">
         <div class="favoritiesBlock__list">
-            <?php while($the_query->have_posts()): $the_query->the_post(); ?>
-            <?php $price = get_field('price'); ?>
-            <?php $button = get_field('button_label'); ?>
-            <div class="favoritiesBlock__listItem product" data-text="<?php the_content(); ?>">
+            <?php $i = 1; while($the_query->have_posts()): $the_query->the_post(); ?>
+            <?php 
+            $price = get_field('price');
+            $button = get_field('button_label'); 
+            $email_text = get_field('email_text'); 
+            $file = get_field('file');
+            $delay = '';
+            if($i % 2 == 0){
+                $delay = ' delay-2';
+            }
+            ?>
+            <?php if($i % 2 != 0): ?>
+                <div class="favoritiesBlock__row">
+            <?php endif; ?>
+            <div class="favoritiesBlock__listItem product animate fade-up<?php echo $delay; ?>" data-email-text="<?php if($email_text): echo $email_text; endif; ?>" data-file="<?php if($file): echo $file; endif; ?>" data-text="<?php the_content(); ?>">
                 <div class="favoritiesBlock__listItem__head">
                     <div class="favoritiesBlock__listItem__sideContent">
                         <div class="favoritiesBlock__listItem__content h4">
                             <h4 class="favoritiesBlock__listItem__title product-title"><?php the_title(); ?></h4>
-                            <?php if($price): ?>
-                                <div class="favoritiesBlock__listItem__price product-price"><?php echo $price; ?></div>
+                            <?php if($price == '0'): ?>
+                                <div class="favoritiesBlock__listItem__price product-price"><span>Free</span></div>
+                            <?php else: ?>
+                                <div class="favoritiesBlock__listItem__price product-price"><span><?php echo $price; ?></span>€</div>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -61,7 +74,10 @@ if($the_query->have_posts()):
                     </div>
                 </div>
             </div>
-            <?php endwhile; wp_reset_postdata(); ?>
+            <?php if($i % 2 == 0): ?>
+                </div>
+            <?php endif; ?>
+            <?php $i++; endwhile; wp_reset_postdata(); ?>
         </div>
     </div>
 </section>
@@ -76,12 +92,12 @@ $button = get_field('button');
     <div class="container">
         <div class="parisContent__wrapper">
             <?php if($image): ?>
-                <div class="parisContent__image">
-                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
+                <div class="parisContent__image parallax-img-wrapper">
+                    <div class="animate fade-right"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div>
                 </div>
             <?php endif; ?>
             <?php if($title || $text || $button): ?>
-                <div class="parisContent__textWrapper">
+                <div class="parisContent__textWrapper animate fade-left delay-2">
                     <?php if($title): ?>
                         <h2 class="parisContent__title"><?php echo $title; ?></h2>
                     <?php endif; ?>
@@ -111,7 +127,7 @@ $button = get_field('button');
             <div class="orderPopup__text">
             </div>
             <div class="orderPopup__form">
-                <?php echo do_shortcode('[contact-form-7 id="a001442" title="Order product form"]'); ?>
+                <?php echo do_shortcode( '[ninja_form id=2]' ); ?>
             </div>
         </div>
     </div>

@@ -2,14 +2,29 @@
     background: #d3e3d7
     &__image 
         padding-right: 5px 
+        position: relative
+        transform: translateY(100px) rotate(-8deg)
         +max-screen($breakpoint-lg)
             text-align: center
+            transform: none
         +max-screen(560px)
             text-align: right
+        .hidden-img
+            opacity: 0
+            +max-screen($breakpoint-lg)
+                display: none
+        .parallax-img
+            position: absolute
+            left: 0
+            top: 0
+            +max-screen(1200px)
+                left: 30px 
+            +max-screen($breakpoint-lg)
+                position: static
+                transform: rotate(-8deg) !important
         img 
             margin-left: -28px
             width: calc( 100% + 28px )
-            transform: rotate(-8deg)
             margin-bottom: -20px
             +max-screen($breakpoint-lg)
                 max-width: 405px
@@ -44,12 +59,15 @@
     &__title 
         line-height: 1
         margin-bottom: 64px
+        font-weight: 400
+        margin-right: -30px
         +max-screen(1200px)
             margin-bottom: 56px
         +max-screen($breakpoint-lg)
             margin-bottom: 48px
         +max-screen($breakpoint-md)
             margin-bottom: 32px
+            margin-right: 0
             max-width: 100%
         +max-screen(560px)
             max-width: 335px
@@ -116,6 +134,12 @@
         margin-left: auto
         margin-right: calc( (-100vw + 1532px) / 2)
         max-width: calc( 1210px + (100vw - 1532px) / 2)
+        display: flex 
+        flex-wrap: nowrap 
+        opacity: 0
+        transition: .5s
+        &.active 
+            display: block
         +max-screen(1532px)
             max-width: 100%
             margin-right: 0
@@ -126,8 +150,8 @@
         +max-screen($breakpoint-lg)
             max-width: calc( 100% + 130px )
             padding-left: 0
-            margin-left: -65px
-            margin-right: -65px
+            margin-left: -35px
+            margin-right: -35px
         +max-screen($breakpoint-md)
             max-width: 100% 
             margin-left: 0
@@ -146,7 +170,8 @@
             +max-screen($breakpoint-lg)
                 transform: rotate(-6deg)
             +max-screen($breakpoint-md)
-                transform: rotate(-4deg)
+                transform: rotate(-3deg)
+                margin: 0 16px
             &.slick-active 
                 opacity: 1
         .slick-active + .slick-slide 
@@ -164,6 +189,8 @@
             &__text 
                 margin-top: 48px
                 line-height: 1.6
+                +max-screen(1200px)
+                    margin-top: 32px
                 +max-screen($breakpoint-md)
                     margin-top: 24px
             &__button 
@@ -197,13 +224,22 @@
                 justify-content: space-between
                 padding-left: 20px
                 align-items: flex-end
+                font-weight: 300
             &__title 
                 height: 420px 
+                font-weight: 300
                 +max-screen($breakpoint-md)
                     height: 305px
+                +max-screen(1200px)
+                    +min-screen(993px)
+                        font-size: 36px
             &__image 
-                width: 100%
-                max-width: 460px
+                width: 55%
+                max-width: 400px
+                +max-screen(1440px)
+                    width: 60%
+                +max-screen($breakpoint-md)
+                    width: 100%
                 +max-screen($breakpoint-md)
                     .favorities__sliderItem__text,
                     .favorities__sliderItem__button 
@@ -289,6 +325,7 @@
     +max-screen($breakpoint-md)
         padding-top: 112px
         padding-bottom: 80px
+        overflow: hidden
     &__title 
         max-width: 850px 
         margin: auto
@@ -306,10 +343,13 @@
     &__text 
         font-size: 24px
         line-height: 1.6
-        margin-bottom: 24px
         padding-right: 77px
         padding-top: 23px
         padding-bottom: 23px
+        p
+            margin-bottom: 24px
+            &:last-child
+                margin-bottom: 0
         +max-screen(1200px)
             font-size: 22px
             padding: 0 10px 
@@ -323,6 +363,10 @@
     &__image 
         padding-left: 46px
         padding-right: 40px
+        position: relative
+        transform: translateY(-100px)
+        +max-screen($breakpoint-lg)
+            transform: none
         +max-screen(1200px)
             padding-left: 16px
             padding-right: 10px
@@ -331,13 +375,20 @@
         img
             width: 100%
             transform: rotate(12deg)
+            position: absolute
+            left: 46px
+            max-width: calc( 100% - 86px )
+            top: 0
             +max-screen($breakpoint-lg)
                 transform: none
                 max-width: 80%
                 margin: auto 
                 display: block 
+                position: static
+                transform: none !important
             +max-screen($breakpoint-md)
                 max-width: 100%
+                
 .features
     background: #D3E3D7
     padding-top: 120px
@@ -444,38 +495,29 @@
             text-align: center
     &__button
         margin-top: 40px
-        padding: 4px 24px 
+        padding: 6px 28px 
         position: relative
+        transition: .3s 
+        opacity: 0.7
+        background: #d3e3d7
+        border-radius: 15px
         +max-screen($breakpoint-lg)
             margin-top: 24px
         +max-screen($breakpoint-md)
             margin: auto 
             margin-top: 12px
-        &::before 
-            content: ""
-            position: absolute
-            left: 0 
-            top: 50%
-            transform: translateY(-50%)
-            transition: .3s 
-            width: 16px
-            height: 16px
-            background: #D3E3D7
-            border-radius: 50%
         a 
             line-height: 1.6
             display: inline-block
             z-index: 1
             position: relative
+            font-size: 22px
             +max-screen($breakpoint-lg)
-                font-size: 18px
+                font-size: 20px
             +max-screen($breakpoint-md)
-                font-size: 16px
+                font-size: 18px
         &:hover 
-            &::before 
-                width: 100%
-                height: 100%
-                border-radius: 15px
+            opacity: 1
 .testimonial
     padding-top: 120px
     padding-bottom: 120px
@@ -548,6 +590,20 @@
     +max-screen($breakpoint-md)
         padding-top: 80px
         padding-bottom: 80px
+    .sbi_photo 
+        position: relative
+        +max-screen($breakpoint-lg)
+            transform: none !important
+        img 
+            position: absolute
+            left: 0
+            display: block !important
+            top: 0
+            height: 100% !important
+            object-fit: cover
+            +max-screen($breakpoint-lg)
+                position: static
+                
     &__title 
         text-align: right
         +max-screen(1200px)

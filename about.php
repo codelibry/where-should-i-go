@@ -13,10 +13,10 @@ if($title || $text):
     <div class="container">
         <div class="hero__content">
             <?php if($title): ?>
-                <h1 class="hero__title"><?php echo $title; ?></h1>
+                <h1 class="hero__title animate fade-up"><?php echo $title; ?></h1>
             <?php endif; ?>
             <?php if($text): ?>
-                <div class="hero__text"><?php echo $text; ?></div>
+                <div class="hero__text animate fade-up delay-1"><?php echo $text; ?></div>
             <?php endif; ?>
         </div>
     </div>
@@ -31,7 +31,7 @@ $image = get_field('image');
 <section class="about">
     <div class="container">
         <div class="about__content">
-            <div class="about__textWrapper">
+            <div class="about__textWrapper animate fade-right">
                 <?php if($title): ?>
                     <h2 class="about__title"><?php echo $title; ?></h2>
                 <?php endif; ?>
@@ -40,7 +40,7 @@ $image = get_field('image');
                 <?php endif; ?>
             </div>
             <?php if($image): ?>
-                <div class="about__image"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></div>
+                <div class="about__image parallax-img-wrapper"><div class="animate fade-left delay-1"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
             <?php endif; ?>
         </div>
     </div>
@@ -52,7 +52,7 @@ if(have_rows('accordion_lines')):
 <section class="accordion">
     <div class="container">
         <?php if($title): ?>
-            <h3 class="accordion__title"><?php echo $title; ?></h3>
+            <h3 class="accordion__title animate fade-up"><?php echo $title; ?></h3>
         <?php endif; ?>
         <div class="accordion__list">
             <?php while(have_rows('accordion_lines')): the_row(); ?>
@@ -61,7 +61,7 @@ if(have_rows('accordion_lines')):
                 $content = get_sub_field('content');
                 if($title || $content):
                 ?>
-                    <div class="accordion__listItem<?php if($content){echo ' has-content';} ?>">
+                    <div class="accordion__listItem<?php if($content){echo ' has-content';} ?> animate fade-up">
                         <?php if($title): ?>
                             <h5 class="accordion__listItem__title"><?php echo $title; ?></h5>
                         <?php endif; ?>
@@ -81,7 +81,7 @@ if($text):
 ?>
 <section class="about__textBlock">
     <div class="container">
-        <div class="about__textBlock__content">
+        <div class="about__textBlock__content animate fade-up">
             <?php echo $text; ?>
         </div>
     </div>
@@ -90,7 +90,7 @@ if($text):
 <?php if(have_rows('teaser_blocks')): ?>
 <section class="teaser">
     <div class="container">
-        <?php while(have_rows('teaser_blocks')): the_row(); ?>
+        <?php $i = 1; while(have_rows('teaser_blocks')): the_row(); ?>
             <?php 
             $title = get_sub_field('title');
             $text = get_sub_field('text');
@@ -99,10 +99,18 @@ if($text):
             $link_label = get_sub_field('link_label');
             $link_type = get_sub_field('link_type');
             $download_file = get_sub_field('download_file');
+            if($i % 2 == 0){
+                $textAnimation = 'left';
+                $imageAnimation = 'right';
+            }
+            else{
+                $textAnimation = 'right';
+                $imageAnimation = 'left';
+            }
             ?>
             <div class="teaser__content row">
                 <?php if($title || $text || $link): ?>
-                    <div class="teaser__textWrapper">
+                    <div class="teaser__textWrapper animate fade-<?php echo $textAnimation; ?>">
                         <?php if($title): ?>
                             <h2 class="teaser__title"><?php echo $title; ?></h2>
                         <?php endif; ?>
@@ -123,10 +131,10 @@ if($text):
                     </div>
                 <?php endif; ?>
                 <?php if($image): ?>
-                    <div class="teaser__image"><img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title']; ?>"></div>
+                    <div class="teaser__image parallax-img-wrapper"><div class="animate fade-<?php echo $imageAnimation; ?> delay-1"><img src="<?php echo $image['url'] ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
                 <?php endif; ?>
             </div>
-        <?php endwhile; ?>
+        <?php $i++; endwhile; ?>
     </div>
 </section>
 <?php endif; ?>
