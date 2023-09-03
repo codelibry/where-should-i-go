@@ -52,38 +52,30 @@ $slider = get_field('favorities_slider');
                 <?php endif; ?>
             </div>
         <?php endif; ?>
-        <?php if($slider): ?>
-            <div class="favorities__slider animate fade-up delay-3">
-                <?php foreach($slider as $post): setup_postdata( $post ); ?>
-                    <?php 
-                    $price = get_field('price'); 
-                    $button = get_field('button_label'); 
-                    $email_text = get_field('email_text'); 
-                    $file = get_field('file');
-                    ?>
-                    <div class="favorities__sliderItem product product-text" data-email-text="<?php if($email_text): echo $email_text; endif; ?>" data-file="<?php if($file): echo $file; endif; ?>" data-text="<?php the_content(); ?>">
-                        <div class="favorities__sliderItem__head">
-                            <div class="favorities__sliderItem__contentWrapper">
-                                <div class="favorities__sliderItem__content h4">
-                                    <h4 class="favorities__sliderItem__title product-title"><?php the_title(); ?></h4>
-                                    <?php if($price == '0'): ?>
-                                        <div class="favorities__sliderItem__price product-price"><span>Free</span></div>
-                                    <?php else: ?>
-                                        <div class="favorities__sliderItem__price product-price"><span><?php echo $price; ?></span>€</div>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                            <div class="favorities__sliderItem__image product-image">
-                                <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="">
-                                <?php if(!empty(get_the_excerpt(  ))): ?>
-                                    <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
-                                <?php endif; ?>
-                                <?php if($button): ?>
-                                    <div class="favorities__sliderItem__button show-product-popup"><?php echo $button; ?></div>
+    </div>
+    <?php if($slider): ?>
+        <div class="favorities__slider animate fade-up delay-3" slide-index="1">
+            <?php foreach($slider as $post): setup_postdata( $post ); ?>
+                <?php 
+                $price = get_field('price'); 
+                $button = get_field('button_label'); 
+                $email_text = get_field('email_text'); 
+                $file = get_field('file');
+                ?>
+                <div class="favorities__sliderItem product product-text" data-email-text="<?php if($email_text): echo $email_text; endif; ?>" data-file="<?php if($file): echo $file; endif; ?>" data-text="<?php the_content(); ?>">
+                    <div class="favorities__sliderItem__head">
+                        <div class="favorities__sliderItem__contentWrapper">
+                            <div class="favorities__sliderItem__content h4">
+                                <h4 class="favorities__sliderItem__title product-title"><?php the_title(); ?></h4>
+                                <?php if($price == '0'): ?>
+                                    <div class="favorities__sliderItem__price product-price"><span>Free</span></div>
+                                <?php else: ?>
+                                    <div class="favorities__sliderItem__price product-price"><span><?php echo $price; ?></span>€</div>
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <div class="favorities__sliderItem__body">
+                        <div class="favorities__sliderItem__image product-image">
+                            <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="">
                             <?php if(!empty(get_the_excerpt(  ))): ?>
                                 <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
                             <?php endif; ?>
@@ -92,14 +84,22 @@ $slider = get_field('favorities_slider');
                             <?php endif; ?>
                         </div>
                     </div>
-                <?php endforeach; wp_reset_postdata(  ); ?>
-            </div>
-        <?php endif; ?>
-        <div class="favorities__bottom">
-            <div class="favorities__arrows">
-                <div class="favorities__arrow favorities__leftArrow"></div>
-                <div class="favorities__arrow favorities__rightArrow"></div>
-            </div>
+                    <div class="favorities__sliderItem__body">
+                        <?php if(!empty(get_the_excerpt(  ))): ?>
+                            <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
+                        <?php endif; ?>
+                        <?php if($button): ?>
+                            <div class="favorities__sliderItem__button show-product-popup"><?php echo $button; ?></div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; wp_reset_postdata(  ); ?>
+        </div>
+    <?php endif; ?>
+    <div class="favorities__bottom">
+        <div class="favorities__arrows">
+            <div class="favorities__arrow favorities__leftArrow"></div>
+            <div class="favorities__arrow favorities__rightArrow"></div>
         </div>
     </div>
 </section>

@@ -41,6 +41,7 @@
     "gsap": "^3.6.1",
     "lottie-web": "^5.7.11",
     "plyr": "^3.6.8",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swiper": "^10.2.0"
   }
 }
