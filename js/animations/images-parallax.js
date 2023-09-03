@@ -13,12 +13,12 @@ function parrallax_images() {
         //responsive
         //let mm = gsap.matchMedia();
         gsap.to(img ,{
-            yPercent: -25,
+            yPercent: -30,
             //stagger: 0.5,
             scrollTrigger: {
                 trigger: img,
                 start: 'top bottom',
-                end: 'bottom top',
+                end: 'bottom center',
                 //markers: true,
                 scrub: true, 
                 //pin: true
