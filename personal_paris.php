@@ -35,7 +35,7 @@ $image = get_field('image');
         <?php if($text || $image): ?>
             <div class="contentBlock__textWrapper row">
                 <?php if($text): ?>
-                    <div class="contentBlock__text col-lg-7 col-12 animate fade-right delay-1"><?php echo $text; ?></div>
+                    <div class="contentBlock__text  p3 col-lg-7 col-12 animate fade-right delay-1"><?php echo $text; ?></div>
                 <?php endif; ?>
                 <?php if($image): ?>
                     <div class="contentBlock__image col-lg-4 col-12 parallax-img-wrapper"><div class="animate fade-left delay-2"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
@@ -135,7 +135,7 @@ $link = get_field('cta_button');
                             <h2 class="teaser__title"><?php echo $title; ?></h2>
                         <?php endif; ?>
                         <?php if($text): ?>
-                            <div class="teaser__text"><?php echo $text; ?></div>
+                            <div class="teaser__text p3"><?php echo $text; ?></div>
                         <?php endif; ?>
                         <?php if($link_type == 'Link'): ?>
                             <div class="teaser__button">
