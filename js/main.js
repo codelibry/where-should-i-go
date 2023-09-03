@@ -6,7 +6,7 @@ import { header } from './template-parts/header/header';
 
 // Animations
 import { appearence } from './animations/appearence';
-import { parrallax_images } from './animations/images-paralax'
+import { parrallax_images } from './animations/images-parallax'
 // Blocks
 import { videoBlock } from './template-parts/blocks/video';
 import { ctaAnimation } from './template-parts/blocks/cta';
