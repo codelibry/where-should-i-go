@@ -31679,3 +31679,5 @@ node_modules/yocto-queue/readme.md
 assets/.DS_Store
 sass/.DS_Store
 template-parts/.DS_Store
+js/animations/images-paralax.js
+sass/blocks/_orderSubmitPopup.sass

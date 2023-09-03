@@ -28,7 +28,7 @@ function parrallax_images() {
         
         });*/
     });
-    $(".sbi_photo_wrap").each(function(){
+    $(".sbi_photo_wrap").each(function(){ 
         let img = $(this).find('.sbi_photo');
         let path = $(this).data('path');
         let disabled = false;
