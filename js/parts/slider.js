@@ -40,7 +40,7 @@ function basicSliders(){
                 clearTimeout(blockTimeout);
                     blockTimeout = setTimeout(function(){
                     blocked = false;
-                }, 25);
+                }, 70);
             
                 if ((deltaY < 1 && deltaY > -1) && ((deltaX > 10 && deltaX > prevDeltaX) || (deltaX < -10 && deltaX < prevDeltaX) || !blocked)) {
                     e.preventDefault();

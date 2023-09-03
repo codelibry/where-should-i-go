@@ -21,7 +21,7 @@ $text = get_field('hero_text', get_option('page_for_posts'));
 
                 <?php if($title): ?>
                     <h1 class="hero__title"><?php echo $title; ?></h1>
-                <?php endif; ?>
+                <?php endif; ?> 
 
                 <?php if($text): ?>
                     <div class="hero__text"><?php echo $text; ?></div>
@@ -39,9 +39,17 @@ $text = get_field('hero_text', get_option('page_for_posts'));
             <div class="favoritiesBlock__list">
                 <?php if(have_posts()) : ?>
 
-                    <?php while(have_posts()): the_post(); ?>
+                    <?php $i = 1; while(have_posts()): the_post(); 
 
-                    <div class="favoritiesBlock__listItem product">
+                    if($i % 2 == 0){
+                        $delay = ' delay-2';
+                    } ?>
+
+                    <?php if($i % 2 != 0): ?>
+                        <div class="favoritiesBlock__row">
+                    <?php endif; ?>
+
+                    <div class="favoritiesBlock__listItem product animate fade-up<?php echo $delay; ?>">
                         <div class="favoritiesBlock__listItem__head">
                             <div class="favoritiesBlock__listItem__sideContent">
                                 <div class="favoritiesBlock__listItem__content h4">
@@ -63,7 +71,10 @@ $text = get_field('hero_text', get_option('page_for_posts'));
                             </div>
                         </div>
                     </div>
-                    <?php endwhile;  ?>
+                    <?php if($i % 2 == 0): ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php $i++; endwhile;  ?>
 
                 <?php else : ?>
                     <h3><?php _e('Sorry, no posts to show yet', 'wsig');?></h3>
