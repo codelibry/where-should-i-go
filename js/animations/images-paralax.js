@@ -20,7 +20,7 @@ function parrallax_images() {
                 start: 'top bottom',
                 end: 'bottom top',
                 //markers: true,
-                scrub: true,
+                scrub: true, 
                 //pin: true
             }
         });
