@@ -444,12 +444,12 @@
             flex-direction: column 
             align-items: center
     &__text 
-        font-size: 24px
+        font-size: 18px
         line-height: 1.6
-        +max-screen(1200px)
-            font-size: 20px
+        +min-screen($breakpoint-xxl)
+            font-size: 24px
         +max-screen($breakpoint-md)
-            font-size: 18px
+            font-size: 16px
         p
             margin-bottom: 32px
             +max-screen($breakpoint-md)
@@ -457,7 +457,7 @@
             &:last-child 
                 margin-bottom: 0
         &Wrapper 
-            width: 53.852%
+            width: 50%
             +max-screen(1350px)
                 width: 48%
             +max-screen($breakpoint-lg)
