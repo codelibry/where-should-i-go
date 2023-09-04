@@ -192,14 +192,14 @@
             +max-screen($breakpoint-md)
                 transform: rotate(-3deg)
                 margin: 0 16px
-                width: 96vw
-                min-width: 96vw
+                width: 92vw
+                min-width: 92vw
             &__head
                 width: 100%
                 display: flex !important
                 align-items: stretch
                 +max-screen($breakpoint-md)
-                    justify-content: space-between
+                    justify-content: flex-start
                     padding-right: 30px
             &__body 
                 display: none 
@@ -271,6 +271,7 @@
                     max-height: 565px
                     +max-screen($breakpoint-md)
                         max-height: 380px
+                        max-width: 100%
     &__title 
         line-height: 1.2
         margin-bottom: 40px
