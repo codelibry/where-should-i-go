@@ -12,7 +12,17 @@
         padding-top: 80px
         padding-bottom: 42px
         overflow: hidden
-    &__title 
+    &__button
+        display: none
+        +max-screen($breakpoint-md)
+            display: block
+            position: fixed
+            bottom: 32px
+            right: 32px
+            padding: 12px 28px
+            border: 2px solid #000
+            border-radius: 25px
+            background: $color-green
     &__content
         align-items: flex-end
     &__form

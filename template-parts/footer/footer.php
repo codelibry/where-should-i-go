@@ -3,7 +3,7 @@ $title = get_field('form_title', 'options');
 $form = get_field('form', 'options');
 $contact = get_field('footer_contact_text', 'options');
 $privacy = get_field('footer_privacy_text', 'options');
-
+$button = get_field('footer_mobile_button', 'options');
 ?>
 <footer class="footer">
     <div class="container">
@@ -40,5 +40,8 @@ $privacy = get_field('footer_privacy_text', 'options');
                 <?php endif; ?>
             </div>
         </div>
+        <?php if($button): ?>
+            <div class="footer__button"><a href="<?php echo $button['url']; ?>"><?php echo $button['title']; ?></a></div>
+        <?php endif; ?>
     </div>
 </footer>
