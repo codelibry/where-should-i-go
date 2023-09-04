@@ -227,7 +227,7 @@ if($image_slider):
             <h2 class="imagesSlider__title animate fade-right">
                 <?php echo $title; ?>
             </h2>
-        <?php endif; ?>
+        <?php endif; ?> 
         <div class="imagesSlider__wrapper animate fade-left delay-1">
             <?php echo $image_slider; ?>
         </div>
