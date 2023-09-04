@@ -183,12 +183,12 @@
             transition: .3s
             margin: 0 12px
             +max-screen(1440px)
-                width: 40vw
-                min-width: 40vw
+                width: 4vw
+                min-width: 4vw
             +max-screen($breakpoint-lg)
                 transform: rotate(-6deg)
-                width: 46vw
-                min-width: 46vw
+                width: 56vw
+                min-width: 56vw
             +max-screen($breakpoint-md)
                 transform: rotate(-3deg)
                 margin: 0 16px
@@ -245,6 +245,9 @@
                 padding-left: 20px
                 align-items: flex-end
                 font-weight: 300
+                &Wrapper 
+                    +max-screen($breakpoint-lg)
+                        position: absolute
             &__title 
                 height: 420px 
                 font-weight: 300
@@ -269,9 +272,10 @@
                     width: 100%
                     object-fit: cover
                     max-height: 565px
+                    +max-screen($breakpoint-lg)
+                        max-width: 100%
                     +max-screen($breakpoint-md)
                         max-height: 380px
-                        max-width: 100%
     &__title 
         line-height: 1.2
         margin-bottom: 40px

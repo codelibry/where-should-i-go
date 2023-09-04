@@ -167,7 +167,7 @@ function basicSliders(){
             });
         }
         //Slide image width
-        if(w <= 768){
+        if(w <= 993){
             $('.favorities__sliderItem').each(function(){
                 var titleWidth = $(this).find('.favorities__sliderItem__content').outerWidth();
                 var slideWIdth = $(this).find('.favorities__sliderItem__head').outerWidth();
