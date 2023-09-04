@@ -172,7 +172,8 @@ function basicSliders(){
                 var titleWidth = $(this).find('.favorities__sliderItem__content').outerWidth();
                 var slideWIdth = $(this).find('.favorities__sliderItem__head').outerWidth();
                 $('.favorities__sliderItem__image').css('width', slideWIdth - titleWidth);
-            })
+            });
+            alert('Hello');
         }
     })
     
