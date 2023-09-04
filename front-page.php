@@ -20,12 +20,7 @@ $mobile_link = get_field('hero_mobile_link');
                     <?php if($text): ?>
                         <div class="fpHero__text"><?php echo $text; ?></div>
                     <?php endif; ?>
-                    <?php if($link): ?>
-                        <div class="fpHero__link button"><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></div>
-                    <?php endif; ?>
-                    <?php if($mobile_link): ?>
-                        <div class="fpHero__mobileLink button"><a href="<?php echo $mobile_link['url']; ?>"><?php echo $mobile_link['title']; ?></a></div>
-                    <?php endif; ?>
+                    
                 </div>
             <?php endif; ?>
         </div>
