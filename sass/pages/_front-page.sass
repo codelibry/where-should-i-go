@@ -3,7 +3,11 @@
     &__image 
         padding-right: 5px 
         position: relative
-        transform: translateY(100px) rotate(-8deg)
+        transform: translateY(220px) rotate(-8deg)
+        +max-screen(1440px)
+            transform: translateY(180px) rotate(-8deg)
+        +max-screen(1200px)
+            transform: translateY(120px) rotate(-8deg)
         +max-screen($breakpoint-lg)
             text-align: center
             transform: none
