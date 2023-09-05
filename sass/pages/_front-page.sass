@@ -115,6 +115,8 @@
     overflow: hidden
     padding-bottom: 212px
     background: #fff
+    +max-screen(1800px)
+        padding-bottom: 152px
     +max-screen(1200px)
         padding-top: 100px
         padding-bottom: 122px
@@ -205,7 +207,7 @@
             &__text 
                 margin-top: 48px
                 line-height: 1.6
-                +max-screen($breakpoint-xxl)
+                +max-screen(1440px)
                     margin-top: 24px
                     font-size: 18px
                 +max-screen(1200px)
@@ -219,7 +221,7 @@
                 line-height: 1.6
                 display: inline-block
                 cursor: pointer
-                +max-screen($breakpoint-xxl)
+                +max-screen(1440px)
                     margin-top: 20px
                     font-size: 18px
                 &::before 
@@ -275,7 +277,7 @@
                     width: 100%
                     object-fit: cover
                     max-height: 480px
-                    +max-screen($breakpoint-xxl)
+                    +max-screen(1440px)
                         max-height: 440px
                     +max-screen(1200px)
                         max-width: 100%
@@ -297,12 +299,12 @@
             font-size: 20px
     &__link 
         margin-top: 120px
-        +max-screen(1200px)
+        +max-screen(1800px)
             margin-top: 82px
         +max-screen($breakpoint-lg)
             margin-top: 64px
         +max-screen($breakpoint-md)
-            margin-top: 64px
+            margin-top: 48px
             padding: 12.5px 0
             border-bottom: 2px solid $color-green
             a 
@@ -393,8 +395,9 @@
             margin-bottom: 24px
             &:last-child
                 margin-bottom: 0
-        +max-screen(1200px)
+        +max-screen(1800px)
             font-size: 22px
+        +max-screen(1200px)
             padding: 0 10px 
         +max-screen($breakpoint-lg)
             font-size: 20px
