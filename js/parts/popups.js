@@ -22,7 +22,7 @@ function initPopups() {
                 $('.orderPopup__form input[type="submit"]').value('Submit');
             }
             else{
-                $('.orderPopup__form input[type="submit"]').value('Buy');
+                $('.orderPopup__form input[type="submit"]').attr('value', 'Buy');
             }
             setTimeout(() => {
                 var imageHeight = $('.orderPopup__productImage img').height();
