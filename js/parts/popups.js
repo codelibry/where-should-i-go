@@ -18,6 +18,12 @@ function initPopups() {
             $('.orderPopup input[type="number"]').val($(this).closest('.product').find('.product-price span').html());
             $('.orderPopup .email-text .field-wrap input').val(productEmailText);
             $('.orderPopup .email-file .field-wrap input').val(productFile);
+            if(productPrice == 'Free'){
+                $('.orderPopup__form input[type="submit"]').value('Submit');
+            }
+            else{
+                $('.orderPopup__form input[type="submit"]').value('Buy');
+            }
             setTimeout(() => {
                 var imageHeight = $('.orderPopup__productImage img').height();
             $('.orderPopup__productContent').css('height', imageHeight);
