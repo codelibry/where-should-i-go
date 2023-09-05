@@ -3,11 +3,13 @@
     &__image 
         padding-right: 5px 
         position: relative
-        transform: translateY(220px) rotate(-8deg)
+        transform: translateY(200px) rotate(-8deg)
         +max-screen(1800px)
-            transform: translateY(180px) rotate(-8deg)
+            transform: translateY(230px) rotate(-8deg)
         +max-screen(1200px)
-            transform: translateY(120px) rotate(-8deg)
+            transform: translateY(210px) rotate(-8deg)
+        +max-screen(1100px)
+            transform: translateY(190px) rotate(-8deg)
         +max-screen($breakpoint-lg)
             text-align: center
             transform: none
@@ -405,7 +407,7 @@
         padding-left: 16px
         padding-right: 40px
         position: relative
-        transform: translateY(-100px)
+        transform: translateY(-50px)
         +max-screen($breakpoint-lg)
             transform: none
         +max-screen(1200px)
@@ -632,6 +634,10 @@
     +max-screen($breakpoint-md)
         padding-top: 80px
         padding-bottom: 80px
+    #sb_instagram .sbi_photo_wrap
+        transform: translateY(55px)
+        +max-screen($breakpoint-lg)
+            transform: none
     .sbi_photo 
         position: relative
         +max-screen($breakpoint-lg)
