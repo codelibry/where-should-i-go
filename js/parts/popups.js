@@ -18,7 +18,7 @@ function initPopups() {
             $('.orderPopup input[type="number"]').val($(this).closest('.product').find('.product-price span').html());
             $('.orderPopup .email-text .field-wrap input').val(productEmailText);
             $('.orderPopup .email-file .field-wrap input').val(productFile);
-            if(productPrice == 'Free'){
+            if($(this).closest('.product').find('.product-price span').html() == 'Free'){
                 $('.orderPopup__form input[type="submit"]').value('Submit');
             }
             else{
