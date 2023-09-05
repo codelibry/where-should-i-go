@@ -128,17 +128,6 @@
             flex-direction: column
             align-items: flex-start
     &__slider 
-        //margin-top: 80px
-        //max-width: 1210px
-        //padding-left: 50px
-        //margin-left: auto
-        //margin-right: calc( (-100vw + 1532px) / 2)
-        //max-width: calc( 1210px + (100vw - 1532px) / 2)
-        //display: flex 
-        //flex-wrap: nowrap 
-        //opacity: 0
-        //transition: .5s
-        
         display: flex !important
         overflow-x: scroll
         display: flex
@@ -147,6 +136,7 @@
         -ms-overflow-style: none
         scrollbar-width: none
         padding: 50px 0
+        margin-top: 80px
         &::-webkit-scrollbar 
             display: none
         &.active 
@@ -158,16 +148,15 @@
             margin-left: 0
             margin-right: 0
             max-width: 100%
+            padding-left: 50px 
         +max-screen($breakpoint-lg)
-            max-width: calc( 100% + 130px )
-            padding-left: 50px
-            margin-left: -35px
-            margin-right: -35px
+            margin-top: 56px
         +max-screen($breakpoint-md)
             max-width: 100% 
             padding-left: 0
             margin-left: 0
             margin-right: 0
+            margin-top: 48px
         .slick-list
             overflow: visible
             padding-top: 24px
@@ -183,23 +172,24 @@
             transition: .3s
             margin: 0 12px
             +max-screen(1440px)
-                width: 40vw
-                min-width: 40vw
+                width: 44vw
+                min-width: 44vw
             +max-screen($breakpoint-lg)
                 transform: rotate(-6deg)
-                width: 46vw
-                min-width: 46vw
+                width: 56vw
+                min-width: 56vw
             +max-screen($breakpoint-md)
                 transform: rotate(-3deg)
                 margin: 0 16px
-                width: 96vw
-                min-width: 96vw
+                width: 92vw
+                min-width: 92vw
             &__head
                 width: 100%
                 display: flex !important
                 align-items: stretch
                 +max-screen($breakpoint-md)
-                    justify-content: center
+                    justify-content: flex-start
+                    padding-right: 30px
             &__body 
                 display: none 
                 +max-screen($breakpoint-md)
@@ -244,7 +234,10 @@
                 padding-left: 20px
                 align-items: flex-end
                 font-weight: 300
-                width: 100%
+                &Wrapper 
+                    +max-screen(1200px)
+                        position: absolute
+                        left: 0
             &__title 
                 height: 420px 
                 font-weight: 300
@@ -269,6 +262,10 @@
                     width: 100%
                     object-fit: cover
                     max-height: 565px
+                    +max-screen($breakpoint-lg)
+                        max-width: 100%
+                    +max-screen($breakpoint-md)
+                        max-height: 380px
     &__title 
         line-height: 1.2
         margin-bottom: 40px
@@ -332,6 +329,16 @@
         transform: rotate(180deg)
     &__rightArrow
         transform: translateY(-1px)
+    &__bottom 
+        padding-left: 100px
+        padding-right: 100px
+        max-width: 1632px
+        +max-screen(1200px)
+            padding-left: 60px
+            padding-right: 60px
+        +max-screen($breakpoint-md)
+            padding-left: 20px
+            padding-right: 20px
 .description 
     background: $color-green
     padding-top: 220px
