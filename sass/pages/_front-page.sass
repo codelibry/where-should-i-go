@@ -146,6 +146,8 @@
         padding: 50px 0
         padding-left: 80px
         margin-top: 80px
+        +max-screen($breakpoint-md)
+            
         &::-webkit-scrollbar 
             display: none
         &.active 
@@ -162,18 +164,18 @@
             margin-top: 56px
         +max-screen($breakpoint-md)
             max-width: 100% 
-            padding-left: 0
             margin-left: 0
             margin-right: 0
             margin-top: 48px
+            overflow: hidden
+            display: block !important
+            padding: 0 25px 
         .slick-list
             overflow: visible
             padding-top: 24px
             padding-bottom: 24px
             +max-screen($breakpoint-md)
-                margin-right: -30px
-                margin-left: -20px
-        
+                margin: 0 -20px 
         &Item 
             width: 35vw
             min-width: 35vw
@@ -192,6 +194,10 @@
                 margin: 0 16px
                 width: 92vw
                 min-width: 92vw
+                display: flex !important
+                justify-content: center
+            +max-screen($breakpoint-sm)
+                display: inline-block !important
             &__head
                 width: 100%
                 display: flex !important
@@ -199,9 +205,14 @@
                 +max-screen($breakpoint-md)
                     justify-content: flex-start
                     padding-right: 30px
+                    position: relative
+                    width: auto
+                +max-screen($breakpoint-sm)
+                    position: static
+                    width: 100%
             &__body 
                 display: none 
-                +max-screen($breakpoint-md)
+                +max-screen($breakpoint-sm)
                     display: block 
                     max-width: 90%
             &__text 
@@ -268,7 +279,7 @@
                     width: 60%
                 +max-screen($breakpoint-md)
                     width: 100%
-                +max-screen($breakpoint-md)
+                +max-screen($breakpoint-sm)
                     width: auto
                     .favorities__sliderItem__text,
                     .favorities__sliderItem__button 
