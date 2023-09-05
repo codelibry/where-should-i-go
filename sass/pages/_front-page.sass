@@ -203,6 +203,8 @@
             &__text 
                 margin-top: 48px
                 line-height: 1.6
+                +max-screen($breakpoint-xxl)
+                    margin-top: 24px
                 +max-screen(1200px)
                     margin-top: 32px
                 +max-screen($breakpoint-md)
@@ -214,6 +216,8 @@
                 line-height: 1.6
                 display: inline-block
                 cursor: pointer
+                +max-screen($breakpoint-xxl)
+                    margin-top: 20px
                 &::before 
                     content: ""
                     width: 16px
@@ -267,6 +271,8 @@
                     width: 100%
                     object-fit: cover
                     max-height: 480px
+                    +max-screen($breakpoint-xxl)
+                        max-height: 440px
                     +max-screen(1200px)
                         max-width: 100%
                     +max-screen($breakpoint-md)
