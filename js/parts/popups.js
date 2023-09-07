@@ -45,11 +45,16 @@ function initPopups() {
                 $(this).find('input').prop('checked', false);
             }
         });
-        var url = window.location.href.split('?'); 
-        var urlPart = url[1].split('&');
-        if(urlPart[1] == 'nfs_checkout=success'){
-            $('body').addClass('submit-popup');
+        // Updated to ensure we avoid undefined state
+        if (window.location.href.indexOf("?") > -1) {
+            var url = window.location.href.split('?'); 
+            var urlPart = url[1].split('&');
+            if(urlPart[1] == 'nfs_checkout=success'){
+                $('body').addClass('submit-popup');
+            }
         }
+       
+        
         
     });
 }
