@@ -40,7 +40,7 @@ $image = get_field('image');
                 <?php endif; ?>
             </div>
             <?php if($image): ?>
-                <div class="about__image parallax-img-wrapper"><div class="animate fade-left delay-1"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
+                <div class="about__image"><div class="animate fade-left parallax-img-wrapper delay-1"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
             <?php endif; ?>
         </div>
     </div>
@@ -131,7 +131,7 @@ if($text):
                     </div>
                 <?php endif; ?>
                 <?php if($image): ?>
-                    <div class="teaser__image parallax-img-wrapper"><div class="animate fade-<?php echo $imageAnimation; ?> delay-1"><img src="<?php echo $image['url'] ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
+                    <div class="teaser__image"><div class="animate parallax-img-wrapper fade-<?php echo $imageAnimation; ?> delay-1"><img src="<?php echo $image['url'] ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
                 <?php endif; ?>
             </div>
         <?php $i++; endwhile; ?>

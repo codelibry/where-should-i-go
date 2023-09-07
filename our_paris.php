@@ -60,7 +60,9 @@ if($the_query->have_posts()):
                         </div>
                     </div>
                     <div class="favoritiesBlock__listItem__image product-image">
-                        <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="">
+                        <div class="parallax-img-wrapper">
+                            <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
+                        </div>
                     </div>
                 </div>
                 <div class="favoritiesBlock__listItem__body">
@@ -92,8 +94,8 @@ $button = get_field('button');
     <div class="container">
         <div class="parisContent__wrapper">
             <?php if($image): ?>
-                <div class="parisContent__image parallax-img-wrapper">
-                    <div class="animate fade-right"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div>
+                <div class="parisContent__image">
+                    <div class="animate fade-right parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div>
                 </div>
             <?php endif; ?>
             <?php if($title || $text || $button): ?>

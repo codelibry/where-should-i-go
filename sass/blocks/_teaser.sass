@@ -64,24 +64,26 @@
         flex: 0 0 47.5%
         text-align: right
         position: relative
-        transform: translateY(-175px)
+        transform: rotate(-12deg)
         +max-screen($breakpoint-lg)
             max-width: 80%
             flex: 0 0 80%
             margin-top: 36px
+            transform: none !important
             transform: none
         +max-screen($breakpoint-md)
             margin-top: 36px
             max-width: 100%
             flex: 0 0 100%
+        .parallax-img-wrapper
+            padding-bottom: 65%
         img 
-            transform: rotate(-12deg)
+            
             position: absolute
             top: 0
             width: calc( 91% - 32px )
             right: 0 
-            +max-screen(1600px)
-                transform: translateX(-20px) rotate(-12deg) 
+             
             +max-screen($breakpoint-lg)
                 width: 100%
                 transform: none !important
@@ -106,14 +108,17 @@
             .teaser__image 
                 text-align: left
                 padding-left: 30px
+                transform: rotate(8deg)  
                 +max-screen($breakpoint-lg)
                     padding-left: 16px
+                    transform: none
                 img 
                     width: 93%
-                    transform: rotate(8deg)  
+                    
                     width: calc( 93% - 46px)                  
                     left: 30px 
                     +max-screen($breakpoint-lg)
                         width: 100%
-                        transform: none
+                        left: 0
+                        
                         

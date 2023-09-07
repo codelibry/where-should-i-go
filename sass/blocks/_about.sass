@@ -37,22 +37,29 @@
     &__image 
         width: 36.4%
         position: relative
-        transform: translateY(-140px)
+        // transform: translateY(-140px)
         +max-screen(1200px)
             width: 42%
         +max-screen($breakpoint-lg)
             width: 80%
             margin-top: 48px
-            transform: none
+            // transform: none
         +max-screen($breakpoint-md)
             width: 100%
             margin-top: 36px
+        .parallax-img-wrapper.fade-left.in
+            transform: rotate(12deg) translateX(0)
+            padding-bottom: 68%
+            +max-screen($breakpoint-lg)
+                transform: none
         img 
             width: 100%
-            transform: rotate(12deg)
+            
             position: absolute
             left: 0
             top: 0
+            object-fit: cover
+            object-position: top
             +max-screen($breakpoint-lg)
                 transform: none !important
                 position: static

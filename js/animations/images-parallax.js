@@ -11,23 +11,31 @@ function parrallax_images() {
         let disabled = false;
 
         //responsive
-        //let mm = gsap.matchMedia();
-        gsap.to(img ,{
-            yPercent: -30,
-            //stagger: 0.5,
-            scrollTrigger: {
-                trigger: img,
-                start: 'top bottom',
-                end: 'bottom center',
-                //markers: true,
-                scrub: true, 
-                //pin: true
-            }
-        });
-        /*mm.add("(min-width: 991px)", () => {
+        console.log(ScrollTrigger.version)
+        let mm = ScrollTrigger.matchMedia();
+        console.log(mm);
         
-        });*/
+        ScrollTrigger.matchMedia({
+            '(min-width: 991px)': () => {
+
+            gsap.to(img ,{
+                yPercent: -35,
+                //stagger: 0.5,
+                scrollTrigger: {
+                    trigger: img,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    //markers: true,
+                    scrub: true, 
+                    //pin: true
+                }
+            });
+            
+        }});
+
     });
+
+
     $(".sbi_photo_wrap").each(function(){ 
         let img = $(this).find('.sbi_photo');
         let path = $(this).data('path');

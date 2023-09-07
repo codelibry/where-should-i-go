@@ -33,7 +33,7 @@ $text = get_field('hero_text', get_option('page_for_posts'));
 
     <?php endif; ?>
 
-    <section class="favoritiesBlock">
+    <section class="favoritiesBlock favoritiesBlock--blog">
         <div class="container">
 
             <div class="favoritiesBlock__list">
@@ -57,7 +57,9 @@ $text = get_field('hero_text', get_option('page_for_posts'));
                                 </div>
                             </div>
                             <div class="favoritiesBlock__listItem__image product-image">
-                                <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="">
+                                <div class="parallax-img-wrapper">
+                                    <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
+                                </div>
                             </div>
                         </div>
                         <div class="favoritiesBlock__listItem__body">

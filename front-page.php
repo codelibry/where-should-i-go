@@ -10,7 +10,7 @@ $mobile_link = get_field('hero_mobile_link');
     <div class="container">
         <div class="fpHero__contentWrapper row">
             <?php if($image): ?>
-                <div class="fpHero__image col-md-4 col-12 parallax-img-wrapper"><div class="animate fade-right"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"><img src="<?php echo $image['url']; ?>" class="hidden-img" alt="<?php echo $image['title']; ?>"></div></div>
+                <div class="fpHero__image col-md-4 col-12 "><div class="animate fade-right parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"><img src="<?php echo $image['url']; ?>" class="hidden-img" alt="<?php echo $image['title']; ?>"></div></div>
             <?php endif; ?>
             <?php if($title || $text || $link): ?>
                 <div class="fpHero__content col-md-8 col-12 animate fade-left delay-1">
@@ -75,7 +75,10 @@ $slider = get_field('favorities_slider');
                             </div>
                         </div>
                         <div class="favorities__sliderItem__image product-image">
-                            <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="">
+                            <div class="parallax-img-wrapper">
+                                <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
+                            </div>
+                            
                             <?php if(!empty(get_the_excerpt(  ))): ?>
                                 <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
                             <?php endif; ?>
@@ -121,8 +124,8 @@ $image = get_field('description_image');
                     </div>
                 <?php endif; ?>
                 <?php if($image): ?>
-                    <div class="description__image col-lg-5 col-12 parallax-img-wrapper">
-                        <div class="animate fade-left delay-2"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div>
+                    <div class="description__image col-lg-5 col-12">
+                        <div class="animate fade-left delay-2 parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div>
                     </div>
                 <?php endif; ?>
             </div>

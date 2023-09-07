@@ -38,7 +38,7 @@ $image = get_field('image');
                     <div class="contentBlock__text  p3 col-lg-7 col-12 animate fade-right delay-1"><?php echo $text; ?></div>
                 <?php endif; ?>
                 <?php if($image): ?>
-                    <div class="contentBlock__image col-lg-4 col-12 parallax-img-wrapper"><div class="animate fade-left delay-2"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
+                    <div class="contentBlock__image col-lg-4 col-12"><div class="animate fade-left delay-2 parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
@@ -151,7 +151,7 @@ $link = get_field('cta_button');
                     </div>
                 <?php endif; ?>
                 <?php if($image): ?>
-                    <div class="teaser__image parallax-img-wrapper"><div class="animate fade-<?php echo $imageAnimation; ?> delay-1"><img src="<?php echo $image['url'] ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
+                    <div class="teaser__image"><div class="animate parallax-img-wrapper fade-<?php echo $imageAnimation; ?> delay-1"><img src="<?php echo $image['url'] ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
                 <?php endif; ?>
             </div>
         <?php $i++; endwhile; ?>

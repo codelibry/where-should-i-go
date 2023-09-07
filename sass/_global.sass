@@ -133,3 +133,15 @@
 
 .overflow-hidden
     overflow: hidden !important
+
+.parallax-img-wrapper
+    position: relative
+    overflow: hidden
+    padding-bottom: 100%
+    img.parallax-img
+        position: absolute
+        height: 150%
+        top: 0%
+        object-fit: cover
+        +max-screen($breakpoint-lg)
+            height: 100%

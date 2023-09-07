@@ -13,19 +13,31 @@
             opacity: 0
             +max-screen($breakpoint-lg)
                 display: none
+        .parallax-img-wrapper
+            padding-bottom: 138%
+            height: 0
+            +max-screen($breakpoint-md)
+                padding-bottom: 69%
         .parallax-img
             position: absolute
             left: 0
-            top: 0
+            top: 15%
+            height: 150%
+            width: 100%
             +max-screen(1200px)
                 left: 30px 
             +max-screen($breakpoint-lg)
                 position: static
                 transform: rotate(-8deg) !important
+            +max-screen($breakpoint-lg)
+                left: unset
+                right: 0
         img 
             margin-left: -28px
             width: calc( 100% + 28px )
             margin-bottom: -20px
+            object-fit: cover
+            object-position: 0% 0%
             +max-screen($breakpoint-lg)
                 max-width: 405px
                 margin: auto
@@ -33,6 +45,8 @@
             +max-screen($breakpoint-md)
                 max-width: 50%
                 margin-bottom: 32px
+                left: unset
+                right: 0
             +max-screen(560px)
                 max-width: 54%
                 margin-bottom: 0
@@ -261,9 +275,11 @@
                 img 
                     width: 100%
                     object-fit: cover
-                    max-height: 565px
                     +max-screen($breakpoint-lg)
                         max-width: 100%
+                .parallax-img-wrapper
+                    max-height: 565px
+                    padding-bottom: 150%
                     +max-screen($breakpoint-md)
                         max-height: 380px
     &__title 
@@ -392,7 +408,7 @@
         padding-left: 16px
         padding-right: 40px
         position: relative
-        transform: translateY(-100px)
+        transform: rotate(12deg)
         +max-screen($breakpoint-lg)
             transform: none
         +max-screen(1200px)
@@ -401,7 +417,6 @@
             padding: 0 10px 
         img
             width: 100%
-            transform: rotate(12deg)
             position: absolute
             left: 46px
             max-width: calc( 100% - 86px )
@@ -415,6 +430,8 @@
                 transform: none !important
             +max-screen($breakpoint-md)
                 max-width: 100%
+        .parallax-img-wrapper
+            padding-bottom: 50%
                 
 .features
     background: $color-green
