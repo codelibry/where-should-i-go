@@ -9,30 +9,30 @@ function basicSliders(){
     $(document).ready(function(){
         //Slider Arrows 
         var w = $(window).width();
-        if(w >= 770){
-            $('.favorities__sliderItem:first-child').addClass('active');
-            var slideRange = $('.favorities__sliderItem').eq(2).offset().left - $('.favorities__sliderItem').eq(1).offset().left;
-            $(".favorities__leftArrow").click(function () { 
-                var leftPos = $('.favorities__slider').scrollLeft();
-                $(".favorities__slider").animate({scrollLeft: leftPos - slideRange}, 300); 
-    
-            });
-            $(".favorities__rightArrow").click(function () { 
-                var leftPos = $('.favorities__slider').scrollLeft();
-                $(".favorities__slider").animate({scrollLeft: leftPos + slideRange}, 300); 
-    
-            });
+        if($('.favorities__slider').length > 0){
+            if(w >= 770){
+                $('.favorities__sliderItem:first-child').addClass('active');
+                var slideRange = $('.favorities__sliderItem').eq(2).offset().left - $('.favorities__sliderItem').eq(1).offset().left;
+                $(".favorities__leftArrow").click(function () { 
+                    var leftPos = $('.favorities__slider').scrollLeft();
+                    $(".favorities__slider").animate({scrollLeft: leftPos - slideRange}, 300); 
+        
+                });
+                $(".favorities__rightArrow").click(function () { 
+                    var leftPos = $('.favorities__slider').scrollLeft();
+                    $(".favorities__slider").animate({scrollLeft: leftPos + slideRange}, 300); 
+                });
+            }
+            else{
+                $('.favorities__slider').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: false,
+                    prevArrow: $('.favorities__leftArrow'),
+                    nextArrow: $('.favorities__rightArrow'),
+                });
+            }
         }
-        else{
-            $('.favorities__slider').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: false,
-                prevArrow: $('.favorities__leftArrow'),
-                nextArrow: $('.favorities__rightArrow'),
-            });
-        }
-       
         
         var sliderImgHeight = $('.favorities__slider').find('.favorities__sliderItem:first-child .favorities__sliderItem__image img').height();
         $('.favorities__slider .favorities__sliderItem .favorities__sliderItem__image img').css('height', sliderImgHeight);
