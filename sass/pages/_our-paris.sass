@@ -78,15 +78,14 @@
                     height: auto !important
                     justify-content: space-between
                     margin-bottom: 32px
-                    flex-direction: column
-                +max-screen($breakpoint-md)
-                    flex-direction: row
             &__price
                 font-weight: 300
                 +max-screen($breakpoint-lg)
-                    margin-top: 18px
-                +max-screen($breakpoint-md)
                     margin-top: 0
+                    margin-left: 16px
+                    margin-top: 3px
+                +max-screen($breakpoint-md)
+                    font-size: 22px
             &__image 
                 max-width: 67.63%
                 margin-bottom: 48px
@@ -201,8 +200,9 @@
         margin-top: 40px 
         font-size: 24px 
         line-height: 1.6
-        +max-screen(1200px)
-            font-size: 22px 
+        +max-screen(1800px)
+            font-size: 22px
+        +max-screen(1200px) 
             margin-top: 36px
         +max-screen($breakpoint-lg)
             font-size: 20px

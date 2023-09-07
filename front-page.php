@@ -13,7 +13,7 @@ $mobile_link = get_field('hero_mobile_link');
                 <div class="fpHero__image col-md-4 col-12 "><div class="animate fade-right parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"><img src="<?php echo $image['url']; ?>" class="hidden-img" alt="<?php echo $image['title']; ?>"></div></div>
             <?php endif; ?>
             <?php if($title || $text || $link): ?>
-                <div class="fpHero__content col-md-8 col-12 animate fade-left delay-1">
+                <div class="fpHero__content col-xl-8 col-12 col-md-7 animate fade-left delay-1">
                     <?php if($title): ?>
                         <h1 class="fpHero__title"><?php echo $title; ?></h1>
                     <?php endif; ?>
@@ -270,7 +270,7 @@ if($image_slider):
 <div class="orderSubmit__wrapper">
     <div class="orderSubmit__content">
         <a href="<?php echo get_home_url(); ?>" class="orderSubmit__close"></a>
-        <div class="orderSubmit__text">Thanks for your purchase!<br>Check your email</div>
+        <div class="orderSubmit__text">Thank you.<br>We’ve emailed you the download link.</div>
     </div>
 </div>
 <?php get_footer(); ?>

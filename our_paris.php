@@ -135,4 +135,10 @@ $button = get_field('button');
     </div>
     <div class="orderPopup__close"></div>
 </div>
+<div class="orderSubmit__wrapper">
+    <div class="orderSubmit__content">
+        <a href="<?php echo get_home_url(); ?>" class="orderSubmit__close"></a>
+        <div class="orderSubmit__text">Thank you.<br>We’ve emailed you the download link.</div>
+    </div>
+</div>
 <?php get_footer(); ?>
