@@ -3,7 +3,7 @@
     &__image 
         padding-right: 5px 
         position: relative
-        transform: translateY(100px) rotate(-8deg)
+        transform: translateY(30px) rotate(-8deg)
         +max-screen($breakpoint-lg)
             text-align: center
             transform: none
@@ -75,6 +75,8 @@
         margin-bottom: 64px
         font-weight: 400
         margin-right: -30px
+        br 
+            display: none
         +max-screen(1200px)
             margin-bottom: 56px
         +max-screen($breakpoint-lg)
@@ -83,6 +85,8 @@
             margin-bottom: 32px
             margin-right: 0
             max-width: 100%
+            br 
+                display: block
         +max-screen(560px)
             max-width: 335px
     &__text 
