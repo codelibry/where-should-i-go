@@ -304,6 +304,10 @@
                 .parallax-img-wrapper
                     max-height: 565px
                     padding-bottom: 150%
+                    +max-screen(1440px)
+                        padding-bottom: 100%
+                    +max-screen($breakpoint-lg)
+                        width: 100% !important
                     +max-screen($breakpoint-md)
                         max-height: 380px
     &__title 
