@@ -38,6 +38,9 @@ $content = get_the_content();
 
     <section class="termsText">
         <div class="container">
+            <div class="termsText__date">
+                <?php echo get_the_date('F j, Y'); ?>
+            </div>
             <div class="termsText__content content-block">
                 <?php echo $content; ?>
             </div>
