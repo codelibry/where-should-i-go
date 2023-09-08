@@ -14,7 +14,7 @@ $content = get_the_content();
 <section class="hero">
     <div class="container">
         <div class="row">
-            <div class="hero__content col-lg-6">
+            <div class="hero__content col-lg-6<?php if($img){echo ' has-image';} ?>">
                 <?php if($title): ?>
                     <h2 class="hero__title"><?php echo $title; ?></h2>
                 <?php endif; ?>
