@@ -65,7 +65,7 @@ $text = get_field('hero_text', get_option('page_for_posts'));
                         <div class="favoritiesBlock__listItem__body">
                             <div class="favoritiesBlock__listItem__textWrapper">
                                 <?php if(!empty(get_the_excerpt())): ?>
-                                    <div class="favoritiesBlock__listItem__text"><?php the_excerpt(); ?></div>
+                                    <div class="favoritiesBlock__listItem__text" style="-webkit-box-orient: vertical;"><?php the_excerpt(); ?></div>
                                 <?php endif; ?>
                                 
                                     <a href="<?php the_permalink();?>" class="favoritiesBlock__listItem__button"><?php _e('Read More', 'wsig');?></a>
