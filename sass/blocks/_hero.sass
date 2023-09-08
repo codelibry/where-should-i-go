@@ -35,6 +35,11 @@
     &__img-wrapper
         position: relative
         padding-bottom: 100%
+        +max-screen($breakpoint-lg)
+            max-width: 80%
+            padding-bottom: 0
+        +max-screen($breakpoint-md)
+            max-width: 100%
         .single-post &
             img
                 width: 100%
@@ -43,3 +48,9 @@
                 position: absolute
                 inset: 0
                 transform: rotate(8deg)
+                +max-screen($breakpoint-lg)
+                    transform: none
+                    position: static 
+                    height: auto 
+                    margin-bottom: -92px
+                    

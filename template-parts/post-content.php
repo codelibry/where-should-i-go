@@ -14,16 +14,16 @@ $content = get_the_content();
 <section class="hero">
     <div class="container">
         <div class="row">
-            <div class="hero__content col-lg-8">
+            <div class="hero__content col-lg-6">
                 <?php if($title): ?>
-                    <h1 class="hero__title"><?php echo $title; ?></h1>
+                    <h2 class="hero__title"><?php echo $title; ?></h2>
                 <?php endif; ?>
                 <?php if($text): ?>
                     <div class="hero__text"><?php echo $text; ?></div>
                 <?php endif; ?>
             </div>
             <?php if ($img) : ?>
-                <div class="col-lg-4 hero__img-column">
+                <div class="col-lg-6 hero__img-column">
                     <div class="hero__img-wrapper">
                         <?php echo $img; ?>
                     </div>
