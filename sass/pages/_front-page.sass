@@ -194,6 +194,10 @@
             transform: rotate(-8deg)
             transition: .3s
             margin: 0 12px
+            img 
+                transform: translateY(12%)
+                +max-screen($breakpoint-lg)
+                    transform: none
             +max-screen(1440px)
                 width: 44vw
                 min-width: 44vw
@@ -301,15 +305,19 @@
                     object-fit: cover
                     +max-screen($breakpoint-lg)
                         max-width: 100%
+                        object-position: top
                 .parallax-img-wrapper
                     max-height: 565px
                     padding-bottom: 150%
                     +max-screen(1440px)
                         padding-bottom: 100%
-                    +max-screen($breakpoint-lg)
+                    +max-screen(1200px)
                         width: 100% !important
                     +max-screen($breakpoint-md)
                         max-height: 380px
+                        padding-bottom: 0
+                        img 
+                            position: static
     &__title 
         line-height: 1.2
         margin-bottom: 40px
