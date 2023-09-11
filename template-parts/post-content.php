@@ -21,6 +21,9 @@ $content = get_the_content();
                 <?php if($text): ?>
                     <div class="hero__text"><?php echo $text; ?></div>
                 <?php endif; ?>
+                <div class="hero__date">
+                    <?php echo get_the_date('F j, Y'); ?>
+                </div>
             </div>
             <?php if ($img) : ?>
                 <div class="col-lg-4 hero__img-column">
@@ -38,9 +41,6 @@ $content = get_the_content();
 
     <section class="termsText">
         <div class="container">
-            <div class="termsText__date">
-                <?php echo get_the_date('F j, Y'); ?>
-            </div>
             <div class="termsText__content content-block">
                 <?php echo $content; ?>
             </div>

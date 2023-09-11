@@ -17,10 +17,6 @@
             max-width: 75%
         +max-screen($breakpoint-md)
             max-width: 100%
-        &.has-image
-            .hero__text 
-                +max-screen($breakpoint-lg)
-                    margin-bottom: 48px
     &__title 
         margin-bottom: 80px
         +max-screen(1200px)
@@ -60,3 +56,32 @@
                     max-height: 500px 
                 +max-screen($breakpoint-md)
                     max-height: 450px 
+    &__date 
+        font-style: italic
+        margin-bottom: 36px
+        font-size: 20px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 32px
+            font-size: 18px
+        +max-screen($breakpoint-md)
+            margin-bottom: 24px
+            font-size: 16px
+    &__title + .hero__date 
+        margin-top: -56px
+        +max-screen(1200px)
+            margin-top: -32px
+        +max-screen($breakpoint-lg)
+            margin-top: -24px
+        +max-screen($breakpoint-md)
+            margin-top: -20px
+    &__text + .hero__date 
+        margin-top: 32px
+        +max-screen($breakpoint-lg)
+            margin-top: 28px
+        +max-screen($breakpoint-md)
+            margin-top: 24px
+    &__content 
+        &.has-image
+            .hero__date
+                +max-screen($breakpoint-lg)
+                    margin-bottom: 48px
