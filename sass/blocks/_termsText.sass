@@ -21,3 +21,9 @@
         img 
             width: 100% 
             height: auto 
+            +max-screen($breakpoint-lg)
+                max-height: 400px 
+            +max-screen($breakpoint-md)
+                max-height: 350px
+            +max-screen($breakpoint-sm)
+                max-height: 300px
