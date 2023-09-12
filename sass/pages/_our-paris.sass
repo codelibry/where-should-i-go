@@ -82,8 +82,10 @@
                 max-width: 67.63%
                 margin-bottom: 48px
                 width: 100%
+                +max-screen(1440px)
+                    margin-bottom: 24px
                 +max-screen(1200px)
-                    margin-bottom: 42px
+                    margin-bottom: 36px
                 +max-screen($breakpoint-lg)
                     margin-bottom: 36px
                     max-width: 100%
@@ -93,6 +95,8 @@
                 .parallax-img-wrapper
                     max-height: 520px
                     padding-bottom: 134%
+                    +max-screen(1440px)
+                        padding-bottom: 100%
                     +max-screen(480px)
                         max-height: 350px
                 img 
@@ -109,17 +113,19 @@
                     max-width: 100%
             &__title 
                 font-weight: 300
-                +max-screen(1200px)
+                +max-screen(1440px)
                     +min-screen(993px)
                         font-size: 28px
-                        padding-bottom: 28px
+                        padding-bottom: 18px
                 +max-screen($breakpoint-md)
                     height: auto !important
             &__text 
                 margin-bottom: 36px
                 line-height: 1.6
-                +max-screen(1200px)
-                    margin-bottom: 32px
+                +max-screen(1440px)
+                    font-size: 18px
+                    margin-bottom: 20px
+                    font-size: 18px
                 +max-screen($breakpoint-lg)
                     margin-bottom: 28px
                 +max-screen($breakpoint-md)
@@ -134,6 +140,8 @@
                 line-height: 1.6
                 display: inline-block
                 z-index: 1
+                +max-screen(1400px)
+                    font-size: 18px
                 &::before 
                     content: ""
                     position: absolute

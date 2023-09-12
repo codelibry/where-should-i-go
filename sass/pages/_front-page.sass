@@ -158,8 +158,6 @@
         padding: 50px 0
         padding-left: 80px
         margin-top: 80px
-        +max-screen($breakpoint-md)
-            
         &::-webkit-scrollbar 
             display: none
         &.active 
@@ -285,9 +283,10 @@
                 font-weight: 300
                 +max-screen($breakpoint-md)
                     height: 305px
-                +max-screen(1200px)
+                +max-screen(1440px)
                     +min-screen(993px)
-                        font-size: 36px
+                        font-size: 28px
+                        padding-bottom: 18px
             &__image 
                 width: 55%
                 max-width: 400px
