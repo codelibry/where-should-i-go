@@ -6,7 +6,7 @@
 
 $title = get_the_title();
 $text = get_field('hero_text');
-$img = get_the_post_thumbnail();
+$img = get_field('hero_image');
 $content = get_the_content();
 
 ?>
@@ -28,7 +28,7 @@ $content = get_the_content();
             <?php if ($img) : ?>
                 <div class="col-lg-4 hero__img-column">
                     <div class="hero__img-wrapper">
-                        <?php echo $img; ?>
+                        <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['title']; ?>">
                     </div>
                 </div>
             <?php endif; ?>

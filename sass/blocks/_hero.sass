@@ -91,5 +91,8 @@
         padding-bottom: 0
         .hero__img-wrapper
             img 
-                margin-bottom: 0
-                max-height: 300px 
+                +max-screen($breakpoint-lg)
+                    margin-bottom: 0
+                    max-height: 400px 
+                +max-screen($breakpoint-sm)
+                    max-height: 300px
