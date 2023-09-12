@@ -14,7 +14,7 @@ $content = get_the_content();
 <section class="hero">
     <div class="container">
         <div class="row">
-            <div class="hero__content col-lg-8<?php if($img){echo ' has-image';} ?>">
+            <div class="hero__content col-lg-7<?php if($img){echo ' has-image';} ?>">
                 <?php if($title): ?>
                     <h2 class="hero__title"><?php echo $title; ?></h2>
                 <?php endif; ?>
@@ -26,7 +26,7 @@ $content = get_the_content();
                 </div>
             </div>
             <?php if ($img) : ?>
-                <div class="col-lg-4 hero__img-column">
+                <div class="col-lg-5 hero__img-column">
                     <div class="hero__img-wrapper">
                         <div class="parallax-img-wrapper">
                             <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['title']; ?>" class="parallax-img">
