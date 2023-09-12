@@ -28,9 +28,7 @@ $content = get_the_content();
             <?php if ($img) : ?>
                 <div class="col-lg-5 hero__img-column">
                     <div class="hero__img-wrapper">
-                        <div class="parallax-img-wrapper">
-                            <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['title']; ?>" class="parallax-img">
-                        </div>
+                        <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['title']; ?>">
                     </div>
                 </div>
             <?php endif; ?>
