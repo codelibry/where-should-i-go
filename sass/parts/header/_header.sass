@@ -13,16 +13,28 @@
     &.hide 
         padding-top: 28px
         padding-bottom: 28px
+        .menu li,
+        .header__button
+            +max-screen(1440px)
+                font-size: 18px
+            +max-screen(1280px)
+                font-size: 16px
+        .header__logo img
+            +max-screen(1440px)
+                max-height: 50px
+            +max-screen(1280px) 
+                max-height: 46px
+        
     +max-screen(1440px)
         &.hide 
             padding-top: 18px
             padding-bottom: 18px
-    +max-screen(1200px)
+    +max-screen(1280px)
         padding-top: 48px
         padding-bottom: 48px
         &.hide 
-            padding-top: 24px
-            padding-bottom: 24px
+            padding-top: 10px
+            padding-bottom: 10px
     +max-screen($breakpoint-lg)
         padding-top: 36px
         padding-bottom: 36px
@@ -65,6 +77,7 @@
     &__logo 
         img 
             max-height: 56px 
+            transition: .3s 
             +max-screen($breakpoint-lg)
                 max-height: 46px
             +max-screen($breakpoint-md)
@@ -109,8 +122,9 @@
             li 
                 margin: 0 20px 
                 position: relative
-                +max-screen(1200px)
-                    font-size: 16px
+                transition: .3s 
+                +max-screen(1280px)
+                    font-size: 18px
                 +max-screen($breakpoint-md)
                     font-size: 20px
                 &::after 
@@ -136,9 +150,10 @@
         transition: .3s
         position: relative
         margin-right: -64px
+        +max-screen(1280px)
+            font-size: 18px
         +max-screen(1200px) 
             margin-right: -32px
-            font-size: 16px
         +max-screen($breakpoint-lg)
             padding: 12.205px 18px
             margin-right: 32px

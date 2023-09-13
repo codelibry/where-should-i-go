@@ -235,6 +235,8 @@
                 +max-screen(1440px)
                     margin-top: 24px
                     font-size: 18px
+                +max-screen(1280px)
+                    font-size: 16px
                 +max-screen(1200px)
                     margin-top: 32px
                 +max-screen($breakpoint-md)
@@ -329,12 +331,17 @@
     &__text 
         font-size: 24px
         line-height: 1.6
-        +max-screen(1200px)
-            font-size: 22px
-        +max-screen($breakpoint-md)
+        +max-screen(1440px)
             font-size: 20px
+        +max-screen(1280px)
+            font-size: 18px
     &__link 
         margin-top: 120px
+        a 
+            +max-screen(1440px)
+                font-size: 20px
+            +max-screen(1280px)
+                font-size: 18px
         +max-screen(1800px)
             margin-top: 82px
         +max-screen($breakpoint-lg)
