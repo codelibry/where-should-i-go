@@ -48,30 +48,31 @@ $text = get_field('hero_text', get_option('page_for_posts'));
                     <?php if($i % 2 != 0): ?>
                         <div class="favoritiesBlock__row">
                     <?php endif; ?>
-
-                    <div class="favoritiesBlock__listItem product animate fade-up<?php echo $delay; ?>">
-                        <div class="favoritiesBlock__listItem__head">
-                            <div class="favoritiesBlock__listItem__sideContent">
-                                <div class="favoritiesBlock__listItem__content h4">
-                                    <h4 class="favoritiesBlock__listItem__title product-title"><?php the_title(); ?></h4>
+                    <div class="favoritiesBlock__listItem__wrapper">
+                        <a class="favoritiesBlock__listItem product animate fade-up<?php echo $delay; ?>" href="<?php the_permalink();?>">
+                            <div class="favoritiesBlock__listItem__head">
+                                <div class="favoritiesBlock__listItem__sideContent">
+                                    <div class="favoritiesBlock__listItem__content h4">
+                                        <h4 class="favoritiesBlock__listItem__title product-title"><?php the_title(); ?></h4>
+                                    </div>
+                                </div>
+                                <div class="favoritiesBlock__listItem__image product-image">
+                                    <div class="parallax-img-wrapper">
+                                        <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="favoritiesBlock__listItem__image product-image">
-                                <div class="parallax-img-wrapper">
-                                    <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
+                            <div class="favoritiesBlock__listItem__body">
+                                <div class="favoritiesBlock__listItem__textWrapper">
+                                    <?php if(!empty(get_the_excerpt())): ?>
+                                        <div class="favoritiesBlock__listItem__text" style="-webkit-box-orient: vertical;"><?php the_excerpt(); ?></div>
+                                    <?php endif; ?>
+                                    
+                                    <div class="favoritiesBlock__listItem__button"><?php _e('Read More', 'wsig');?></div>
+                                    
                                 </div>
                             </div>
-                        </div>
-                        <div class="favoritiesBlock__listItem__body">
-                            <div class="favoritiesBlock__listItem__textWrapper">
-                                <?php if(!empty(get_the_excerpt())): ?>
-                                    <div class="favoritiesBlock__listItem__text" style="-webkit-box-orient: vertical;"><?php the_excerpt(); ?></div>
-                                <?php endif; ?>
-                                
-                                    <a href="<?php the_permalink();?>" class="favoritiesBlock__listItem__button"><?php _e('Read More', 'wsig');?></a>
-                                
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     <?php if($i % 2 == 0): ?>
                         </div>

@@ -13,40 +13,43 @@
         +max-screen($breakpoint-lg)
             margin: 0 -12px
     &__list 
-        transform: translateX(270px) rotate(-6deg)
+        transform: translateX(170px)
         +max-screen(1600px)
-            transform: translateX(210px) rotate(-6deg)
+            transform: translateX(110px)
         +max-screen(1400px)
-            transform: translateX(210px) rotate(-4deg)
+            transform: translateX(110px)
         +max-screen(1300px)
-            transform: translateX(160px) rotate(-2deg)
+            transform: translateX(80px)
         +max-screen(1200px)
             +min-screen(993px)
-                transform: translateX(120px) rotate(-2deg)
+                transform: translateX(130px)
                 margin-bottom: -48px
         +max-screen($breakpoint-lg)
             margin-bottom: -42px
             padding-top: 0
             transform: none
         &Item 
-            max-width: 36.64%
-            margin: 0 75px
-            margin-bottom: 52px
-            +max-screen(1200px)
-                +min-screen(993px)
-                    max-width: 41%
-                    margin: 0 35px
-                    margin-bottom: 48px
-            +max-screen($breakpoint-lg)
-                margin: 0 
-                margin-bottom: 42px
-                max-width: 50%
-                padding: 0 12px 
-                transform: rotate(-4deg)
-            +max-screen($breakpoint-md)
-                max-width: 100%
-                transform: none
-                transition-delay: 0s
+            cursor: pointer
+            &__wrapper
+                max-width: 36.64%
+                margin: 0 75px
+                margin-bottom: 52px
+                transform: rotate(-8deg)
+                +max-screen(1200px)
+                    +min-screen(993px)
+                        max-width: 41%
+                        margin: 0 35px
+                        margin-bottom: 48px
+                +max-screen($breakpoint-lg)
+                    margin: 0 
+                    margin-bottom: 42px
+                    max-width: 50%
+                    padding: 0 12px 
+                    transform: none
+                +max-screen($breakpoint-md)
+                    max-width: 100%
+                    transform: none
+                    transition-delay: 0s
             &__content 
                 +min-screen(993px)
                     writing-mode: vertical-rl
@@ -96,7 +99,7 @@
                     max-height: 520px
                     padding-bottom: 134%
                     +max-screen(1440px)
-                        padding-bottom: 100%
+                        padding-bottom: 135%
                     +max-screen(480px)
                         max-height: 350px
                 img 
@@ -125,7 +128,6 @@
                 +max-screen(1440px)
                     font-size: 18px
                     margin-bottom: 20px
-                    font-size: 18px
                 +max-screen($breakpoint-lg)
                     margin-bottom: 28px
                 +max-screen($breakpoint-md)
@@ -162,7 +164,7 @@
         .favoritiesBlock__listItem__text
             overflow: hidden
             display: -webkit-box
-            -webkit-line-clamp: 5
+            -webkit-line-clamp: 4
 .parisContent
     padding-top: 120px 
     padding-bottom: 120px 

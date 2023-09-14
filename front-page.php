@@ -62,7 +62,7 @@ $slider = get_field('favorities_slider');
                 $email_text = get_field('email_text'); 
                 $file = get_field('file');
                 ?>
-                <div class="favorities__sliderItem product product-text" data-email-text="<?php if($email_text): echo $email_text; endif; ?>" data-file="<?php if($file): echo $file; endif; ?>" data-text="<?php the_content(); ?>">
+                <div class="favorities__sliderItem product show-product-popup product-text" data-email-text="<?php if($email_text): echo $email_text; endif; ?>" data-file="<?php if($file): echo $file; endif; ?>" data-text="<?php the_content(); ?>">
                     <div class="favorities__sliderItem__head">
                         <div class="favorities__sliderItem__contentWrapper">
                             <div class="favorities__sliderItem__content h4">
@@ -83,7 +83,7 @@ $slider = get_field('favorities_slider');
                                 <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
                             <?php endif; ?>
                             <?php if($button): ?>
-                                <div class="favorities__sliderItem__button show-product-popup"><?php echo $button; ?></div>
+                                <div class="favorities__sliderItem__button"><?php echo $button; ?></div>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ $slider = get_field('favorities_slider');
                             <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
                         <?php endif; ?>
                         <?php if($button): ?>
-                            <div class="favorities__sliderItem__button show-product-popup"><?php echo $button; ?></div>
+                            <div class="favorities__sliderItem__button"><?php echo $button; ?></div>
                         <?php endif; ?>
                     </div>
                 </div>

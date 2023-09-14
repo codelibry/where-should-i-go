@@ -3,7 +3,9 @@
     &__image 
         padding-right: 5px 
         position: relative
-        transform: translateY(30px) rotate(-8deg)
+        transform: translateY(80px) rotate(-8deg)
+        +max-screen(1800px)
+            transform: translateY(20px) rotate(-8deg)
         +max-screen($breakpoint-lg)
             text-align: center
             transform: none
@@ -16,6 +18,8 @@
         .parallax-img-wrapper
             padding-bottom: 138%
             height: 0
+            +max-screen($breakpoint-lg) 
+                overflow: visible
             +max-screen($breakpoint-md)
                 padding-bottom: 69%
         .parallax-img
@@ -29,7 +33,6 @@
             +max-screen($breakpoint-lg)
                 position: static
                 transform: rotate(-8deg) !important
-            +max-screen($breakpoint-lg)
                 left: unset
                 right: 0
         img 
@@ -195,6 +198,7 @@
             transform: rotate(-8deg)
             transition: .3s
             margin: 0 12px
+            cursor: pointer
             img 
                 transform: translateY(12%)
                 +max-screen($breakpoint-lg)

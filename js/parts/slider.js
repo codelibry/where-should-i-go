@@ -54,13 +54,13 @@ function basicSliders(){
         }
         else{
             $('.favoritiesBlock__list .favoritiesBlock__row').each(function(){
-                var firstItem = $(this).find('.favoritiesBlock__listItem:nth-child(1) .favoritiesBlock__listItem__title').height();
-                var secondItem = $(this).find('.favoritiesBlock__listItem:nth-child(2) .favoritiesBlock__listItem__title').height();
+                var firstItem = $(this).find('.favoritiesBlock__listItem__wrapper:nth-child(1) .favoritiesBlock__listItem__title').height();
+                var secondItem = $(this).find('.favoritiesBlock__listItem__wrapper:nth-child(2) .favoritiesBlock__listItem__title').height();
                 if(firstItem > secondItem){
-                    $(this).find('.favoritiesBlock__listItem:nth-child(2) .favoritiesBlock__listItem__title').css('height', firstItem);
+                    $(this).find('.favoritiesBlock__listItem__wrapper:nth-child(2) .favoritiesBlock__listItem__title').css('height', firstItem);
                 }
                 else{
-                    $(this).find('.favoritiesBlock__listItem:nth-child(1) .favoritiesBlock__listItem__title').css('height', secondItem);
+                    $(this).find('.favoritiesBlock__listItem__wrapper:nth-child(1) .favoritiesBlock__listItem__title').css('height', secondItem);
                 }
             });
         }

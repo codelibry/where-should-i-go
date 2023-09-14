@@ -47,32 +47,34 @@ if($the_query->have_posts()):
             <?php if($i % 2 != 0): ?>
                 <div class="favoritiesBlock__row">
             <?php endif; ?>
-            <div class="favoritiesBlock__listItem product animate fade-up<?php echo $delay; ?>" data-email-text="<?php if($email_text): echo $email_text; endif; ?>" data-file="<?php if($file): echo $file; endif; ?>" data-text="<?php the_content(); ?>">
-                <div class="favoritiesBlock__listItem__head">
-                    <div class="favoritiesBlock__listItem__sideContent">
-                        <div class="favoritiesBlock__listItem__content h4">
-                            <h4 class="favoritiesBlock__listItem__title product-title"><?php the_title(); ?></h4>
-                            <?php if($price == '0'): ?>
-                                <div class="favoritiesBlock__listItem__price product-price"><span>Free</span></div>
-                            <?php else: ?>
-                                <div class="favoritiesBlock__listItem__price product-price"><span><?php echo $price; ?></span>€</div>
+            <div class="favoritiesBlock__listItem__wrapper">
+                <div class="favoritiesBlock__listItem product show-product-popup animate fade-up<?php echo $delay; ?>" data-email-text="<?php if($email_text): echo $email_text; endif; ?>" data-file="<?php if($file): echo $file; endif; ?>" data-text="<?php the_content(); ?>">
+                    <div class="favoritiesBlock__listItem__head">
+                        <div class="favoritiesBlock__listItem__sideContent">
+                            <div class="favoritiesBlock__listItem__content h4">
+                                <h4 class="favoritiesBlock__listItem__title product-title"><?php the_title(); ?></h4>
+                                <?php if($price == '0'): ?>
+                                    <div class="favoritiesBlock__listItem__price product-price"><span>Free</span></div>
+                                <?php else: ?>
+                                    <div class="favoritiesBlock__listItem__price product-price"><span><?php echo $price; ?></span>€</div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="favoritiesBlock__listItem__image product-image">
+                            <div class="parallax-img-wrapper">
+                                <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="favoritiesBlock__listItem__body">
+                        <div class="favoritiesBlock__listItem__textWrapper">
+                            <?php if(!empty(get_the_excerpt())): ?>
+                                <div class="favoritiesBlock__listItem__text"><?php the_excerpt(); ?></div>
+                            <?php endif; ?>
+                            <?php if($button): ?>
+                                <div class="favoritiesBlock__listItem__button"><?php echo $button; ?></div>
                             <?php endif; ?>
                         </div>
-                    </div>
-                    <div class="favoritiesBlock__listItem__image product-image">
-                        <div class="parallax-img-wrapper">
-                            <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
-                        </div>
-                    </div>
-                </div>
-                <div class="favoritiesBlock__listItem__body">
-                    <div class="favoritiesBlock__listItem__textWrapper">
-                        <?php if(!empty(get_the_excerpt())): ?>
-                            <div class="favoritiesBlock__listItem__text"><?php the_excerpt(); ?></div>
-                        <?php endif; ?>
-                        <?php if($button): ?>
-                            <div class="favoritiesBlock__listItem__button show-product-popup"><?php echo $button; ?></div>
-                        <?php endif; ?>
                     </div>
                 </div>
             </div>
