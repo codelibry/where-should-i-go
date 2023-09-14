@@ -31,7 +31,7 @@ $content = get_the_content();
     <section class="termsText">
         <div class="container">
             <div class="termsText__content content-block">
-                <?php echo $content; ?>
+                <?php the_content(); ?>
             </div>
         </div>
     </section>
