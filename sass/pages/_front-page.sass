@@ -321,6 +321,11 @@
                         padding-bottom: 135%
                         img 
                             transform: translateY(15%)
+                            +max-screen($breakpoint-lg)
+                                transform: none
+                            +max-screen($breakpoint-md)
+                                height: 100vh
+                                max-height: 100%
                     +max-screen(1200px)
                         width: 100% !important
                     +max-screen($breakpoint-md)
