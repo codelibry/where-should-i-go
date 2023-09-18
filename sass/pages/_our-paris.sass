@@ -102,12 +102,17 @@
                         padding-bottom: 120%
                     +max-screen(1440px)
                         padding-bottom: 135%
+                    +max-screen($breakpoint-lg)
+                        padding-bottom: 0
                     +max-screen(480px)
                         max-height: 350px
-                img 
+                img.parallax-img
                     width: 100%
                     object-fit: cover
                     transform: translateY(16%)
+                    +max-screen($breakpoint-lg)
+                        transform: none
+                        position: static
             &__head 
                 display: flex 
                 position: relative
