@@ -13,7 +13,7 @@ if($title || $text):
     <div class="container">
         <div class="hero__content">
             <?php if($title): ?>
-                <h1 class="hero__title animate fade-up"><?php echo $title; ?></h1>
+                <h1 class="hero__title sm animate fade-up"><?php echo $title; ?></h1>
             <?php endif; ?>
             <?php if($text): ?>
                 <div class="hero__text animate fade-up delay-1"><?php echo $text; ?></div>

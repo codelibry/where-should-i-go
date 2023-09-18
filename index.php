@@ -20,7 +20,7 @@ $text = get_field('hero_text', get_option('page_for_posts'));
             <div class="hero__content">
 
                 <?php if($title): ?>
-                    <h1 class="hero__title"><?php echo $title; ?></h1>
+                    <h1 class="hero__title sm"><?php echo $title; ?></h1>
                 <?php endif; ?> 
 
                 <?php if($text): ?>
