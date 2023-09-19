@@ -63,6 +63,7 @@ $content = get_the_content();
 <section class="arrows">
     <div class="container">
         <div class="arrows__content">
+            
             <?php if (!empty($prevID)) { ?>
                 <a class="arrows__leftSide" href="<?php echo get_permalink($prevID); ?>">
                     <div class="arrows__leftSide__icon"><img src="<?php echo get_template_directory_uri(  ) . '/assets/images/next.png' ?>" alt=""></div>
