@@ -254,7 +254,7 @@ if($image_slider):
                     <div class="orderPopup__productTitle"></div>
                     <div class="orderPopup__productPrice"></div>
                 </h4>
-                <div class="orderPopup__productImage"><div class="parallax-img-wrapper"><img src="" class="parallax-img" alt=""></div></div>
+                <div class="orderPopup__productImage"><img src="" alt=""></div>
             </div>
         </div>
         <div class="orderPopup__textWrapper">
