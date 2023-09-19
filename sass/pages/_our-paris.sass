@@ -505,14 +505,19 @@
             +max-screen($breakpoint-md)
                 margin-top: 24px
         &Image 
+            width: 100%
             img 
                 width: 100%
                 max-width: 392px 
+                height: 500px 
+                object-fit: cover
+                object-position: top
                 +max-screen($breakpoint-md)
                     margin-top: 32px
                     max-width: 100%
                     max-height: 650px
                     object-fit: cover
+                
         &Title 
             padding-bottom: 24px
             +max-screen(1400px)
