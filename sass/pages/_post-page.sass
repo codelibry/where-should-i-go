@@ -1,25 +1,84 @@
 .arrows 
     &__content 
         display: flex 
-        justify-content: space-between
+        +max-screen($breakpoint-sm)
+            flex-direction: column 
     &__leftSide,
     &__rightSide
-        display: flex 
-        align-items: center
+        a
+            display: flex 
+            align-items: center
         &__icon 
             img 
                 width: 48px 
                 height: 48px 
                 object-fit: contain
+                +max-screen($breakpoint-lg)
+                    width: 36px 
+                    height: 36px 
+                +max-screen($breakpoint-md)
+                    width: 24px 
+                    height: 24px 
         &__direction
             opacity: 0.5
     &__leftSide
+        margin-right: auto
+        +max-screen($breakpoint-sm)
+            margin-bottom: 24px
         &__icon
             margin-right: 24px
+            +max-screen($breakpoint-lg)
+                margin-right: 18px
+            +max-screen($breakpoint-md)
+                margin-right: 12px
             img 
                 transform: rotate(180deg)
     &__rightSide 
+        margin-left: auto
+        a
+            +max-screen($breakpoint-md)
+                justify-content: flex-end
         &__direction
             text-align: right
         &__icon 
             margin-left: 24px
+            +max-screen($breakpoint-lg)
+                margin-left: 18px
+            +max-screen($breakpoint-md)
+                margin-left: 12px
+.similarPosts
+    padding-top: 120px 
+    +max-screen(1200px)
+        padding-top: 100px 
+    +max-screen($breakpoint-lg)
+        padding-top: 92px 
+    +max-screen($breakpoint-md)
+        padding-top: 80px 
+    &__title 
+        text-align: center
+        margin-bottom: 72px
+    &__list 
+        justify-content: center
+        margin-bottom: -48px
+        margin: 0 -18px 
+    &__item 
+        &Wrapper 
+            margin-bottom: 48px
+            padding: 0 18px
+        &Image 
+            img
+                width: 100%
+                object-fit: cover
+                +max-screen($breakpoint-md)
+                    height: 350px 
+        &Date 
+            margin-top: 16px
+            margin-bottom: 8px
+            opacity: 0.7
+        &Title 
+            font-size: 32px
+            font-family: 'Romie'
+            +max-screen(1200px)
+                font-size: 28px
+            +max-screen($breakpoint-md)
+                font-size: 26px
