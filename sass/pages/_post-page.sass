@@ -1,0 +1,25 @@
+.arrows 
+    &__content 
+        display: flex 
+        justify-content: space-between
+    &__leftSide,
+    &__rightSide
+        display: flex 
+        align-items: center
+        &__icon 
+            img 
+                width: 48px 
+                height: 48px 
+                object-fit: contain
+        &__direction
+            opacity: 0.5
+    &__leftSide
+        &__icon
+            margin-right: 24px
+            img 
+                transform: rotate(180deg)
+    &__rightSide 
+        &__direction
+            text-align: right
+        &__icon 
+            margin-left: 24px

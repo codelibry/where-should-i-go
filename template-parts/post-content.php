@@ -48,3 +48,39 @@ $content = get_the_content();
     </section>
 
 <?php endif; ?>
+<?php
+    $pagelist = get_posts('sort_column=menu_order&sort_order=asc');
+    $pages = array();
+    foreach ($pagelist as $page) {
+        $pages[] += $page->ID;
+    }
+
+    $current = array_search(get_the_ID(), $pages);
+    $prevID = $pages[$current - 1];
+    $nextID = $pages[$current + 1];
+?>
+
+<section class="arrows">
+    <div class="container">
+        <div class="arrows__content">
+            <?php if (!empty($prevID)) { ?>
+                <a class="arrows__leftSide" href="<?php echo get_permalink($prevID); ?>">
+                    <div class="arrows__leftSide__icon"><img src="<?php echo get_template_directory_uri(  ) . '/assets/images/next.png' ?>" alt=""></div>
+                    <div class="arrows__leftSide__text">
+                        <div class="arrows__leftSide__direction">Previous Article</div>
+                        <h5 class="arrows__leftSide__post"><?php echo get_the_title($prevID); ?></h5>
+                    </div>
+                </a>
+            <?php }
+            if (!empty($nextID)) { ?>
+                <a class="arrows__rightSide" href="<?php echo get_permalink($nextID); ?>">
+                    <div class="arrows__rightSide__text">
+                        <div class="arrows__rightSide__direction">Next Article</div>
+                        <h5 class="arrows__rightSide__post"><?php echo get_the_title($nextID); ?></h5>
+                    </div>
+                    <div class="arrows__rightSide__icon"><img src="<?php echo get_template_directory_uri(  ) . '/assets/images/next.png' ?>" alt=""></div>
+                </a>
+            <?php } ?>
+        </div>
+    </div>
+</section>
