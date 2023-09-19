@@ -69,7 +69,14 @@
             img
                 width: 100%
                 object-fit: cover
-                +max-screen($breakpoint-md)
+                height: 550px 
+                +max-screen(1600px)
+                    height: 510px 
+                +max-screen(1440px)
+                    height: 475px
+                +max-screen($breakpoint-lg)
+                    height: 400px
+                +max-screen($breakpoint-sm)
                     height: 350px 
         &Date 
             margin-top: 16px
