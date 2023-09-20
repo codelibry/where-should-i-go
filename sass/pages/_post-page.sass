@@ -57,6 +57,14 @@
     &__title 
         text-align: center
         margin-bottom: 72px
+        +max-screen(1440px)
+            margin-bottom: 64px
+        +max-screen(1200px)
+            margin-bottom: 56px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 48px
+        +max-screen($breakpoint-md)
+            margin-bottom: 36px
     &__list 
         justify-content: center
         margin-bottom: -48px
@@ -71,21 +79,29 @@
                 object-fit: cover
                 height: 550px 
                 +max-screen(1600px)
-                    height: 510px 
+                    height: 475px 
                 +max-screen(1440px)
-                    height: 475px
-                +max-screen(1200px)
                     height: 400px
+                +max-screen(1200px)
+                    height: 350px
                 +max-screen($breakpoint-sm)
                     height: 350px 
         &Date 
             margin-top: 16px
             margin-bottom: 8px
             opacity: 0.7
+            +max-screen(1440px)
+                font-size: 18px
+            +max-screen(1200px)
+                font-size: 16px
+            +max-screen($breakpoint-md)
+                font-size: 14px
         &Title 
             font-size: 32px
             font-family: 'Romie'
-            +max-screen(1200px)
+            +max-screen(1440px)
                 font-size: 28px
-            +max-screen($breakpoint-md)
+            +max-screen(1200px)
                 font-size: 26px
+            +max-screen($breakpoint-lg)
+                font-size: 24px
