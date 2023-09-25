@@ -8,7 +8,7 @@ function initPopups() {
             var productPrice = $(this).closest('.product').find('.product-price').html();
             var productText = $(this).closest('.product').attr('data-text');
             var productImage = $(this).closest('.product').find('.product-image img').attr('src');
-            var productForm = $(this).closest('.product').find('.favoritiesBlock__listItem__form').html();
+            var productForm = $(this).closest('.product').find('.product-form').html();
             $('.orderPopup__text').html(productText);
             $('.orderPopup__productTitle').html(productTitle);
             $('.orderPopup__productImage img').attr('src', productImage);

@@ -59,8 +59,7 @@ $slider = get_field('favorities_slider');
                 <?php 
                 $price = get_field('price'); 
                 $button = get_field('button_label'); 
-                $email_text = get_field('email_text'); 
-                $file = get_field('file');
+                $payment_form = get_field('payment_form');
                 ?>
                 <div class="favorities__sliderItem product show-product-popup product-text" data-email-text="<?php if($email_text): echo $email_text; endif; ?>" data-file="<?php if($file): echo $file; endif; ?>" data-text="<?php the_content(); ?>">
                     <div class="favorities__sliderItem__head">
@@ -95,6 +94,11 @@ $slider = get_field('favorities_slider');
                             <div class="favorities__sliderItem__button"><?php echo $button; ?></div>
                         <?php endif; ?>
                     </div>
+                    <?php if($payment_form): ?>
+                        <div class="favorities__sliderItem__form product-form">
+                            <?php echo $payment_form; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             <?php endforeach; wp_reset_postdata(  ); ?>
         </div>
