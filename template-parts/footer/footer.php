@@ -45,24 +45,3 @@ $button = get_field('footer_mobile_button', 'options');
         <?php endif; ?>
     </div>
 </footer>
-<?php 
-$args = array(
-    'post_type' => 'product',
-    'posts_per_page' => -1,
-);
-$the_query = new WP_Query($args);
-if($the_query->have_posts()):
-    
-?>
-<script>
-    <?php while($the_query->have_posts()): $the_query->the_post(); ?>
-        <?php 
-            $post = get_post(get_the_ID()); 
-            $slug = $post->post_name;
-            $email_text = get_field('email_text');
-        ?>
-            var <?php echo $slug; ?>-text = <?php echo get_field('email_text'); ?>;
-            console.log(<?php $slug; ?>-text);
-    <?php endwhile; ?>
-</script>
-<?php endif; ?>
