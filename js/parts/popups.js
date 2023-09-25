@@ -52,6 +52,13 @@ function initPopups() {
             }
         });
         // Updated to ensure we avoid undefined state
+        if (window.location.href.indexOf("&") > -1) {
+            var url = window.location.href.split('?'); 
+            var urlPart = url[1].split('&');
+            if(urlPart[1] == 'nfs_checkout=cancel'){
+                window.location = url[0];
+            }
+        }
         if (window.location.href.indexOf("?") > -1) {
             var url = window.location.href.split('?'); 
             var urlPart = url[1].split('&');
