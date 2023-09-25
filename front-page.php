@@ -96,7 +96,7 @@ $slider = get_field('favorities_slider');
                     </div>
                     <?php if($payment_form): ?>
                         <div class="favorities__sliderItem__form product-form">
-                            <?php echo $payment_form; ?>
+                            <?php echo do_shortcode($payment_form); ?>
                         </div>
                     <?php endif; ?>
                 </div>
