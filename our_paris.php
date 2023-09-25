@@ -47,7 +47,7 @@ if($the_query->have_posts()):
                 <div class="favoritiesBlock__row">
             <?php endif; ?>
             <div class="favoritiesBlock__listItem__wrapper">
-                <div class="favoritiesBlock__listItem product show-product-popup animate fade-up<?php echo $delay; ?>" data-text="<?php the_content(); ?>">
+                <div class="favoritiesBlock__listItem product show-product-popup animate fade-up<?php echo $delay; ?>" data-open-popup="true" data-text="<?php the_content(); ?>">
                     <div class="favoritiesBlock__listItem__head">
                         <div class="favoritiesBlock__listItem__sideContent">
                             <div class="favoritiesBlock__listItem__content h4">
