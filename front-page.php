@@ -261,7 +261,6 @@ if($image_slider):
             <div class="orderPopup__text">
             </div>
             <div class="orderPopup__form">
-                <?php echo do_shortcode( '[ninja_form id=2]' ); ?>
             </div>
         </div>
     </div>

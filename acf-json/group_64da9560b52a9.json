@@ -11,7 +11,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -30,7 +30,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -41,42 +41,21 @@
             "maxlength": ""
         },
         {
-            "key": "field_64edd812aeb02",
-            "label": "Email Text",
-            "name": "email_text",
-            "type": "wysiwyg",
+            "key": "field_6511c298e1272",
+            "label": "Payment Form",
+            "name": "payment_form",
+            "type": "forms",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_64edd81baeb03",
-            "label": "File",
-            "name": "file",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
+            "return_format": "post_object",
+            "allow_null": 0,
+            "multiple": 0
         }
     ],
     "location": [
@@ -94,7 +73,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": 1,
     "description": "",
-    "modified": 1693344373
+    "modified": 1695662847
 }

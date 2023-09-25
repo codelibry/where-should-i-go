@@ -37,8 +37,7 @@ if($the_query->have_posts()):
             <?php 
             $price = get_field('price');
             $button = get_field('button_label'); 
-            $email_text = get_field('email_text'); 
-            $file = get_field('file');
+            $payment_form = get_field('payment_form');
             $delay = '';
             if($i % 2 == 0){
                 $delay = ' delay-2';
@@ -65,6 +64,11 @@ if($the_query->have_posts()):
                                 <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
                             </div>
                         </div>
+                        <?php if($payment_form): ?>
+                            <div class="favoritiesBlock__listItem__form">
+                                <?php echo $payment_form; ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <div class="favoritiesBlock__listItem__body">
                         <div class="favoritiesBlock__listItem__textWrapper">
