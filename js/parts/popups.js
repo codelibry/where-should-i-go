@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 function initPopups() {
     $(document).ready(function(){
-        $('div.show-product-popup[data-open-popup="true"]').click(function(){
+        $('.show-product-popup').click(function(){
             var productTitle = $(this).closest('.product').find('.product-title').html();
             var productPrice = $(this).closest('.product').find('.product-price').html();
             var productText = $(this).closest('.product').attr('data-text');

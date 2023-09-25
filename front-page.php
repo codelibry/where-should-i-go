@@ -61,7 +61,7 @@ $slider = get_field('favorities_slider');
                 $button = get_field('button_label'); 
                 $payment_form = get_field('payment_form');
                 ?>
-                <div class="favorities__sliderItem product show-product-popup product-text" data-open-popup="true" data-text="<?php the_content(); ?>">
+                <div class="favorities__sliderItem product product-text" data-open-popup="true" data-text="<?php the_content(); ?>">
                     <div class="favorities__sliderItem__head">
                         <div class="favorities__sliderItem__contentWrapper">
                             <div class="favorities__sliderItem__content h4">
@@ -82,7 +82,7 @@ $slider = get_field('favorities_slider');
                                 <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
                             <?php endif; ?>
                             <?php if($button): ?>
-                                <div class="favorities__sliderItem__button"><?php echo $button; ?></div>
+                                <div class="favorities__sliderItem__button show-product-popup"><?php echo $button; ?></div>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ $slider = get_field('favorities_slider');
                             <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
                         <?php endif; ?>
                         <?php if($button): ?>
-                            <div class="favorities__sliderItem__button"><?php echo $button; ?></div>
+                            <div class="favorities__sliderItem__button show-product-popup"><?php echo $button; ?></div>
                         <?php endif; ?>
                     </div>
                     <?php if($payment_form): ?>
