@@ -61,7 +61,7 @@ $slider = get_field('favorities_slider');
                 $button = get_field('button_label'); 
                 $payment_form = get_field('payment_form');
                 ?>
-                <div class="favorities__sliderItem product show-product-popup product-text" data-email-text="<?php if($email_text): echo $email_text; endif; ?>" data-file="<?php if($file): echo $file; endif; ?>" data-text="<?php the_content(); ?>">
+                <div class="favorities__sliderItem product show-product-popup product-text" show-product-popup="true" data-text="<?php the_content(); ?>">
                     <div class="favorities__sliderItem__head">
                         <div class="favorities__sliderItem__contentWrapper">
                             <div class="favorities__sliderItem__content h4">
