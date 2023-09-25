@@ -275,7 +275,7 @@ if($the_query->have_posts()):
                 if($payment_form):
                 ?>
                 <div class="orderPopup__form <?php echo $slug; ?>">
-                    <?php echo $payment_form; ?>
+                    <?php echo do_shortcode($payment_form); ?>
                 </div>
                 <?php endif; ?>
             <?php endwhile; ?>
