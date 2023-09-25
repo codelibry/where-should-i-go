@@ -37,8 +37,9 @@ if($the_query->have_posts()):
             <?php 
             $price = get_field('price');
             $button = get_field('button_label'); 
-            $payment_form = get_field('payment_form');
             $delay = '';
+            $post = get_post(get_the_ID());
+            $slug = $post->post_name;
             if($i % 2 == 0){
                 $delay = ' delay-2';
             }
@@ -47,7 +48,7 @@ if($the_query->have_posts()):
                 <div class="favoritiesBlock__row">
             <?php endif; ?>
             <div class="favoritiesBlock__listItem__wrapper">
-                <div class="favoritiesBlock__listItem product animate fade-up<?php echo $delay; ?>" data-text="<?php the_content(); ?>">
+                <div class="favoritiesBlock__listItem product animate fade-up<?php echo $delay; ?>" data-text="<?php the_content(); ?>" data-slug="<?php echo $slug; ?>">
                     <div class="favoritiesBlock__listItem__head">
                         <div class="favoritiesBlock__listItem__sideContent">
                             <div class="favoritiesBlock__listItem__content h4">
@@ -64,11 +65,6 @@ if($the_query->have_posts()):
                                 <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
                             </div>
                         </div>
-                        <?php if($payment_form): ?>
-                            <div class="favoritiesBlock__listItem__form product-form">
-                                <?php echo do_shortcode($payment_form); ?>
-                            </div>
-                        <?php endif; ?>
                     </div>
                     <div class="favoritiesBlock__listItem__body">
                         <div class="favoritiesBlock__listItem__textWrapper">
@@ -120,6 +116,14 @@ $button = get_field('button');
         </div>
     </div>
 </section>
+<?php 
+$args = array(
+    'post_type' => 'product',
+    'posts_per_page' => -1,
+);
+$the_query = new WP_Query($args);
+if($the_query->have_posts()):
+?>
 <div class="orderPopup">
     <div class="orderPopup__content">
         <div class="orderPopup__productWrapper">
@@ -134,9 +138,18 @@ $button = get_field('button');
         <div class="orderPopup__textWrapper">
             <div class="orderPopup__text">
             </div>
-            <div class="orderPopup__form">
-                
-            </div>
+            <?php while($the_query->have_posts()): $the_query->the_post(); ?>
+                <?php 
+                $payment_form = get_field('payment_form');
+                $post = get_post(get_the_ID()); 
+                $slug = $post->post_name;
+                if($payment_form):
+                ?>
+                <div class="orderPopup__form <?php echo $slug; ?>">
+                    <?php echo $payment_form; ?>
+                </div>
+                <?php endif; ?>
+            <?php endwhile; ?>
         </div>
     </div>
     <div class="orderPopup__close"></div>
@@ -147,4 +160,5 @@ $button = get_field('button');
         <div class="orderSubmit__text">Thank you.<br>We’ve emailed you the download link.</div>
     </div>
 </div>
+<?php endif; ?>
 <?php get_footer(); ?>

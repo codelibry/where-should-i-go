@@ -8,14 +8,15 @@ function initPopups() {
             var productPrice = $(this).closest('.product').find('.product-price').html();
             var productText = $(this).closest('.product').attr('data-text');
             var productImage = $(this).closest('.product').find('.product-image img').attr('src');
-            var productForm = $(this).closest('.product').find('.product-form').html();
+            var productForm = $(this).closest('.product').attr('data-slug');
             $('.orderPopup__text').html(productText);
             $('.orderPopup__productTitle').html(productTitle);
             $('.orderPopup__productImage img').attr('src', productImage);
             $('.orderPopup__productPrice').html(productPrice);
             $('.orderPopup__formTitle input').val(productTitle);
             $('.orderPopup input[type="number"]').val($(this).closest('.product').find('.product-price span').html());
-            $('.orderPopup__form').html(productForm);
+            $('.orderPopup__form').removeClass('active');
+            $('.orderPopup__form.' + productForm).addClass('active');
             if($(this).closest('.product').find('.product-price span').html() == 'Free'){
                 $('.orderPopup__form input[type="submit"]').attr('value', 'Submit');
             }

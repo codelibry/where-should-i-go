@@ -59,9 +59,9 @@ $slider = get_field('favorities_slider');
                 <?php 
                 $price = get_field('price'); 
                 $button = get_field('button_label'); 
-                $payment_form = get_field('payment_form');
+                $slug = $post->post_name;
                 ?>
-                <div class="favorities__sliderItem product product-text" data-open-popup="true" data-text="<?php the_content(); ?>">
+                <div class="favorities__sliderItem product product-text" data-slug="<?php echo $slug; ?>" data-open-popup="true" data-text="<?php the_content(); ?>">
                     <div class="favorities__sliderItem__head">
                         <div class="favorities__sliderItem__contentWrapper">
                             <div class="favorities__sliderItem__content h4">
@@ -94,11 +94,6 @@ $slider = get_field('favorities_slider');
                             <div class="favorities__sliderItem__button show-product-popup"><?php echo $button; ?></div>
                         <?php endif; ?>
                     </div>
-                    <?php if($payment_form): ?>
-                        <div class="favorities__sliderItem__form product-form">
-                            <?php echo do_shortcode($payment_form); ?>
-                        </div>
-                    <?php endif; ?>
                 </div>
             <?php endforeach; wp_reset_postdata(  ); ?>
         </div>
@@ -250,6 +245,14 @@ if($image_slider):
     </div>
 </section>
 <?php endif; ?>
+<?php 
+$args = array(
+    'post_type' => 'product',
+    'posts_per_page' => -1,
+);
+$the_query = new WP_Query($args);
+if($the_query->have_posts()):
+?>
 <div class="orderPopup">
     <div class="orderPopup__content">
         <div class="orderPopup__productWrapper">
@@ -264,8 +267,18 @@ if($image_slider):
         <div class="orderPopup__textWrapper">
             <div class="orderPopup__text">
             </div>
-            <div class="orderPopup__form">
-            </div>
+            <?php while($the_query->have_posts()): $the_query->the_post(); ?>
+                <?php 
+                $payment_form = get_field('payment_form');
+                $post = get_post(get_the_ID()); 
+                $slug = $post->post_name;
+                if($payment_form):
+                ?>
+                <div class="orderPopup__form <?php echo $slug; ?>">
+                    <?php echo $payment_form; ?>
+                </div>
+                <?php endif; ?>
+            <?php endwhile; ?>
         </div>
     </div>
     <div class="orderPopup__close"></div>
@@ -276,5 +289,6 @@ if($image_slider):
         <div class="orderSubmit__text">Thank you.<br>We’ve emailed you the download link.</div>
     </div>
 </div>
+<?php endif; ?>
 <?php get_footer(); ?>
 
