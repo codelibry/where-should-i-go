@@ -46,28 +46,6 @@ function my_acf_op_init() {
 				'parent_slug' => $parent['menu_slug'],
 			)
 		);
-		$locationsOptions = acf_add_options_page(
-			array(
-				'page_title'  => __( 'Locations' ),
-				'menu_title'  => __( 'Locations' ),
-				'parent_slug' => $parent['menu_slug'],
-			)
-		);
-		$scripts          = acf_add_options_page(
-			array(
-				'page_title'  => __( 'Scripts' ),
-				'menu_title'  => __( 'Scripts' ),
-				'parent_slug' => $parent['menu_slug'],
-			)
-		);
-
-		$api = acf_add_options_page(
-			array(
-				'page_title'  => __( 'Booking API' ),
-				'menu_title'  => __( 'Booking API' ),
-				'parent_slug' => $parent['menu_slug'],
-			)
-		);
 	}
 }
 add_action( 'acf/init', 'my_acf_op_init' );
