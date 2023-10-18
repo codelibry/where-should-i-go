@@ -46,6 +46,13 @@ function my_acf_op_init() {
 				'parent_slug' => $parent['menu_slug'],
 			)
 		);
+		$submitPopup    = acf_add_options_page(
+			array(
+				'page_title'  => __( 'Submit Popup' ),
+				'menu_title'  => __( 'Submit Popup' ),
+				'parent_slug' => $parent['menu_slug'],
+			)
+		);
 	}
 }
 add_action( 'acf/init', 'my_acf_op_init' );

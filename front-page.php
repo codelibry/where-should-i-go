@@ -283,12 +283,20 @@ if($the_query->have_posts()):
     </div>
     <div class="orderPopup__close"></div>
 </div>
+
+
+<!-- Submit Popup -->
+
+<?php $submit_popup_text = get_field('submit_popup_text', 'options'); ?>
+
 <div class="orderSubmit__wrapper">
     <div class="orderSubmit__content">
         <a href="<?php echo get_home_url(); ?>" class="orderSubmit__close"></a>
-        <div class="orderSubmit__text">Thank you.<br>We’ve emailed you the download link.</div>
+        <div class="orderSubmit__text"><?php echo $submit_popup_text; ?></div>
     </div>
 </div>
+
+<!-- Submit Popup End -->
+
 <?php endif; ?>
 <?php get_footer(); ?>
-
