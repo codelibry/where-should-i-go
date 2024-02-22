@@ -24,7 +24,7 @@ $content = get_the_content();
                 <div class="hero__dataWrapper">
                     <div class="hero__data">
                         <div class="hero__author">
-                            By <?php echo get_the_author(); ?>
+                            <?php echo 'By'. ' ' . get_the_author_posts_link();?>
                         </div>
                         <div class="hero__date">
                             <?php echo get_the_date('F j, Y'); ?>
@@ -38,7 +38,7 @@ $content = get_the_content();
                             <div class="hero__categoriesLabel">Categories: </div>
                             <div class="hero__categoriesList">
                                 <?php foreach($post_categories as $category): ?>
-                                    <div class="hero__categoriesList__item"><?php echo $category->name; ?><span>,</span></div>
+                                    <a href="<?php echo get_category_link($category);?>" class="hero__categoriesList__item"><?php echo $category->name; ?><span>,</span></a>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -51,7 +51,7 @@ $content = get_the_content();
                             <div class="hero__categoriesLabel">Tags: </div>
                             <div class="hero__categoriesList">
                                 <?php foreach($post_tags as $tag): ?>
-                                    <div class="hero__categoriesList__item"><?php echo $tag->name; ?><span>,</span></div>
+                                    <a href="<?php echo get_category_link($category);?>" class="hero__categoriesList__item"><?php echo $tag->name; ?><span>,</span></a>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -74,9 +74,21 @@ $content = get_the_content();
 
     <section class="termsText">
         <div class="container">
-            <div class="termsText__content content-block">
-                <?php the_content(); ?>
+
+            <div class="row">
+
+                <div class="termsText__content content-block col-lg-8">
+                    <?php the_content(); ?>
+                </div>
+
+                <div class="col-lg-4 termsText__sidebar">
+                    <video src="https://whereshouldigo.paris/wp-content/uploads/2024/02/SIDEBAR-VIDEO.mp4" autoplay muted playsinline loop>
+
+                    </video>
+                </div>
+
             </div>
+            
         </div>
     </section>
 
