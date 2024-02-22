@@ -62,11 +62,7 @@ if($the_query->have_posts()):
                         </div>
                         <div class="favoritiesBlock__listItem__image product-image">
                             <div class="parallax-img-wrapper">
-                                <?php
-                                  $image_id = get_post_thumbnail_id(get_the_ID());
-                                  $placeholder = get_template_directory_uri() . '/assets/images/placeholder.png';
-                                ?>
-                                <img <?php if($image_id){ acf_srcset($image_id, 'large', '1920px'); } else { echo get_template_directory_uri() . '/assets/images/placeholder.png'; } ?> alt="" class="parallax-img">
+                                <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
                             </div>
                         </div>
                     </div>
@@ -101,9 +97,7 @@ $button = get_field('button');
         <div class="parisContent__wrapper">
             <?php if($image): ?>
                 <div class="parisContent__image">
-                  <div class="animate fade-right parallax-img-wrapper">
-                    <img <?php acf_srcset($image['id'], 'large', '1920px') ?> class="parallax-img" alt="<?php echo $image['title']; ?>">
-                  </div>
+                    <div class="animate fade-right parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div>
                 </div>
             <?php endif; ?>
             <?php if($title || $text || $button): ?>
@@ -160,10 +154,6 @@ if($the_query->have_posts()):
     </div>
     <div class="orderPopup__close"></div>
 </div>
-
-
-<!-- Submit Popup -->
-
 <?php $submit_popup_text = get_field('submit_popup_text', 'options'); ?>
 
 <div class="orderSubmit__wrapper">
@@ -172,8 +162,5 @@ if($the_query->have_posts()):
         <div class="orderSubmit__text"><?php echo $submit_popup_text; ?></div>
     </div>
 </div>
-
-<!-- Submit Popup End -->
-
 <?php endif; ?>
 <?php get_footer(); ?>

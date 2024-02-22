@@ -31,7 +31,6 @@ function initPopups() {
                 $('body').addClass('opened-popup');
             }, 200);
             $("body").on('DOMSubtreeModified', ".nf-response-msg", function() {
-                console.log('123');
                 $('body').removeClass('opened-popup');
                 $('body').addClass('submit-popup');
             });
@@ -65,8 +64,6 @@ function initPopups() {
                 $('body').addClass('submit-popup');
             }
         }
-       
-        
         
     });
 }

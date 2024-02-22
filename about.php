@@ -10,16 +10,16 @@ $text = get_field('hero_text');
 if($title || $text):
 ?>
 <section class="hero">
-  <div class="container">
-      <div class="hero__content">
-          <?php if($title): ?>
-              <h1 class="hero__title sm animate fade-up"><?php echo $title; ?></h1>
-          <?php endif; ?>
-          <?php if($text): ?>
-              <div class="hero__text animate fade-up delay-1"><?php echo $text; ?></div>
-          <?php endif; ?>
-      </div>
-  </div>
+    <div class="container">
+        <div class="hero__content">
+            <?php if($title): ?>
+                <h1 class="hero__title sm animate fade-up"><?php echo $title; ?></h1>
+            <?php endif; ?>
+            <?php if($text): ?>
+                <div class="hero__text animate fade-up delay-1"><?php echo $text; ?></div>
+            <?php endif; ?>
+        </div>
+    </div>
 </section>
 <?php endif; ?>
 <?php 
@@ -29,23 +29,19 @@ $image = get_field('image');
 
 ?>
 <section class="about">
-  <div class="container">
-      <div class="about__content">
-          <div class="about__textWrapper animate fade-right">
-              <?php if($title): ?>
-                  <h2 class="about__title"><?php echo $title; ?></h2>
-              <?php endif; ?>
-              <?php if($text): ?>
-                  <div class="about__text p3"><?php echo $text; ?></div>
-              <?php endif; ?>
-          </div>
-          <?php if($image): ?>
-            <div class="about__image">
-              <div class="animate fade-left parallax-img-wrapper delay-1">
-                <img <?php acf_srcset($image['id'], 'large', '1920px') ?> class="parallax-img" alt="<?php echo $image['title']; ?>">
-              </div>
+    <div class="container">
+        <div class="about__content">
+            <div class="about__textWrapper animate fade-right">
+                <?php if($title): ?>
+                    <h2 class="about__title"><?php echo $title; ?></h2>
+                <?php endif; ?>
+                <?php if($text): ?>
+                    <div class="about__text p3"><?php echo $text; ?></div>
+                <?php endif; ?>
             </div>
-          <?php endif; ?>
+            <?php if($image): ?>
+                <div class="about__image"><div class="animate fade-left parallax-img-wrapper delay-1"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
@@ -134,15 +130,9 @@ if($text):
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
-
                 <?php if($image): ?>
-                  <div class="teaser__image">
-                    <div class="animate parallax-img-wrapper fade-<?php echo $imageAnimation; ?> delay-1">
-                      <img <?php acf_srcset($image['id'], 'large', '1920px') ?> class="parallax-img" alt="<?php echo $image['title']; ?>">
-                    </div>
-                  </div>
+                    <div class="teaser__image"><div class="animate parallax-img-wrapper fade-<?php echo $imageAnimation; ?> delay-1"><img src="<?php echo $image['url'] ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
                 <?php endif; ?>
-
             </div>
         <?php $i++; endwhile; ?>
     </div>

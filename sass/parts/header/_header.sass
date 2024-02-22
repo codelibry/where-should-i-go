@@ -19,12 +19,12 @@
                 font-size: 18px
             +max-screen(1280px)
                 font-size: 16px
-        .header__logo img
-            +max-screen(1440px)
-                max-height: 50px
-            +max-screen(1280px) 
-                max-height: 46px
-        
+        .header__logo 
+            img
+                +max-screen(1440px)
+                    max-height: 50px
+                +max-screen(1280px) 
+                    max-height: 46px
     +max-screen(1440px)
         &.hide 
             padding-top: 18px
@@ -82,6 +82,37 @@
                 max-height: 46px
             +max-screen($breakpoint-md)
                 max-height: 40px 
+        h1 
+            font-weight: 300
+            display: block
+            font-size: 30px
+            line-height: 0.8
+            display: flex 
+            flex-direction: column
+            +max-screen($breakpoint-lg)
+                font-size: 24px 
+            +max-screen($breakpoint-md)
+                font-size: 21px
+            span 
+                white-space: nowrap 
+            .logo-i-letter 
+                font-size: 26px
+                line-height: 10px
+                font-weight: 200
+                transform: scaleY(1.8)
+                display: inline-block
+                transform-origin: bottom
+                padding-bottom: 3px
+                margin: 0 -0.1em
+                +max-screen($breakpoint-lg) 
+                    font-size: 18px
+                    padding-bottom: 1px
+                +max-screen($breakpoint-md)
+                    font-size: 16px
+            .logo-quest-letter 
+                display: inline-block
+                transform: scaleY(1.25)
+                transform-origin: bottom
     &__content 
         display: flex 
         +max-screen($breakpoint-lg)

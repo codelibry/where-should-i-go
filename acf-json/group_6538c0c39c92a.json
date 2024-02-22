@@ -1,13 +1,13 @@
 {
-    "key": "group_652f9f59ef77c",
-    "title": "Submit Popup",
+    "key": "group_6538c0c39c92a",
+    "title": "Theme Options",
     "fields": [
         {
-            "key": "field_652f9f5aa3bd2",
-            "label": "Submit Popup Text",
+            "key": "field_6538c0c4aa989",
+            "label": "Thank you message",
             "name": "submit_popup_text",
             "aria-label": "",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,11 +16,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Thank you.<br>\r\nWe’ve emailed you the download link.",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -28,7 +28,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-submit-popup"
+                "value": "acf-options-theme-options"
             }
         ]
     ],
@@ -41,5 +41,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697620906
+    "modified": 1698218431
 }

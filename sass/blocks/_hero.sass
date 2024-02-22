@@ -53,37 +53,71 @@
                     max-height: 500px 
                 +max-screen($breakpoint-md)
                     max-height: 450px 
+    &__data
+        display: flex 
+        &Wrapper
+            font-style: italic
+            margin-bottom: 36px
+            font-size: 20px
+            +max-screen($breakpoint-lg)
+                margin-bottom: 32px
+                font-size: 18px
+            +max-screen($breakpoint-md)
+                margin-bottom: 24px
+                font-size: 16px
+            & > div 
+                margin-bottom: 16px
+                +max-screen(1200px)
+                    margin-bottom: 12px
+                +max-screen($breakpoint-lg)
+                    margin-bottom: 8px
+                &:last-child
+                    margin-bottom: 0
+    &__categories 
+        &Wrapper
+            margin: 0 -5px 
+            display: flex 
+            flex-wrap: wrap 
+        &Label 
+            margin: 0 5px 
+        &List 
+            display: flex 
+            flex-wrap: wrap
+            &__item 
+                margin: 0 5px 
+                &:last-child
+                    span 
+                        display: none
     &__date 
-        font-style: italic
-        margin-bottom: 36px
-        font-size: 20px
-        +max-screen($breakpoint-lg)
-            margin-bottom: 32px
-            font-size: 18px
-        +max-screen($breakpoint-md)
-            margin-bottom: 24px
-            font-size: 16px
-    &__title + .hero__date 
-        margin-top: 36px
+        margin-left: 32px
         +max-screen(1200px)
+            margin-left: 24px
+        +max-screen($breakpoint-md)
+            margin-left: 16px
+    &__title + .hero__data
+        &Wrapper
+            margin-top: 36px
+            +max-screen(1200px)
+                margin-top: 32px
+            +max-screen($breakpoint-lg)
+                margin-top: 24px
+            +max-screen($breakpoint-md)
+                margin-top: 20px
+    &__text + .hero__data 
+        &Wrapper
             margin-top: 32px
-        +max-screen($breakpoint-lg)
-            margin-top: 24px
-        +max-screen($breakpoint-md)
-            margin-top: 20px
-    &__text + .hero__date 
-        margin-top: 32px
-        +max-screen($breakpoint-lg)
-            margin-top: 28px
-        +max-screen($breakpoint-md)
-            margin-top: 24px
+            +max-screen($breakpoint-lg)
+                margin-top: 28px
+            +max-screen($breakpoint-md)
+                margin-top: 24px
     &__content 
         &.has-image
-            .hero__date
-                +max-screen($breakpoint-lg)
-                    margin-bottom: 32px
-                +max-screen($breakpoint-md)
-                    margin-bottom: 24px
+            .hero__data
+                &Wrapper
+                    +max-screen($breakpoint-lg)
+                        margin-bottom: 32px
+                    +max-screen($breakpoint-md)
+                        margin-bottom: 24px
     .single-post & 
         padding-bottom: 0
         .hero__img-wrapper

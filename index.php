@@ -58,11 +58,7 @@ $text = get_field('hero_text', get_option('page_for_posts'));
                                 </div>
                                 <div class="favoritiesBlock__listItem__image product-image">
                                     <div class="parallax-img-wrapper">
-                                      <?php
-                                        $image_id = get_post_thumbnail_id(get_the_ID());
-                                        $placeholder = get_template_directory_uri() . '/assets/images/placeholder.png';
-                                      ?>
-                                      <img <?php if($image_id){ acf_srcset($image_id, 'large', '1920px'); } else { echo get_template_directory_uri() . '/assets/images/placeholder.png'; } ?> alt="" class="parallax-img">
+                                        <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
                                     </div>
                                 </div>
                             </div>

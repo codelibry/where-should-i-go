@@ -16,14 +16,47 @@ $content = get_the_content();
         <div class="row">
             <div class="hero__content col-lg-8<?php if($img){echo ' has-image';} ?>">
                 <?php if($title): ?>
-                    <h2 class="hero__title sm"><?php echo $title; ?></h2>
+                    <h1 class="hero__title xs"><?php echo $title; ?></h1>
                 <?php endif; ?>
                 <?php if($text): ?>
                     <div class="hero__text"><?php echo $text; ?></div>
                 <?php endif; ?>
-                <div class="hero__date">
-                    <?php echo get_the_date('F j, Y'); ?>
-                </div>
+                <div class="hero__dataWrapper">
+                    <div class="hero__data">
+                        <div class="hero__author">
+                            By <?php echo get_the_author(); ?>
+                        </div>
+                        <div class="hero__date">
+                            <?php echo get_the_date('F j, Y'); ?>
+                        </div>
+                    </div>
+                    <?php 
+                    $post_categories = get_the_category(); 
+                    if(!empty($post_categories)):
+                    ?>
+                        <div class="hero__categoriesWrapper">
+                            <div class="hero__categoriesLabel">Categories: </div>
+                            <div class="hero__categoriesList">
+                                <?php foreach($post_categories as $category): ?>
+                                    <div class="hero__categoriesList__item"><?php echo $category->name; ?><span>,</span></div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <?php 
+                    $post_tags = get_the_tags();
+                    if(!empty($post_tags)):
+                    ?>
+                        <div class="hero__categoriesWrapper">
+                            <div class="hero__categoriesLabel">Tags: </div>
+                            <div class="hero__categoriesList">
+                                <?php foreach($post_tags as $tag): ?>
+                                    <div class="hero__categoriesList__item"><?php echo $tag->name; ?><span>,</span></div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    </div>
             </div>
             <?php if ($img) : ?>
                 <div class="col-lg-4 hero__img-column">

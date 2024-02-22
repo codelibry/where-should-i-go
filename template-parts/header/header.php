@@ -7,7 +7,16 @@ $button = get_field('header_menu_cta_button', 'options');
         <div class="header__content">
             <?php if($logo): ?>
                 <div class="header__logo">
-                    <a href="<?php echo get_home_url() ?>"><img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['title']; ?>"></a>
+                    <a href="<?php echo get_home_url() ?>">
+                        <?php if(is_front_page()): ?>
+                            <h1>
+                                <span class="top_line">Where</span>
+                                <span class="bottom_line"> should <span class="logo-i-letter">I</span> go<span class="logo-quest-letter">?</span></span>
+                            </h1>
+                        <?php else: ?>
+                            <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['title']; ?>">
+                        <?php endif; ?>
+                    </a>
                 </div>
             <?php endif; ?>
             <div class="header__menuWrapper">
