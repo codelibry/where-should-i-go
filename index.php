@@ -6,8 +6,20 @@ Template Name: Index
 
 get_header(); 
 
-$title = get_the_title(get_option('page_for_posts'));
-$text = get_field('hero_text', get_option('page_for_posts'));
+if (is_author()) : 
+
+    the_post();
+    $title = get_the_author_meta( 'first_name', $author_id ) . ' ' . get_the_author_meta( 'last_name', $author_id ); 
+    $text = get_the_author_meta( 'description', $author_id );
+    $img = get_field('image', 'user_' .  get_the_author_meta( 'ID', $author_id ));
+    rewind_posts();
+
+else : 
+
+    $title = get_the_title(get_option('page_for_posts'));
+    $text = get_field('hero_text', get_option('page_for_posts'));
+
+endif; 
 
 ?>
 
@@ -17,17 +29,51 @@ $text = get_field('hero_text', get_option('page_for_posts'));
 
     <section class="hero">
         <div class="container">
-            <div class="hero__content">
 
-                <?php if($title): ?>
-                    <h1 class="hero__title sm"><?php echo $title; ?></h1>
-                <?php endif; ?> 
+            <?php if (is_author()) : ?>
 
-                <?php if($text): ?>
-                    <div class="hero__text"><?php echo $text; ?></div>
-                <?php endif; ?>
+                <div class="row single-post">
 
-            </div>
+                    <div class="hero__content col-lg-8<?php if($img){echo ' has-image';} ?>">
+
+                        <?php if($title): ?>
+                            <h1 class="hero__title sm"><?php echo $title; ?></h1>
+                        <?php endif; ?> 
+
+                        <?php if($text): ?>
+                            <div class="hero__text"><?php echo $text; ?></div>
+                        <?php endif; ?>
+
+                    </div>
+
+                    <?php if ($img) : ?>
+
+                        <div class="col-lg-4 hero__img-column">
+                            <div class="hero__img-wrapper">
+                                <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['title']; ?>">
+                            </div>
+                        </div>
+
+                    <?php endif; ?>
+
+                </div>
+
+            <?php else : ?>
+
+                <div class="hero__content">
+
+                    <?php if($title): ?>
+                        <h1 class="hero__title sm"><?php echo $title; ?></h1>
+                    <?php endif; ?> 
+
+                    <?php if($text): ?>
+                        <div class="hero__text"><?php echo $text; ?></div>
+                    <?php endif; ?>
+
+                </div>
+
+            <?php endif; ?>
+
         </div>
     </section>
 
