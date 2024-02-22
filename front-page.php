@@ -15,7 +15,7 @@ $mobile_link = get_field('hero_mobile_link');
             <?php if($title || $text || $link): ?>
                 <div class="fpHero__content col-md-8 col-12 animate fade-left delay-1">
                     <?php if($title): ?>
-                        <h1 class="fpHero__title"><?php echo $title; ?></h1>
+                        <div class="h1 fpHero__title"><?php echo $title; ?></div>
                     <?php endif; ?>
                     <?php if($text): ?>
                         <div class="fpHero__text"><?php echo $text; ?></div>
