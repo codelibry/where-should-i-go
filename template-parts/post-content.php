@@ -81,11 +81,19 @@ $content = get_the_content();
                     <?php the_content(); ?>
                 </div>
 
-                <div class="col-lg-4 termsText__sidebar">
+                <?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
+
+                    <div class="col-lg-4 termsText__sidebar">
+                        <?php dynamic_sidebar('blog-sidebar'); ?>
+                    </div>
+
+                <?php endif; ?>
+
+                <!-- <div class="col-lg-4 termsText__sidebar">
                     <video src="https://whereshouldigo.paris/wp-content/uploads/2024/02/SIDEBAR-VIDEO.mp4" autoplay muted playsinline loop>
 
                     </video>
-                </div>
+                </div> -->
 
             </div>
             

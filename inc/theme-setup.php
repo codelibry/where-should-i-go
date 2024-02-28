@@ -50,3 +50,17 @@ function redirect_product_single(){
         wp_redirect( get_home_url() . '/packages/', 301 );
     exit;
 }
+
+// Register Post Sidebar
+function register_post_sidebar() {
+    register_sidebar( array(
+        'name'          => __( 'Blog Sidebar', 'wsig' ),
+        'id'            => 'blog-sidebar',
+        'description'   => __( 'Widgets in this area will be shown on single post pages.', 'wsig' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'register_post_sidebar' );
