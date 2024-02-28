@@ -10,7 +10,7 @@ if (is_author()) :
 
     the_post();
     $title = get_the_author_meta( 'first_name', $author_id ) . ' ' . get_the_author_meta( 'last_name', $author_id ); 
-    $text = get_the_author_meta( 'description', $author_id );
+    $text = get_field('bio', 'user_' .  get_the_author_meta( 'ID', $author_id ));
     $img = get_field('image', 'user_' .  get_the_author_meta( 'ID', $author_id ));
     rewind_posts();
 
@@ -41,7 +41,7 @@ endif;
                         <?php endif; ?> 
 
                         <?php if($text): ?>
-                            <div class="hero__text"><?php echo $text; ?></div>
+                            <div class="hero__text content-block"><?php echo $text; ?></div>
                         <?php endif; ?>
 
                     </div>
