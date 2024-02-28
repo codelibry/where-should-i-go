@@ -83,7 +83,7 @@ $content = get_the_content();
 
                 <?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
 
-                    <div class="col-lg-4 termsText__sidebar">
+                    <div class="col-lg-4 termsText__sidebar content-block">
                         <?php dynamic_sidebar('blog-sidebar'); ?>
                     </div>
 
