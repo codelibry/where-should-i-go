@@ -33,54 +33,56 @@ if($the_query->have_posts()):
 <section class="favoritiesBlock">
     <div class="container">
         <div class="favoritiesBlock__list">
-            <?php $i = 1; while($the_query->have_posts()): $the_query->the_post(); ?>
-            <?php 
-            $price = get_field('price');
-            $button = get_field('button_label'); 
-            $delay = '';
-            $post = get_post(get_the_ID());
-            $slug = $post->post_name;
-            if($i % 2 == 0){
-                $delay = ' delay-2';
-            }
-            ?>
-            <?php if($i % 2 != 0): ?>
-                <div class="favoritiesBlock__row">
-            <?php endif; ?>
-            <div class="favoritiesBlock__listItem__wrapper">
-                <div class="favoritiesBlock__listItem product animate fade-up<?php echo $delay; ?>" data-text="<?php the_content(); ?>" data-slug="<?php echo $slug; ?>">
-                    <div class="favoritiesBlock__listItem__head">
-                        <div class="favoritiesBlock__listItem__sideContent">
-                            <div class="favoritiesBlock__listItem__content h4">
-                                <h4 class="favoritiesBlock__listItem__title product-title"><?php the_title(); ?></h4>
-                                <?php if($price == '0'): ?>
-                                    <div class="favoritiesBlock__listItem__price product-price"><span>Free</span></div>
-                                <?php else: ?>
-                                    <div class="favoritiesBlock__listItem__price product-price"><span><?php echo $price; ?></span>€</div>
-                                <?php endif; ?>
+            <div class="favoritiesBlock__row">
+
+                <?php $i = 1; while($the_query->have_posts()): $the_query->the_post(); ?>
+                <?php 
+                $price = get_field('price');
+                $button = get_field('button_label'); 
+                $delay = '';
+                $post = get_post(get_the_ID());
+                $slug = $post->post_name;
+                // if($i % 2 == 0){
+                //     $delay = ' delay-2';
+                // }
+                ?>
+            
+                
+            
+                    <div class="favoritiesBlock__listItem__wrapper">
+                        <div class="favoritiesBlock__listItem product animate fade-up<?php echo $delay; ?>" data-text="<?php the_content(); ?>" data-slug="<?php echo $slug; ?>">
+                            <div class="favoritiesBlock__listItem__head">
+                                <div class="favoritiesBlock__listItem__sideContent">
+                                    <div class="favoritiesBlock__listItem__content h4">
+                                        <h4 class="favoritiesBlock__listItem__title product-title"><?php the_title(); ?></h4>
+                                        <?php if($price == '0'): ?>
+                                            <div class="favoritiesBlock__listItem__price product-price"><span>Free</span></div>
+                                        <?php else: ?>
+                                            <div class="favoritiesBlock__listItem__price product-price"><span><?php echo $price; ?></span>€</div>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <div class="favoritiesBlock__listItem__image product-image">
+                                    <div class="parallax-img-wrapper">
+                                        <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="favoritiesBlock__listItem__image product-image">
-                            <div class="parallax-img-wrapper">
-                                <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
+                            <div class="favoritiesBlock__listItem__body">
+                                <div class="favoritiesBlock__listItem__textWrapper">
+                                    <?php if(!empty(get_the_excerpt())): ?>
+                                        <div class="favoritiesBlock__listItem__text"><?php the_excerpt(); ?></div>
+                                    <?php endif; ?>
+                                    <?php if($button): ?>
+                                        <div class="favoritiesBlock__listItem__button show-product-popup"><?php echo $button; ?></div>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="favoritiesBlock__listItem__body">
-                        <div class="favoritiesBlock__listItem__textWrapper">
-                            <?php if(!empty(get_the_excerpt())): ?>
-                                <div class="favoritiesBlock__listItem__text"><?php the_excerpt(); ?></div>
-                            <?php endif; ?>
-                            <?php if($button): ?>
-                                <div class="favoritiesBlock__listItem__button show-product-popup"><?php echo $button; ?></div>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php if($i % 2 == 0): ?>
-                </div>
-            <?php endif; ?>
+
+               
+                                        
             <?php $i++; endwhile; wp_reset_postdata(); ?>
         </div>
     </div>

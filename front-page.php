@@ -176,13 +176,13 @@ $link = get_field('cta_link');
             <?php endif; ?>
             <div class="cta__content animate fade-left delay-1">
                 <?php if($title): ?>
-                    <h2 class="cta__title animate fade-up delay-2"><?php echo $title; ?></h2>
+                    <h2 class="cta__title animate fade-up delay-1"><?php echo $title; ?></h2>
                 <?php endif; ?>
                 <?php if($text): ?>
-                    <div class="cta__text animate fade-up delay-3"><?php echo $text; ?></div>
+                    <div class="cta__text animate fade-up delay-1"><?php echo $text; ?></div>
                 <?php endif; ?>
                 <?php if($link): ?>
-                    <div class="cta__button animate fade-up delay-4"><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></div>
+                    <div class="cta__button animate fade-up delay-1"><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></div>
                 <?php endif; ?>
             </div>
         </div>

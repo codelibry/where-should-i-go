@@ -1,10 +1,14 @@
 .container
 	padding-left: 100px
 	padding-right: 100px
-	max-width: 1632px
+	width: 1632px
+	max-width: 85%
 	+max-screen(1200px)
+		max-width: 90%
 		padding-left: 60px
 		padding-right: 60px
+	+max-screen($breakpoint-lg)
+		max-width: 100%
 	+max-screen($breakpoint-md)
 		padding-left: 20px
 		padding-right: 20px

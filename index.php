@@ -83,6 +83,8 @@ endif;
         <div class="container">
 
             <div class="favoritiesBlock__list">
+                
+                <div class="favoritiesBlock__row">
                 <?php if(have_posts()) : ?>
 
                     <?php $i = 1; while(have_posts()): the_post(); 
@@ -91,9 +93,7 @@ endif;
                         $delay = ' delay-2';
                     } ?>
 
-                    <?php if($i % 2 != 0): ?>
-                        <div class="favoritiesBlock__row">
-                    <?php endif; ?>
+                    
                     <div class="favoritiesBlock__listItem__wrapper">
                         <a class="favoritiesBlock__listItem product animate fade-up<?php echo $delay; ?>" href="<?php the_permalink();?>">
                             <div class="favoritiesBlock__listItem__head">
@@ -120,14 +120,14 @@ endif;
                             </div>
                         </a>
                     </div>
-                    <?php if($i % 2 == 0): ?>
-                        </div>
-                    <?php endif; ?>
+                    
                     <?php $i++; endwhile;  ?>
 
                 <?php else : ?>
                     <h3><?php _e('Sorry, no posts to show yet', 'wsig');?></h3>
                 <?php endif;?>
+
+                </div>
 
             </div>
 

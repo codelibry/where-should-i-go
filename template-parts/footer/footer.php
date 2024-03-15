@@ -10,7 +10,7 @@ $button = get_field('footer_mobile_button', 'options');
         <div class="footer__content row">
             <div class="footer__formWrapper col-lg-6 col-md-7 col-12 animate fade-right">
                 <?php if($title): ?>
-                    <h2 class="footer__title"><?php echo $title; ?></h2>
+                    <h2 class="h2 footer__title"><?php echo $title; ?></h2>
                 <?php endif; ?>
                 <?php if($form): ?>
                     <div class="footer__form">
