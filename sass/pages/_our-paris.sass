@@ -132,6 +132,8 @@
                     max-width: 100%
             &__title 
                 font-weight: 300
+                +min-screen(1240px)
+                    padding-bottom: 20px
                 +min-screen(1650px)
                     font-size: 28px
                     padding-bottom: 18px
@@ -141,6 +143,7 @@
                     font-size: 16px
                 +max-screen($breakpoint-md)
                     height: auto !important
+                
             &__text 
                 margin-bottom: 36px
                 line-height: 1.6

@@ -14,7 +14,7 @@ import { imagesSlider } from './template-parts/blocks/images_slider';
 import { accordion } from './template-parts/blocks/accordion';
 import { testimonialsSlider } from './template-parts/blocks/testimonials';
 // Parts
-import { initPopups } from './parts/popups';
+import { initPopups, codelibryPopups } from './parts/popups';
 import { basicSliders } from './parts/slider';
 
 
@@ -33,4 +33,5 @@ testimonialsSlider();
 
 // Parts
 initPopups();
+codelibryPopups();
 basicSliders();
