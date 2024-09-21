@@ -72,6 +72,7 @@ function codelibryPopups() {
     jQuery(document).ready(function(){
         var popupCookieName = 'discount-popup-7'; // Name of the cookie
 
+<<<<<<< Updated upstream
         // Check if the cookie is set
         if (document.cookie.indexOf(popupCookieName + '=true') === -1) {
             // Set a timeout to show the popup after 10 seconds
@@ -106,3 +107,6 @@ function codelibryPopups() {
 
 
 export { initPopups, codelibryPopups };
+=======
+export { initPopups };
+>>>>>>> Stashed changes

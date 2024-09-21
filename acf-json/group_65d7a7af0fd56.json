@@ -26,6 +26,29 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "medium"
+<<<<<<< Updated upstream
+=======
+        },
+        {
+            "key": "field_65d7b0478e3d2",
+            "label": "Bio",
+            "name": "bio",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "used on author page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+>>>>>>> Stashed changes
         }
     ],
     "location": [
@@ -46,5 +69,9 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
+<<<<<<< Updated upstream
     "modified": 1708632181
+=======
+    "modified": 1708634203
+>>>>>>> Stashed changes
 }

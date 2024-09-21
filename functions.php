@@ -14,3 +14,11 @@ add_filter('woocommerce_resize_images', static function() {
 });
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_loop_add_to_cart', 30 );
+
+add_filter( 'wpseo_robots', 'my_robots_func' );
+function my_robots_func( $robotsstr ) {
+	if ( is_archive() && is_paged() ) {
+		return 'noindex,follow';		
+	}
+	return $robotsstr;
+}

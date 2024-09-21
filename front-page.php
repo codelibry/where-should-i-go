@@ -62,7 +62,11 @@ $slider = get_field('favorities_slider');
                 $slug = $post->post_name;
                 ?>
                 <div class="favorities__sliderItem product product-text" data-slug="<?php echo $slug; ?>" data-open-popup="true" data-text="<?php the_content(); ?>">
+<<<<<<< Updated upstream
                     <div class="favorities__sliderItem__head">
+=======
+                    <div class="favorities__sliderItem__head show-product-popup">
+>>>>>>> Stashed changes
                         <div class="favorities__sliderItem__contentWrapper">
                             <div class="favorities__sliderItem__content h4">
                                 <h4 class="favorities__sliderItem__title product-title"><?php the_title(); ?></h4>
@@ -86,7 +90,7 @@ $slider = get_field('favorities_slider');
                             <?php endif; ?>
                         </div>
                     </div>
-                    <div class="favorities__sliderItem__body">
+                    <div class="favorities__sliderItem__body show-product-popup">
                         <?php if(!empty(get_the_excerpt(  ))): ?>
                             <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
                         <?php endif; ?>

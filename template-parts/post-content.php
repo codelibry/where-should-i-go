@@ -117,12 +117,12 @@ $content = get_the_content();
         <div class="arrows__content">
             <?php if(get_previous_post_link()): ?>
                 <div class="arrows__leftSide">
-                    <?php previous_post_link('%link', '<div class="arrows__leftSide__icon"><img src="' . get_template_directory_uri(  ) . '/assets/images/next.png" alt=""></div><div class="arrows__leftSide__text"><div class="arrows__leftSide__direction">Previous Article</div><h5 class="arrows__leftSide__post">%title</h5></div>'); ?>
+                    <?php previous_post_link('%link', '<div class="arrows__leftSide__icon"><img src="' . get_template_directory_uri(  ) . '/assets/images/next.png" alt=""></div><div class="arrows__leftSide__text"><div class="arrows__leftSide__direction">Previous Article</div><div class="h5 arrows__leftSide__post">%title</div></div>'); ?>
                 </div>
             <?php endif; ?>
             <?php if(get_next_post_link()): ?>
                 <div class="arrows__rightSide">
-                    <?php next_post_link('%link', '<div class="arrows__rightSide__text"><div class="arrows__rightSide__direction">Next Article</div><h5 class="arrows__rightSide__post">%title</h5></div><div class="arrows__rightSide__icon"><img src="' . get_template_directory_uri(  ) . '/assets/images/next.png" alt=""></div>') ?>
+                    <?php next_post_link('%link', '<div class="arrows__rightSide__text"><div class="arrows__rightSide__direction">Next Article</div><div class="h5 arrows__rightSide__post">%title</div></div><div class="arrows__rightSide__icon"><img src="' . get_template_directory_uri(  ) . '/assets/images/next.png" alt=""></div>') ?>
                 </div>
             <?php endif; ?>
         </div>

@@ -19,3 +19,14 @@ $body_classes = '';
     <?php get_template_part('template-parts/header/header'); ?>
 
     <div id="main">
+		
+		<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LCLSVP3WZY">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LCLSVP3WZY');
+</script>

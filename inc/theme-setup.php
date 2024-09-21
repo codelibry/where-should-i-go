@@ -63,4 +63,8 @@ function register_post_sidebar() {
         'after_title'   => '</h2>',
     ) );
 }
+<<<<<<< Updated upstream
 add_action( 'widgets_init', 'register_post_sidebar' );
+=======
+add_action( 'widgets_init', 'register_post_sidebar' );
+>>>>>>> Stashed changes
