@@ -31681,4 +31681,3 @@ sass/.DS_Store
 template-parts/.DS_Store
 js/animations/images-paralax.js
 sass/blocks/_orderSubmitPopup.sass
-node_modules/*

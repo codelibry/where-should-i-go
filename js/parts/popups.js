@@ -68,45 +68,5 @@ function initPopups() {
     });
 }
 
-function codelibryPopups() {
-    jQuery(document).ready(function(){
-        var popupCookieName = 'discount-popup-7'; // Name of the cookie
 
-<<<<<<< Updated upstream
-        // Check if the cookie is set
-        if (document.cookie.indexOf(popupCookieName + '=true') === -1) {
-            // Set a timeout to show the popup after 10 seconds
-            setTimeout(function() {
-                $('#welcome-discount-popup').css("display", "flex").fadeIn();
-            }, 2000);
-        }
-
-        $('#welcome-discount-popup .popup-block__close').click(function(e){
-            e.preventDefault();
-            $('#welcome-discount-popup').fadeOut();
-            // Set the cookie when the popup is closed
-            document.cookie = popupCookieName + '=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/';
-        });
-
-        // Click outside the popup
-        $(document).click(function(event) {
-            if (!$(event.target).closest('#welcome-discount-popup .popup-block').length) {
-                $('#welcome-discount-popup').fadeOut();
-                // Set the cookie when clicked outside the popup
-                document.cookie = popupCookieName + '=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/';
-            }
-        });
-
-        $('#welcome-discount-popup .popup-block__inner').click(function(event){
-            event.stopPropagation();
-        });
-
-    });
-}
-
-
-
-export { initPopups, codelibryPopups };
-=======
 export { initPopups };
->>>>>>> Stashed changes

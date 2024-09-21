@@ -62,11 +62,7 @@ $slider = get_field('favorities_slider');
                 $slug = $post->post_name;
                 ?>
                 <div class="favorities__sliderItem product product-text" data-slug="<?php echo $slug; ?>" data-open-popup="true" data-text="<?php the_content(); ?>">
-<<<<<<< Updated upstream
-                    <div class="favorities__sliderItem__head">
-=======
                     <div class="favorities__sliderItem__head show-product-popup">
->>>>>>> Stashed changes
                         <div class="favorities__sliderItem__contentWrapper">
                             <div class="favorities__sliderItem__content h4">
                                 <h4 class="favorities__sliderItem__title product-title"><?php the_title(); ?></h4>
@@ -95,7 +91,7 @@ $slider = get_field('favorities_slider');
                             <div class="favorities__sliderItem__text"><?php the_excerpt(  ); ?></div>
                         <?php endif; ?>
                         <?php if($button): ?>
-                            <div class="favorities__sliderItem__button show-product-popup"><?php echo $button; ?></div>
+                            <div class="favorities__sliderItem__button"><?php echo $button; ?></div>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -180,13 +176,13 @@ $link = get_field('cta_link');
             <?php endif; ?>
             <div class="cta__content animate fade-left delay-1">
                 <?php if($title): ?>
-                    <h2 class="cta__title animate fade-up delay-1"><?php echo $title; ?></h2>
+                    <h2 class="cta__title animate fade-up delay-2"><?php echo $title; ?></h2>
                 <?php endif; ?>
                 <?php if($text): ?>
-                    <div class="cta__text animate fade-up delay-1"><?php echo $text; ?></div>
+                    <div class="cta__text animate fade-up delay-3"><?php echo $text; ?></div>
                 <?php endif; ?>
                 <?php if($link): ?>
-                    <div class="cta__button animate fade-up delay-1"><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></div>
+                    <div class="cta__button animate fade-up delay-4"><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></div>
                 <?php endif; ?>
             </div>
         </div>

@@ -11,7 +11,7 @@
         +max-screen(1200px)
             +min-screen(993px)
                 margin: 0 -35px 
-        +max-screen(1240px)
+        +max-screen($breakpoint-lg)
             margin: 0 -12px
     &__list 
         transform: translateX(170px)
@@ -25,7 +25,7 @@
             +min-screen(993px)
                 transform: translateX(130px)
                 margin-bottom: -48px
-        +max-screen(1240px)
+        +max-screen($breakpoint-lg)
             margin-bottom: -42px
             padding-top: 0
             transform: none
@@ -34,32 +34,27 @@
             &__form 
                 display: none 
             &__wrapper
-                max-width: calc(100% / 3)
-                padding: 0 75px
+                max-width: 36.64%
+                margin: 0 75px
                 margin-bottom: 52px
                 transform: rotate(-8deg)
-                +max-screen(1240px)
-                    max-width: 50%
-                    margin-bottom: 48px
-                    transform: none
-                +max-screen(1240px)
+                +max-screen(1200px)
+                    +min-screen(993px)
+                        max-width: 41%
+                        margin: 0 35px
+                        margin-bottom: 48px
+                +max-screen($breakpoint-lg)
                     margin: 0 
                     margin-bottom: 42px
-                    // max-width: 50%
+                    max-width: 50%
                     padding: 0 12px 
-                    
+                    transform: none
                 +max-screen($breakpoint-md)
                     max-width: 100%
-                    // transform: none
+                    transform: none
                     transition-delay: 0s
             &__content 
-                +max-screen(1800px)
-                    +min-screen(1650px)
-                        font-size: 28px
-                        padding-bottom: 18px
-                +max-screen(1650px)
-                    font-size: 20px
-                +min-screen(1240px)
+                +min-screen(993px)
                     writing-mode: vertical-rl
                     transform: rotate(180deg)
                     display: -webkit-box
@@ -73,7 +68,7 @@
                     bottom: 48px
                     right: 100%
                     width: min-content
-                +max-screen(1240px)
+                +max-screen($breakpoint-lg)
                     right: auto 
                     left: 0
                     position: static
@@ -83,21 +78,21 @@
                     margin-bottom: 32px
             &__price
                 font-weight: 300
-                +max-screen(1240px)
+                +max-screen($breakpoint-lg)
                     margin-top: 0
                     margin-left: 16px
                     margin-top: 3px
                 +max-screen($breakpoint-md)
                     font-size: 22px
             &__image 
-                max-width: 100%
+                max-width: 62.63%
                 margin-bottom: 48px
                 width: 100%
                 +max-screen(1800px)
                     margin-bottom: 24px
                 +max-screen(1200px)
                     margin-bottom: 36px
-                +max-screen(1240px)
+                +max-screen($breakpoint-lg)
                     margin-bottom: 36px
                     max-width: 100%
                     height: auto !important
@@ -110,7 +105,7 @@
                         padding-bottom: 120%
                     +max-screen(1440px)
                         padding-bottom: 135%
-                    +max-screen(1240px)
+                    +max-screen($breakpoint-lg)
                         padding-bottom: 0
                     +max-screen(480px)
                         height: 350px
@@ -118,43 +113,33 @@
                     width: 100%
                     object-fit: cover
                     transform: translateY(16%)
-                    +max-screen(1240px)
+                    +max-screen($breakpoint-lg)
                         transform: none
                         position: static
             &__head 
                 display: flex 
                 position: relative
-                +max-screen(1240px)
+                +max-screen($breakpoint-lg)
                     flex-direction: column
             &__body 
-                max-width: 100%
-                +max-screen(1240px)
+                max-width: 62.63%
+                +max-screen($breakpoint-lg)
                     max-width: 100%
             &__title 
                 font-weight: 300
-                +min-screen(1240px)
-                    padding-bottom: 20px
-                +min-screen(1650px)
-                    font-size: 28px
-                    padding-bottom: 18px
-                +max-screen(1650px)
-                    font-size: 20px
-                +max-screen($breakpoint-xl)
-                    font-size: 16px
+                +max-screen(1800px)
+                    +min-screen(993px)
+                        font-size: 28px
+                        padding-bottom: 18px
                 +max-screen($breakpoint-md)
                     height: auto !important
-                
             &__text 
                 margin-bottom: 36px
                 line-height: 1.6
                 +max-screen(1800px)
                     font-size: 18px
                     margin-bottom: 20px
-                +max-screen(1600px)
-                    font-size: 16px
-                +max-screen($breakpoint-xl)
-                    font-size: 14px
-                +max-screen(1240px)
+                +max-screen($breakpoint-lg)
                     margin-bottom: 28px
                 +max-screen($breakpoint-md)
                     margin-bottom: 24px 
@@ -168,8 +153,8 @@
                 line-height: 1.6
                 display: inline-block
                 z-index: 1
-                +max-screen(1650px)
-                    font-size: 14px
+                +max-screen(1400px)
+                    font-size: 18px
                 &::before 
                     content: ""
                     position: absolute

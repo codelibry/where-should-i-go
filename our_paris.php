@@ -51,11 +51,7 @@ if($the_query->have_posts()):
             
                     <div class="favoritiesBlock__listItem__wrapper">
                         <div class="favoritiesBlock__listItem product animate fade-up<?php echo $delay; ?>" data-text="<?php the_content(); ?>" data-slug="<?php echo $slug; ?>">
-<<<<<<< Updated upstream
-                            <div class="favoritiesBlock__listItem__head">
-=======
                             <div class="favoritiesBlock__listItem__head show-product-popup">
->>>>>>> Stashed changes
                                 <div class="favoritiesBlock__listItem__sideContent">
                                     <div class="favoritiesBlock__listItem__content h4">
                                         <h4 class="favoritiesBlock__listItem__title product-title"><?php the_title(); ?></h4>
@@ -72,21 +68,13 @@ if($the_query->have_posts()):
                                     </div>
                                 </div>
                             </div>
-<<<<<<< Updated upstream
-                            <div class="favoritiesBlock__listItem__body">
-=======
                             <div class="favoritiesBlock__listItem__body show-product-popup">
->>>>>>> Stashed changes
                                 <div class="favoritiesBlock__listItem__textWrapper">
                                     <?php if(!empty(get_the_excerpt())): ?>
                                         <div class="favoritiesBlock__listItem__text"><?php the_excerpt(); ?></div>
                                     <?php endif; ?>
                                     <?php if($button): ?>
-<<<<<<< Updated upstream
-                                        <div class="favoritiesBlock__listItem__button show-product-popup"><?php echo $button; ?></div>
-=======
                                         <div class="favoritiesBlock__listItem__button"><?php echo $button; ?></div>
->>>>>>> Stashed changes
                                     <?php endif; ?>
                                 </div>
                             </div>

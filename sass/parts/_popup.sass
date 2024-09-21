@@ -6,10 +6,6 @@
     width: 100vw
     height: 100vh
     z-index: 1000
-
-    // display: flex
-    justify-content: center
-    align-items: center
     &__background
         position: absolute
         width: 100vw
@@ -23,18 +19,11 @@
         justify-content: center
         height: 100%
         z-index: 1001
-        background: white
-        padding: 40px
-    &__box
-       max-height: 80vh
-       overflow: auto
-       padding-right: 40px
-       margin-right: -40px
+        overflow: auto
     &__wrapper
         position: relative
-        
+        max-height: 80vh
         max-width: 550px
-        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)
         .videoBlock &
             max-width: 920px
     &__container
@@ -86,8 +75,6 @@
             transform: translateY(-50%) rotate(45deg)
         &::after
             transform: translateY(-50%) rotate(-45deg)
-    &__header
-        margin-bottom: 30px
 
 .popup-hotel-location
     .popup-block__container
