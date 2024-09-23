@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Our Paris
+Template Name: Packages
 */
 get_header();
 ?>
@@ -23,10 +23,22 @@ if($title || $text):
 </section>
 <?php endif; ?>
 <?php 
+$packages_country = get_field('packages_country');
 $args = array(
     'post_type' => 'product',
     'posts_per_page' => -1,
+    'tax_query' => array(),
 );
+
+if($packages_country){
+    $country_filter = array(
+        'taxonomy' => 'packages_country',
+        'field'    => 'id',
+        'terms'    => $packages_country,
+    );
+
+    array_push($args['tax_query'], $country_filter);
+}
 $the_query = new WP_Query($args);
 if($the_query->have_posts()):
 ?>

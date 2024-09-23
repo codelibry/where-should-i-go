@@ -40,6 +40,37 @@
             "show_in_graphql" => false,
         ];
         register_taxonomy("event_country", ["event"], $args);
+        
+
+
+        /**
+         * Taxonomy: Countries.
+         */
+        
+         $labels = [
+            "name" => __("Packages Country", "theme_slug"),
+            "singular_name" => __("Packages Country", "theme_slug"),
+        ];
+        
+        
+        $args = [
+            "label" => __("Packages Countries", "theme_slug"),
+            "labels" => $labels,
+            "public" => true,
+            "publicly_queryable" => true,
+            "hierarchical" => true,
+            "show_ui" => true,
+            "show_in_menu" => true,
+            "show_in_nav_menus" => true,
+            "query_var" => true,
+            "rewrite" => ['slug' => 'packages_country', 'with_front' => true,],
+            "show_admin_column" => true,
+            "show_in_rest" => true,
+            "show_tagcloud" => false,
+            "rest_base" => "packages_country",
+            "show_in_quick_edit" => false,
+        ];
+        register_taxonomy("packages_country", ["product"], $args);
     }
     
     add_action('init', 'cptui_register_my_taxes_event_country');

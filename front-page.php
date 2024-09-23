@@ -35,6 +35,32 @@ $mobile_link = get_field('hero_mobile_link');
     </div>
 </section>
 <?php 
+$image = get_field('cta_image');
+$title = get_field('cta_title');
+$text = get_field('cta_text');
+$link = get_field('cta_link');
+?>
+<section class="cta" id="cta">
+    <div class="container">
+        <div class="cta__contentWrapper">
+            <?php if($image): ?>
+                <div class="cta__image animate fade-right"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></div>
+            <?php endif; ?>
+            <div class="cta__content animate fade-left delay-1">
+                <?php if($title): ?>
+                    <h2 class="cta__title animate fade-up delay-2"><?php echo $title; ?></h2>
+                <?php endif; ?>
+                <?php if($text): ?>
+                    <div class="cta__text animate fade-up delay-3"><?php echo $text; ?></div>
+                <?php endif; ?>
+                <?php if($link): ?>
+                    <div class="cta__button animate fade-up delay-4"><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
+<?php 
 $title = get_field('favorities_slider_title');
 $text = get_field('favorities_slider_text');
 $link = get_field('favorities_slider_link');
@@ -109,32 +135,6 @@ $slider = get_field('favorities_slider');
     </div>
 </section>
 <?php 
-$title = get_field('description_title');
-$text = get_field('description_text');
-$image = get_field('description_image');
-?>
-<section class="description">
-    <div class="container">
-        <?php if($title): ?>
-            <h4 class="description__title animate fade-up"><?php echo $title; ?></h4>
-        <?php endif; ?>
-        <?php if($text || $image): ?>
-            <div class="description__content row">
-                <?php if($text): ?>
-                    <div class="description__text col-lg-7 col-12 animate fade-right delay-1">
-                        <?php echo $text; ?>
-                    </div>
-                <?php endif; ?>
-                <?php if($image): ?>
-                    <div class="description__image col-lg-5 col-12">
-                        <div class="animate fade-left delay-2 parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div>
-                    </div>
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
-    </div>
-</section>
-<?php 
 $title = get_field('features_title');
 ?>
 <section class="features">
@@ -166,32 +166,6 @@ $title = get_field('features_title');
     </div>
 </section>
 <?php 
-$image = get_field('cta_image');
-$title = get_field('cta_title');
-$text = get_field('cta_text');
-$link = get_field('cta_link');
-?>
-<section class="cta" id="cta">
-    <div class="container">
-        <div class="cta__contentWrapper">
-            <?php if($image): ?>
-                <div class="cta__image animate fade-right"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></div>
-            <?php endif; ?>
-            <div class="cta__content animate fade-left delay-1">
-                <?php if($title): ?>
-                    <h2 class="cta__title animate fade-up delay-2"><?php echo $title; ?></h2>
-                <?php endif; ?>
-                <?php if($text): ?>
-                    <div class="cta__text animate fade-up delay-3"><?php echo $text; ?></div>
-                <?php endif; ?>
-                <?php if($link): ?>
-                    <div class="cta__button animate fade-up delay-4"><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</section>
-<?php 
 if(have_rows('testimonials__list')):
 ?>
 <section class="testimonial">
@@ -218,6 +192,46 @@ if(have_rows('testimonials__list')):
                 </div>
             <?php endwhile; ?>
         </div>
+    </div>
+</section>
+<?php endif; ?>
+<?php 
+if(have_rows('description_block')):
+?>
+<section class="description">
+    <div class="container">
+        <?php $i = 1; while(have_rows('description_block')): the_row(); ?>
+            <?php 
+            $title = get_sub_field('description_title');
+            $text = get_sub_field('description_text');
+            $image = get_sub_field('description_image');
+            $button = get_sub_field('description_button');
+            ?>
+            <div class="description__block">
+                <?php if($title): ?>
+                    <h4 class="description__title animate fade-up"><?php echo $title; ?></h4>
+                <?php endif; ?>
+                <?php if($text || $image): ?>
+                    <div class="description__content row<?php if($i % 2 == 0){echo ' image-left';} ?>">
+                        <?php if($text): ?>
+                            <div class="description__text col-lg-7 col-12 animate fade-<?php if($i % 2 == 0){echo 'left';}else{echo 'right';} ?> delay-1">
+                                <?php echo $text; ?>
+                                <?php if($button): ?>
+                                    <div class="description__button button">
+                                        <a href="<?php echo $button['url']; ?>"><?php echo $button['title']; ?></a>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if($image): ?>
+                            <div class="description__image col-lg-5 col-12">
+                                <div class="animate fade-<?php if($i % 2 == 0){echo 'right';}else{echo 'left';} ?> delay-2 parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        <?php $i++; endwhile; ?>
     </div>
 </section>
 <?php endif; ?>
