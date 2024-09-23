@@ -1,39 +1,29 @@
 <?php get_header(); ?>
 <?php 
-$image = get_field('hero_image');
-$title = get_field('hero_title');
-$text = get_field('hero_text');
-$image__text_link = get_field('hero_image__text_link');
-$link = get_field('hero_link');
-$mobile_link = get_field('hero_mobile_link');
+if(have_rows('hero_images_list')):
 ?>
-<section class="fpHero">
-    <div class="container">
-        <div class="fpHero__contentWrapper row">
-            <?php if($image): ?>
-                <<?php if($image__text_link){echo 'a href="' . $image__text_link['url'] . '"';}else{echo 'div';} ?> class="fpHero__image col-md-4 col-12 ">
-                    <div class="animate fade-right parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"><img src="<?php echo $image['url']; ?>" class="hidden-img" alt="<?php echo $image['title']; ?>"></div>
-                </<?php if($image__text_link){echo 'a';}else{echo 'div';} ?>>
-            <?php endif; ?>
-            <?php if($title || $text || $link): ?>
-                <div class="fpHero__content col-md-8 col-12 animate fade-left delay-1">
-                    <?php if($title): ?>
-                        <<?php if($image__text_link){echo 'a href="' . $image__text_link['url'] . '"';}else{echo 'div';} ?> class="h1 fpHero__title"><?php echo $title; ?></<?php if($image__text_link){echo 'a';}else{echo 'div';} ?>>
-                    <?php endif; ?>
-                    <?php if($text): ?>
-                        <<?php if($image__text_link){echo 'a href="' . $image__text_link['url'] . '"';}else{echo 'div';} ?> class="fpHero__text"><?php echo $text; ?></<?php if($image__text_link){echo 'a';}else{echo 'div';} ?>>
-                    <?php endif; ?>
-                    <?php if($link): ?>
-                        <div class="fpHero__link button"><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></div>
-                    <?php endif; ?>
-                    <?php if($mobile_link): ?>
-                        <div class="fpHero__mobileLink button"><a href="<?php echo $mobile_link['url']; ?>"><?php echo $mobile_link['title']; ?></a></div>
-                    <?php endif; ?>
-                </div>
-            <?php endif; ?>
+    <section class="fpHero">
+        <div class="container">
+            <div class="fpHero__contentList row">
+                <?php while(have_rows('hero_images_list')): the_row(); ?>
+                    <?php 
+                    $image = get_sub_field('item_image');
+                    $title = get_sub_field('item_title');
+                    $link = get_sub_field('item_link');
+                    ?>
+                    <a href="<?php echo $link['url']; ?>" class="fpHero__contentList__item">
+                        <?php if($title): ?>
+                            <div class="fpHero__contentList__itemTitle h1"><?php echo $title; ?></div>
+                        <?php endif; ?>
+                        <?php if($image): ?>
+                            <div class="fpHero__contentList__itemImage parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="parallax-img"></div>
+                        <?php endif; ?>
+                    </a>
+                <?php endwhile; ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif; ?>
 <?php 
 $image = get_field('cta_image');
 $title = get_field('cta_title');

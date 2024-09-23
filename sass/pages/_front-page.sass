@@ -1,5 +1,10 @@
 .fpHero
     background: $color-green
+    padding-bottom: 120px
+    +max-screen($breakpoint-lg)
+        padding-bottom: 72px
+    +max-screen($breakpoint-md)
+        padding-bottom: 32px
     &__image 
         padding-right: 5px 
         position: relative
@@ -73,6 +78,38 @@
             align-items: flex-start
         &Wrapper 
             align-items: center
+        &List 
+            display: flex
+            justify-content: space-around
+            +max-screen($breakpoint-md)
+                flex-direction: column
+                align-items: center
+            &__item 
+                display: block
+                width: 40%
+                transform: rotate(-5deg)
+                text-align: center
+                +max-screen($breakpoint-md)
+                    width: 80%
+                    transform: none 
+                    margin-bottom: 32px
+                &Image 
+                    position: relative
+                    padding-bottom: 0
+                    &::before
+                        content: ""
+                        display: block 
+                        padding-bottom: 120%
+                    img 
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                &Title 
+                    +max-screen($breakpoint-md)
+                        margin-bottom: 12px 
     &__title 
         line-height: 1
         margin-bottom: 64px
