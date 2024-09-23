@@ -14,8 +14,17 @@ function header(){
                 $('header').removeClass('hide');
             }
         });
+        
+
+        $('.header__menu .menu-item.menu-item-has-children').on({
+            mouseenter: function(){
+                $(this).find('.sub-menu').stop().slideDown();
+            },
+            mouseleave: function() {
+                $(this).find('.sub-menu').stop().slideUp();
+            }
+        });
     });
-    
 }
 
 
