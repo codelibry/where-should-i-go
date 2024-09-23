@@ -3,9 +3,9 @@
     &__image 
         padding-right: 5px 
         position: relative
-        transform: translateY(80px) rotate(-5deg)
+        transform: translateY(80px) rotate(-8deg)
         +max-screen(1800px)
-            transform: translateY(20px) rotate(-5deg)
+            transform: translateY(20px) rotate(-8deg)
         +max-screen($breakpoint-lg)
             text-align: center
             transform: none
@@ -32,7 +32,7 @@
                 left: 30px 
             +max-screen($breakpoint-lg)
                 position: static
-                transform: rotate(-5deg) !important
+                transform: rotate(-8deg) !important
                 left: unset
                 right: 0
         img 
@@ -431,16 +431,6 @@
         padding-top: 112px
         padding-bottom: 80px
         overflow: hidden
-    &__block 
-        margin-bottom: 132px 
-        +max-screen(1200px)
-            margin-bottom: 112px
-        +max-screen($breakpoint-lg)
-            margin-bottom: 96px 
-        +max-screen($breakpoint-md)
-            margin-bottom: 80px 
-        &:last-child
-            margin-bottom: 0
     &__title 
         max-width: 850px 
         margin: auto
@@ -455,18 +445,6 @@
     &__content
         display: flex 
         align-items: center
-        &.image-left 
-            flex-direction: row-reverse
-            .description 
-                &__text 
-                    padding-right: 10px 
-                    padding-left: 77px 
-                    +max-screen(1200px)
-                        padding: 0 10px 
-                &__image 
-                    transform: rotate(-12deg)
-                    +max-screen($breakpoint-lg)
-                        transform: none 
     &__text 
         font-size: 24px
         line-height: 1.6
@@ -493,14 +471,12 @@
         padding-right: 40px
         position: relative
         transform: rotate(12deg)
+        +max-screen($breakpoint-lg)
+            transform: none
         +max-screen(1200px)
             padding-right: 10px
         +max-screen($breakpoint-lg)
             padding: 0 10px 
-            transform: none
-            margin-top: 48px
-        +max-screen($breakpoint-md)
-            margin-top: 0
         img
             width: 100%
             position: absolute
@@ -513,21 +489,12 @@
                 margin: auto 
                 display: block 
                 position: static
-                transform: translateX(-50%) !important
-                left: 50%
+                transform: none !important
             +max-screen($breakpoint-md)
                 max-width: 100%
         .parallax-img-wrapper
             padding-bottom: 50%
-    &__button 
-        border-bottom: 1px solid #fff
-        display: inline-block
-        +max-screen($breakpoint-lg)
-            background: #fff
-            padding: 6px 24px
-            border-radius: 15px
-            a::after 
-                content: none 
+                
 .features
     background: $color-green
     padding-top: 120px

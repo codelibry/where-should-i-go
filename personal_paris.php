@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Paris | Zurich Pages
+Template Name: Personal Paris
 */
 get_header();
 ?>

@@ -1,12 +1,11 @@
 {
     "key": "group_64dcec3647446",
-    "title": "Paris | Zurich Pages Fields",
+    "title": "Personal Paris Fields",
     "fields": [
         {
             "key": "field_64dcec42b5c1c",
             "label": "Hero",
             "name": "",
-            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -23,7 +22,6 @@
             "key": "field_64dcec47b5c1d",
             "label": "Title",
             "name": "hero_title",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -43,7 +41,6 @@
             "key": "field_64dcec50b5c1e",
             "label": "Text",
             "name": "hero_text",
-            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -63,7 +60,6 @@
             "key": "field_64dcec7db5c1f",
             "label": "Title | Text | Image",
             "name": "",
-            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -80,7 +76,6 @@
             "key": "field_64dcec88b5c20",
             "label": "Title",
             "name": "title",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -100,7 +95,6 @@
             "key": "field_64dcec8cb5c21",
             "label": "Text",
             "name": "text",
-            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -120,7 +114,6 @@
             "key": "field_64dcec94b5c22",
             "label": "Image",
             "name": "image",
-            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -145,7 +138,6 @@
             "key": "field_64dcecbcb5c23",
             "label": "Features",
             "name": "",
-            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -162,7 +154,6 @@
             "key": "field_64dcecc5b5c24",
             "label": "Title",
             "name": "features_title",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -182,7 +173,6 @@
             "key": "field_64dcecd5b5c25",
             "label": "Features",
             "name": "features",
-            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -196,13 +186,12 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "Add Row",
+            "button_label": "",
             "sub_fields": [
                 {
                     "key": "field_64dcecdab5c26",
                     "label": "Text",
                     "name": "text",
-                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -216,17 +205,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": "",
-                    "parent_repeater": "field_64dcecd5b5c25"
+                    "maxlength": ""
                 }
-            ],
-            "rows_per_page": 20
+            ]
         },
         {
             "key": "field_64dcece7b5c27",
             "label": "Text",
             "name": "",
-            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -243,7 +229,6 @@
             "key": "field_64dcececb5c28",
             "label": "Text",
             "name": "text_block",
-            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -263,7 +248,6 @@
             "key": "field_64dcecf4b5c29",
             "label": "CTA",
             "name": "",
-            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -280,7 +264,6 @@
             "key": "field_64dcecf9b5c2a",
             "label": "Image",
             "name": "cta_image",
-            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -305,7 +288,6 @@
             "key": "field_64dced08b5c2b",
             "label": "Title",
             "name": "cta_title",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -325,7 +307,6 @@
             "key": "field_64dced11b5c2c",
             "label": "Text",
             "name": "cta_text",
-            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -345,7 +326,6 @@
             "key": "field_64dced1ab5c2d",
             "label": "Button",
             "name": "cta_button",
-            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -361,7 +341,6 @@
             "key": "field_64dced30b5c2e",
             "label": "Teaser Blocks",
             "name": "",
-            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -378,7 +357,6 @@
             "key": "field_64dcede5b5c2f",
             "label": "Teaser Blocks",
             "name": "teaser_blocks",
-            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -392,13 +370,12 @@
             "min": 0,
             "max": 0,
             "layout": "block",
-            "button_label": "Add Row",
+            "button_label": "",
             "sub_fields": [
                 {
                     "key": "field_64dcedf5b5c30",
                     "label": "Title",
                     "name": "title",
-                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -412,14 +389,12 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": "",
-                    "parent_repeater": "field_64dcede5b5c2f"
+                    "maxlength": ""
                 },
                 {
                     "key": "field_64dcedf9b5c31",
                     "label": "Text",
                     "name": "text",
-                    "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -433,14 +408,12 @@
                     "tabs": "all",
                     "toolbar": "full",
                     "media_upload": 1,
-                    "delay": 0,
-                    "parent_repeater": "field_64dcede5b5c2f"
+                    "delay": 0
                 },
                 {
                     "key": "field_64dcee03b5c33",
                     "label": "Image",
                     "name": "image",
-                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -459,14 +432,12 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": "",
-                    "parent_repeater": "field_64dcede5b5c2f"
+                    "mime_types": ""
                 },
                 {
                     "key": "field_64dcedffb5c32",
                     "label": "Link",
                     "name": "link",
-                    "aria-label": "",
                     "type": "link",
                     "instructions": "",
                     "required": 0,
@@ -484,14 +455,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
-                    "parent_repeater": "field_64dcede5b5c2f"
+                    "return_format": "array"
                 },
                 {
                     "key": "field_64dd089e95a74",
                     "label": "Link Label",
                     "name": "link_label",
-                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -513,14 +482,12 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": "",
-                    "parent_repeater": "field_64dcede5b5c2f"
+                    "maxlength": ""
                 },
                 {
                     "key": "field_64dcee13b5c34",
                     "label": "Link Type",
                     "name": "link_type",
-                    "aria-label": "",
                     "type": "radio",
                     "instructions": "",
                     "required": 0,
@@ -539,14 +506,12 @@
                     "default_value": "",
                     "layout": "vertical",
                     "return_format": "value",
-                    "save_other_choice": 0,
-                    "parent_repeater": "field_64dcede5b5c2f"
+                    "save_other_choice": 0
                 },
                 {
                     "key": "field_64dcee3cb5c35",
                     "label": "Download File",
                     "name": "download_file",
-                    "aria-label": "",
                     "type": "file",
                     "instructions": "",
                     "required": 0,
@@ -568,11 +533,9 @@
                     "library": "all",
                     "min_size": "",
                     "max_size": "",
-                    "mime_types": "",
-                    "parent_repeater": "field_64dcede5b5c2f"
+                    "mime_types": ""
                 }
-            ],
-            "rows_per_page": 20
+            ]
         }
     ],
     "location": [
@@ -580,7 +543,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "paris_zurich_pages.php"
+                "value": "personal_paris.php"
             }
         ]
     ],
@@ -590,8 +553,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": 1,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1726924485
+    "modified": 1692306281
 }

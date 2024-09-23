@@ -6,7 +6,6 @@
             "key": "field_64e3af6cfc38f",
             "label": "Hero",
             "name": "",
-            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -23,7 +22,6 @@
             "key": "field_64e3af71fc390",
             "label": "Title",
             "name": "hero_title",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -43,7 +41,6 @@
             "key": "field_64e3af79fc391",
             "label": "Text",
             "name": "hero_text",
-            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -60,50 +57,9 @@
             "delay": 0
         },
         {
-            "key": "field_66eed1cb713e8",
-            "label": "Packages List",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_66eed1b8713e7",
-            "label": "Packages Country",
-            "name": "packages_country",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "packages_country",
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
-            "field_type": "checkbox",
-            "multiple": 0,
-            "allow_null": 0
-        },
-        {
             "key": "field_64e3af8ed5e09",
             "label": "Image | Text",
             "name": "",
-            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -120,7 +76,6 @@
             "key": "field_64e3af99d5e0a",
             "label": "Image",
             "name": "image",
-            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -145,7 +100,6 @@
             "key": "field_64e3afa4d5e0b",
             "label": "Title",
             "name": "title",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -165,7 +119,6 @@
             "key": "field_64e3afabd5e0c",
             "label": "Text",
             "name": "text",
-            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -185,7 +138,6 @@
             "key": "field_64e3afb4d5e0d",
             "label": "Button",
             "name": "button",
-            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -203,7 +155,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "packages_list.php"
+                "value": "our_paris.php"
             }
         ]
     ],
@@ -213,8 +165,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": 1,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1726927454
+    "modified": 1692643311
 }
