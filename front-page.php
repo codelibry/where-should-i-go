@@ -13,7 +13,7 @@ if(have_rows('hero_images_list')):
                     ?>
                     <a href="<?php echo $link['url']; ?>" class="fpHero__contentList__item">
                         <?php if($title): ?>
-                            <div class="fpHero__contentList__itemTitle h1"><?php echo $title; ?></div>
+                            <div class="fpHero__contentList__itemTitle h2"><?php echo $title; ?></div>
                         <?php endif; ?>
                         <?php if($image): ?>
                             <div class="fpHero__contentList__itemImage parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="parallax-img"></div>
