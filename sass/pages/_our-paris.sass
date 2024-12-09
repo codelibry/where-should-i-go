@@ -13,6 +13,33 @@
                 margin: 0 -35px 
         +max-screen($breakpoint-lg)
             margin: 0 -12px
+    &__toggler 
+        display: flex
+        column-gap: 20px
+        justify-content: center
+        flex-wrap: wrap 
+        row-gap: 20px
+        margin-top: -40px
+        margin-bottom: 64px
+        +max-screen($breakpoint-lg)
+            margin-bottom: 48px
+        +max-screen($breakpoint-md)
+            margin-bottom: 32px
+        &Item 
+            padding: 6px 42px
+            cursor: pointer
+            border-radius: 30px
+            border: 4px solid #000
+            transition: .3s
+            cursor: pointer
+            &[data-country="paris"]
+                border-color: #d3e3d7
+                &.active
+                    background: #d3e3d7
+            &[data-country="zurich"]
+                border-color: #a6d4ff
+                &.active 
+                    background-color: #a6d4ff
     &__list 
         transform: translateX(170px)
         +max-screen(1600px)
@@ -29,6 +56,16 @@
             margin-bottom: -42px
             padding-top: 0
             transform: none
+        &.country-paris 
+            .favoritiesBlock__listItem__wrapper
+                display: none 
+                &.country-paris
+                    display: block
+        &.country-zurich 
+            .favoritiesBlock__listItem__wrapper
+                display: none 
+                &.country-zurich
+                    display: block
         &Item 
             cursor: pointer
             &__form 
@@ -53,6 +90,20 @@
                     max-width: 100%
                     transform: none
                     transition-delay: 0s
+                &.country-paris 
+                    .parallax-img-wrapper 
+                        border: 10px solid #D3E3D3
+                        +max-screen(1200px)
+                            border: 8px solid #D3E3D3
+                        +max-screen($breakpoint-lg)
+                            border: 5px solid #D3E3D3
+                &.country-zurich 
+                    .parallax-img-wrapper 
+                        border: 10px solid #A6D4FF
+                        +max-screen(1200px)
+                            border: 8px solid #A6D4FF
+                        +max-screen($breakpoint-lg)
+                            border: 5px solid #A6D4FF
             &__content 
                 +min-screen(993px)
                     writing-mode: vertical-rl
@@ -100,11 +151,6 @@
                     margin-bottom: 32px
                 .parallax-img-wrapper
                     max-height: 520px
-                    padding-bottom: 134%
-                    +max-screen(1800px)
-                        padding-bottom: 120%
-                    +max-screen(1440px)
-                        padding-bottom: 135%
                     +max-screen($breakpoint-lg)
                         padding-bottom: 0
                     +max-screen(480px)

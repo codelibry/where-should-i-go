@@ -52,22 +52,18 @@
             margin: auto
             transform: none
             transform: translate(0, 0) rotate(12deg)
-            margin-top: 100px
+            transform: none 
+            margin-top: 32px
         img 
-            // transform: translateX(-20px) rotate(12deg)
             margin-left: -58px
-            width: calc( 100% + 38px )
             position: absolute
             right: 10px
             top: 0
             object-fit: cover
             +max-screen(1200px)
                 margin-left: -90px
-                width: calc( 100% + 90px )
             +max-screen($breakpoint-lg)
                 margin-left: 0
-                width: calc( 100% - 20px )
-                // transform: translateX(10px)!important
                 margin-top: 36px
                 position: static
             +max-screen($breakpoint-md)

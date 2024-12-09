@@ -16,6 +16,7 @@ import { testimonialsSlider } from './template-parts/blocks/testimonials';
 // Parts
 import { initPopups } from './parts/popups';
 import { basicSliders } from './parts/slider';
+import { packagesFilter } from './parts/packages-filter';
 
 
 header();
@@ -34,3 +35,4 @@ testimonialsSlider();
 // Parts
 initPopups();
 basicSliders();
+packagesFilter();

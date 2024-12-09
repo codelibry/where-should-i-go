@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 <?php 
-if(have_rows('hero_images_list')):
+$subtitle = get_field('hero_subtitle');
+$text = get_field('hero_small_text');
+$button = get_field('hero_button');
+if($subtitle || $text || $button || have_rows('hero_images_list')):
 ?>
     <section class="fpHero">
         <div class="container">
@@ -16,11 +19,24 @@ if(have_rows('hero_images_list')):
                             <div class="fpHero__contentList__itemTitle h2"><?php echo $title; ?></div>
                         <?php endif; ?>
                         <?php if($image): ?>
-                            <div class="fpHero__contentList__itemImage parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="parallax-img"></div>
+                            <div class="fpHero__contentList__itemImage parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class=""></div>
                         <?php endif; ?>
                     </a>
                 <?php endwhile; ?>
             </div>
+            <?php if($subtitle || $text || $button): ?>
+                <div class="fpHero__textWrapper">
+                    <?php if($subtitle): ?>
+                        <div class="fpHero__subtitle"><?php echo $subtitle; ?></div>
+                    <?php endif; ?>
+                    <?php if($text): ?>
+                        <div class="fpHero__text"><?php echo $text; ?></div>
+                    <?php endif; ?>
+                    <?php if($button): ?>
+                        <div class="fpHero__button"><a href="<?php echo $button['url']; ?>" class="btn"><?php echo $button['title']; ?></a></div>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
 <?php endif; ?>
@@ -29,6 +45,7 @@ $image = get_field('cta_image');
 $title = get_field('cta_title');
 $text = get_field('cta_text');
 $link = get_field('cta_link');
+if($image || $title || $text || $link):
 ?>
 <section class="cta" id="cta">
     <div class="container">
@@ -50,6 +67,7 @@ $link = get_field('cta_link');
         </div>
     </div>
 </section>
+<?php endif; ?>
 <?php 
 $title = get_field('favorities_slider_title');
 $text = get_field('favorities_slider_text');
@@ -79,8 +97,14 @@ $slider = get_field('favorities_slider');
                 $price = get_field('price'); 
                 $button = get_field('button_label'); 
                 $slug = $post->post_name;
+
+                $packages_country = get_the_terms(get_the_ID(), 'packages_country');
+                $terms_class = "";
+                foreach($packages_country as $term):
+                    $terms_class .= " country-" . $term->slug;
+                endforeach;
                 ?>
-                <div class="favorities__sliderItem product product-text" data-slug="<?php echo $slug; ?>" data-open-popup="true" data-text="<?php the_content(); ?>">
+                <div class="favorities__sliderItem product product-text<?php echo $terms_class; ?>" data-slug="<?php echo $slug; ?>" data-open-popup="true" data-text="<?php the_content(); ?>">
                     <div class="favorities__sliderItem__head show-product-popup">
                         <div class="favorities__sliderItem__contentWrapper">
                             <div class="favorities__sliderItem__content h4">
@@ -94,7 +118,7 @@ $slider = get_field('favorities_slider');
                         </div>
                         <div class="favorities__sliderItem__image product-image">
                             <div class="parallax-img-wrapper">
-                                <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
+                                <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="">
                             </div>
                             
                             <?php if(!empty(get_the_excerpt(  ))): ?>
@@ -192,17 +216,18 @@ if(have_rows('description_block')):
     <div class="container">
         <?php $i = 1; while(have_rows('description_block')): the_row(); ?>
             <?php 
+            $country = get_sub_field('description_country');
             $title = get_sub_field('description_title');
             $text = get_sub_field('description_text');
             $image = get_sub_field('description_image');
             $button = get_sub_field('description_button');
             ?>
-            <div class="description__block">
-                <?php if($title): ?>
-                    <h4 class="description__title animate fade-up"><?php echo $title; ?></h4>
-                <?php endif; ?>
-                <?php if($text || $image): ?>
+            <div class="description__block<?php if($country){echo ' country-' . $country;} ?>">
+                <?php if($title || $text || $image): ?>
                     <div class="description__content row<?php if($i % 2 == 0){echo ' image-left';} ?>">
+                        <?php if($title): ?>
+                            <h4 class="description__title animate fade-up"><?php echo $title; ?></h4>
+                        <?php endif; ?>
                         <?php if($text): ?>
                             <div class="description__text col-lg-7 col-12 animate fade-<?php if($i % 2 == 0){echo 'left';}else{echo 'right';} ?> delay-1">
                                 <?php echo $text; ?>
@@ -215,7 +240,7 @@ if(have_rows('description_block')):
                         <?php endif; ?>
                         <?php if($image): ?>
                             <div class="description__image col-lg-5 col-12">
-                                <div class="animate fade-<?php if($i % 2 == 0){echo 'right';}else{echo 'left';} ?> delay-2 parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div>
+                                <div class="animate fade-<?php if($i % 2 == 0){echo 'right';}else{echo 'left';} ?> delay-2 parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="" alt="<?php echo $image['title']; ?>"></div>
                             </div>
                         <?php endif; ?>
                     </div>

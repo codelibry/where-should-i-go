@@ -5,11 +5,12 @@ Template Name: Paris | Zurich Pages
 get_header();
 ?>
 <?php 
+$page_type = get_field('page_type');
 $title = get_field('hero_title');
 $text = get_field('hero_text');
 if($title || $text):
 ?>
-<section class="hero">
+<section class="hero <?php echo $page_type; ?>-page">
     <div class="container">
         <div class="hero__content">
             <?php if($title): ?>
@@ -38,7 +39,7 @@ $image = get_field('image');
                     <div class="contentBlock__text  p3 col-lg-7 col-12 animate fade-right delay-1"><?php echo $text; ?></div>
                 <?php endif; ?>
                 <?php if($image): ?>
-                    <div class="contentBlock__image col-lg-4 col-12"><div class="animate fade-left delay-2 parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
+                    <div class="contentBlock__image col-lg-4 col-12"><div class="animate fade-left delay-2 parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="" alt="<?php echo $image['title']; ?>"></div></div>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
@@ -47,7 +48,7 @@ $image = get_field('image');
 <?php 
 $title = get_field('features_title');
 ?>
-<section class="features">
+<section class="features <?php echo $page_type; ?>-page">
     <div class="container">
         <?php if($title): ?>
             <h2 class="features__title animate fade-up"><?php echo $title; ?></h2>
@@ -73,7 +74,7 @@ $title = get_field('features_title');
 </section>
 <?php $text = get_field('text_block'); ?>
 <?php if($text): ?>
-<section class="textBlock">
+<section class="textBlock <?php echo $page_type; ?>-page">
     <div class="container">
         <div class="textBlock__content animate fade-up">
             <?php echo $text; ?>
@@ -108,7 +109,7 @@ $link = get_field('cta_button');
     </div>
 </section>
 <?php if(have_rows('teaser_blocks')): ?>
-<section class="teaser">
+<section class="teaser <?php echo $page_type; ?>-page">
     <div class="container">
         <?php $i = 1; while(have_rows('teaser_blocks')): the_row(); ?>
             <?php 
@@ -151,7 +152,7 @@ $link = get_field('cta_button');
                     </div>
                 <?php endif; ?>
                 <?php if($image): ?>
-                    <div class="teaser__image"><div class="animate parallax-img-wrapper fade-<?php echo $imageAnimation; ?> delay-1"><img src="<?php echo $image['url'] ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div></div>
+                    <div class="teaser__image"><div class="animate parallax-img-wrapper fade-<?php echo $imageAnimation; ?> delay-1"><img src="<?php echo $image['url'] ?>" class="" alt="<?php echo $image['title']; ?>"></div></div>
                 <?php endif; ?>
             </div>
         <?php $i++; endwhile; ?>

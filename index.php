@@ -104,7 +104,7 @@ endif;
                                 </div>
                                 <div class="favoritiesBlock__listItem__image product-image">
                                     <div class="parallax-img-wrapper">
-                                        <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
+                                        <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="">
                                     </div>
                                 </div>
                             </div>

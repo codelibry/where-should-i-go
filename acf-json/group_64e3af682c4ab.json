@@ -60,46 +60,6 @@
             "delay": 0
         },
         {
-            "key": "field_66eed1cb713e8",
-            "label": "Packages List",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_66eed1b8713e7",
-            "label": "Packages Country",
-            "name": "packages_country",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "packages_country",
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
-            "field_type": "checkbox",
-            "multiple": 0,
-            "allow_null": 0
-        },
-        {
             "key": "field_64e3af8ed5e09",
             "label": "Image | Text",
             "name": "",
@@ -216,5 +176,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726927454
+    "modified": 1733499180
 }

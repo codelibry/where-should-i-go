@@ -3,6 +3,48 @@
     "title": "Paris | Zurich Pages Fields",
     "fields": [
         {
+            "key": "field_6750a067e9bf1",
+            "label": "Page Type",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6750a070e9bf2",
+            "label": "Page Type",
+            "name": "page_type",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "zurich": "Zurich",
+                "paris": "Paris"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_64dcec42b5c1c",
             "label": "Hero",
             "name": "",
@@ -593,5 +635,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726924485
+    "modified": 1733337238
 }

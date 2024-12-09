@@ -137,7 +137,11 @@
 .parallax-img-wrapper
     position: relative
     overflow: hidden
-    padding-bottom: 100%
+    img 
+        width: 100% 
+        height: 100% 
+        object-fit: cover
+        object-position: center
     img.parallax-img
         position: absolute
         height: 150%
@@ -145,3 +149,11 @@
         object-fit: cover
         +max-screen($breakpoint-lg)
             height: 100%
+.page-template-paris_zurich_pages 
+    .contentBlock__image 
+        .parallax-img-wrapper
+            padding-bottom: 100%
+            +max-screen($breakpoint-lg)
+                padding-bottom: 0
+section.zurich-page 
+    background-color: #a6d4ff

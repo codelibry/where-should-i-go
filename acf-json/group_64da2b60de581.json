@@ -108,6 +108,62 @@
             ]
         },
         {
+            "key": "field_6756b1e377dcb",
+            "label": "Subtitle",
+            "name": "hero_subtitle",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6756b1e977dcc",
+            "label": "Text",
+            "name": "hero_small_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6756b1ee77dcd",
+            "label": "Button",
+            "name": "hero_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_64dab079983ca",
             "label": "CTA",
             "name": "",
@@ -525,6 +581,32 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
+                    "key": "field_675329cb6c39c",
+                    "label": "Country",
+                    "name": "description_country",
+                    "aria-label": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "paris": "Paris",
+                        "zurich": "Zurich"
+                    },
+                    "default_value": "",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "layout": "vertical",
+                    "save_other_choice": 0,
+                    "parent_repeater": "field_66eeb4c447f05"
+                },
+                {
                     "key": "field_64daa333c62a0",
                     "label": "Title",
                     "name": "description_title",
@@ -687,5 +769,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727107635
+    "modified": 1733735374
 }

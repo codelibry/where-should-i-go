@@ -23,30 +23,30 @@ if($title || $text):
 </section>
 <?php endif; ?>
 <?php 
-$packages_country = get_field('packages_country');
 $args = array(
     'post_type' => 'product',
     'posts_per_page' => -1,
     'tax_query' => array(),
 );
-
-if($packages_country){
-    $country_filter = array(
-        'taxonomy' => 'packages_country',
-        'field'    => 'id',
-        'terms'    => $packages_country,
-    );
-
-    array_push($args['tax_query'], $country_filter);
-}
 $the_query = new WP_Query($args);
 if($the_query->have_posts()):
 ?>
 <section class="favoritiesBlock">
     <div class="container">
+        <div class="favoritiesBlock__toggler">
+            <?php 
+            $country_terms = get_terms(array(
+                'taxonomy' => 'packages_country',
+                'hide_empty' => true,
+            ));
+            
+            foreach($country_terms as $country_term): ?>
+                <div class="favoritiesBlock__togglerItem" data-country="<?php echo $country_term->slug; ?>"><?php echo $country_term->name; ?></div>
+            <?php endforeach;
+            ?>
+        </div>
         <div class="favoritiesBlock__list">
             <div class="favoritiesBlock__row">
-
                 <?php $i = 1; while($the_query->have_posts()): $the_query->the_post(); ?>
                 <?php 
                 $price = get_field('price');
@@ -54,6 +54,11 @@ if($the_query->have_posts()):
                 $delay = '';
                 $post = get_post(get_the_ID());
                 $slug = $post->post_name;
+                $packages_country = get_the_terms(get_the_ID(), 'packages_country');
+                $terms_class = "";
+                foreach($packages_country as $term):
+                    $terms_class .= " country-" . $term->slug;
+                endforeach;
                 // if($i % 2 == 0){
                 //     $delay = ' delay-2';
                 // }
@@ -61,7 +66,7 @@ if($the_query->have_posts()):
             
                 
             
-                    <div class="favoritiesBlock__listItem__wrapper">
+                    <div class="favoritiesBlock__listItem__wrapper<?php echo $terms_class; ?>">
                         <div class="favoritiesBlock__listItem product animate fade-up<?php echo $delay; ?>" data-text="<?php the_content(); ?>" data-slug="<?php echo $slug; ?>">
                             <div class="favoritiesBlock__listItem__head show-product-popup">
                                 <div class="favoritiesBlock__listItem__sideContent">
@@ -76,7 +81,7 @@ if($the_query->have_posts()):
                                 </div>
                                 <div class="favoritiesBlock__listItem__image product-image">
                                     <div class="parallax-img-wrapper">
-                                        <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="parallax-img">
+                                        <img src="<?php if(!empty(get_the_post_thumbnail_url( ))){ echo get_the_post_thumbnail_url(); }else{ echo get_template_directory_uri(  ) . '/assets/images/placeholder.png'; } ?>" alt="" class="">
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +116,7 @@ $button = get_field('button');
         <div class="parisContent__wrapper">
             <?php if($image): ?>
                 <div class="parisContent__image">
-                    <div class="animate fade-right parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="parallax-img" alt="<?php echo $image['title']; ?>"></div>
+                    <div class="animate fade-right parallax-img-wrapper"><img src="<?php echo $image['url']; ?>" class="" alt="<?php echo $image['title']; ?>"></div>
                 </div>
             <?php endif; ?>
             <?php if($title || $text || $button): ?>
